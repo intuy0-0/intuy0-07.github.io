@@ -52,7 +52,7 @@
             width: 100%;
             height: 100vh;
             position: relative;
-            background: #f5f5f7;
+            background: white;
         }
         
         #category-page.visible {
@@ -68,8 +68,8 @@
         }
         
         .category-logo {
-            width: 487.926px; /* 放大20px */
-            height: 666px; /* 放大20px */
+            width: 487.926px;
+            height: 666px;
             margin-left: 84px;
         }
         
@@ -86,7 +86,7 @@
             top: 0;
             right: 135px;
             height: 100%;
-            width: 1208.24px; /* 放大20px */
+            width: 1208.24px;
             perspective: 1000px;
         }
         
@@ -98,12 +98,11 @@
         }
         
         .carousel-item {
-            width: 1208.24px; /* 放大20px */
-            height: 666.32px; /* 放大20px */
+            width: 1208.24px;
+            height: 666.32px;
             margin: 40px 0;
             border-radius: 12px;
             overflow: hidden;
-            /* 移除投影效果 */
             transition: transform 0.6s ease, opacity 0.6s ease;
             position: absolute;
         }
@@ -112,6 +111,27 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        
+        /* 指示器样式 */
+        .indicators {
+            position: absolute;
+            left: 84px;
+            bottom: 60px;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .indicator.active {
+            background-color: #000;
         }
         
         /* 动画效果 */
@@ -180,6 +200,16 @@
                 </div>
             </div>
         </div>
+        
+        <!-- 指示器 -->
+        <div class="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+            <div class="indicator" data-index="3"></div>
+            <div class="indicator" data-index="4"></div>
+            <div class="indicator" data-index="5"></div>
+        </div>
     </div>
 
     <script>
@@ -188,6 +218,7 @@
             const categoryPage = document.getElementById('category-page');
             const homeLogo = document.getElementById('home-logo');
             const carouselItems = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.indicator');
             
             // 点击首页logo跳转到分类页面
             homeLogo.addEventListener('click', function() {
@@ -200,69 +231,90 @@
             
             // 初始化轮播效果
             function initCarousel() {
-                const centerIndex = 2; // 中间显示的图片索引
-                
-                // 设置初始位置
-                carouselItems.forEach((item, index) => {
-                    if (index < centerIndex) {
-                        // 上方图片
-                        item.style.transform = `translateY(-${(centerIndex - index) * 120}%) scale(0.8)`;
-                        item.style.opacity = 0.6 - (centerIndex - index) * 0.2;
-                        item.style.zIndex = centerIndex - index;
-                    } else if (index === centerIndex) {
-                        // 中间图片
-                        item.style.transform = 'translateY(0) scale(1)';
-                        item.style.opacity = 1;
-                        item.style.zIndex = carouselItems.length;
-                    } else {
-                        // 下方图片
-                        item.style.transform = `translateY(${(index - centerIndex) * 120}%) scale(0.8)`;
-                        item.style.opacity = 0.6 - (index - centerIndex) * 0.2;
-                        item.style.zIndex = carouselItems.length - (index - centerIndex);
-                    }
-                });
-                
-                // 滚动事件处理
-                let currentIndex = centerIndex;
+                let currentIndex = 0;
                 let isScrolling = false;
                 
+                // 设置初始位置
+                updateCarousel();
+                
+                // 更新轮播显示
+                function updateCarousel() {
+                    carouselItems.forEach((item, index) => {
+                        // 计算相对位置
+                        let position = index - currentIndex;
+                        
+                        // 处理循环逻辑
+                        if (position < -carouselItems.length / 2) {
+                            position += carouselItems.length;
+                        } else if (position > carouselItems.length / 2) {
+                            position -= carouselItems.length;
+                        }
+                        
+                        // 设置位置和样式
+                        if (position === 0) {
+                            // 中间图片
+                            item.style.transform = 'translateY(0) scale(1)';
+                            item.style.opacity = 1;
+                            item.style.zIndex = carouselItems.length;
+                        } else {
+                            // 其他图片
+                            const offsetY = position * 120;
+                            const scale = 0.8;
+                            const opacity = 0.6 - Math.abs(position) * 0.2;
+                            
+                            item.style.transform = `translateY(${offsetY}%) scale(${scale})`;
+                            item.style.opacity = Math.max(opacity, 0.1);
+                            item.style.zIndex = carouselItems.length - Math.abs(position);
+                        }
+                    });
+                    
+                    // 更新指示器
+                    updateIndicators();
+                }
+                
+                // 更新指示器
+                function updateIndicators() {
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // 滚动事件处理
                 window.addEventListener('wheel', function(e) {
                     if (isScrolling) return;
                     
                     isScrolling = true;
                     
-                    if (e.deltaY > 0 && currentIndex < carouselItems.length - 1) {
-                        // 向下滚动
-                        currentIndex++;
-                    } else if (e.deltaY < 0 && currentIndex > 0) {
-                        // 向上滚动
-                        currentIndex--;
+                    if (e.deltaY > 0) {
+                        // 向下滚动 - 下一张
+                        currentIndex = (currentIndex + 1) % carouselItems.length;
+                    } else if (e.deltaY < 0) {
+                        // 向上滚动 - 上一张
+                        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
                     }
                     
                     // 更新位置
-                    carouselItems.forEach((item, index) => {
-                        if (index < currentIndex) {
-                            // 移动到上方
-                            item.style.transform = `translateY(-${(currentIndex - index) * 120}%) scale(0.8)`;
-                            item.style.opacity = 0.6 - (currentIndex - index) * 0.2;
-                            item.style.zIndex = currentIndex - index;
-                        } else if (index === currentIndex) {
-                            // 移动到中间
-                            item.style.transform = 'translateY(0) scale(1)';
-                            item.style.opacity = 1;
-                            item.style.zIndex = carouselItems.length;
-                        } else {
-                            // 移动到下方
-                            item.style.transform = `translateY(${(index - currentIndex) * 120}%) scale(0.8)`;
-                            item.style.opacity = 0.6 - (index - currentIndex) * 0.2;
-                            item.style.zIndex = carouselItems.length - (index - currentIndex);
-                        }
-                    });
+                    updateCarousel();
                     
                     // 防止滚动过快
                     setTimeout(() => {
                         isScrolling = false;
                     }, 600);
+                });
+                
+                // 点击指示器切换图片
+                indicators.forEach(indicator => {
+                    indicator.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        if (index !== currentIndex) {
+                            currentIndex = index;
+                            updateCarousel();
+                        }
+                    });
                 });
             }
         });
