@@ -17,6 +17,8 @@
             color: #333;
             overflow: hidden;
             height: 100vh;
+            /* 防止滚动时出现白色闪烁 */
+            -webkit-overflow-scrolling: touch;
         }
         
         /* 首页样式 */
@@ -44,6 +46,9 @@
             width: 625.834px;
             height: 864px;
             animation: fadeIn 1s ease-out;
+            /* 优化渲染性能 */
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
         }
         
         /* 分类页面样式 */
@@ -53,6 +58,9 @@
             height: 100vh;
             position: relative;
             background: white;
+            /* 防止滚动时出现白色闪烁 */
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
         }
         
         #category-page.visible {
@@ -71,6 +79,9 @@
             width: 487.926px;
             height: 666px;
             margin-left: 84px;
+            /* 优化渲染性能 */
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
         }
         
         /* 右侧导航区域 */
@@ -79,6 +90,9 @@
             height: 100%;
             position: relative;
             overflow: hidden;
+            /* 创建新的层叠上下文，防止残影 */
+            isolation: isolate;
+            transform: translateZ(0);
         }
         
         .scroll-container {
@@ -88,6 +102,9 @@
             height: 100%;
             width: 1208.24px;
             perspective: 1000px;
+            /* 防止滚动时出现残影 */
+            overflow: hidden;
+            backface-visibility: hidden;
         }
         
         .carousel {
@@ -95,6 +112,9 @@
             top: 50%;
             transform: translateY(-50%);
             width: 100%;
+            /* 优化性能 */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
         }
         
         .carousel-item {
@@ -103,14 +123,23 @@
             margin: 40px 0;
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.6s ease, opacity 0.6s ease;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+                        opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             position: absolute;
+            /* 优化渲染性能 - 关键修复 */
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
+            -webkit-font-smoothing: subpixel-antialiased;
         }
         
         .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* 优化图片渲染 */
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
         }
         
         /* 指示器样式 */
@@ -120,6 +149,7 @@
             bottom: 60px;
             display: flex;
             gap: 12px;
+            z-index: 20;
         }
         
         .indicator {
@@ -128,6 +158,7 @@
             border-radius: 50%;
             background-color: #ddd;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
         
         .indicator.active {
@@ -233,6 +264,8 @@
             function initCarousel() {
                 let currentIndex = 0;
                 let isScrolling = false;
+                let startY = 0;
+                let currentY = 0;
                 
                 // 设置初始位置
                 updateCarousel();
@@ -283,7 +316,45 @@
                     });
                 }
                 
-                // 滚动事件处理
+                // 触摸事件处理（移动设备）
+                const carousel = document.querySelector('.carousel');
+                
+                carousel.addEventListener('touchstart', function(e) {
+                    startY = e.touches[0].clientY;
+                });
+                
+                carousel.addEventListener('touchmove', function(e) {
+                    if (isScrolling) return;
+                    currentY = e.touches[0].clientY;
+                });
+                
+                carousel.addEventListener('touchend', function() {
+                    if (isScrolling) return;
+                    
+                    const diffY = startY - currentY;
+                    
+                    if (Math.abs(diffY) > 50) { // 最小滑动距离
+                        isScrolling = true;
+                        
+                        if (diffY > 0) {
+                            // 向上滑动 - 下一张
+                            currentIndex = (currentIndex + 1) % carouselItems.length;
+                        } else {
+                            // 向下滑动 - 上一张
+                            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                        }
+                        
+                        // 更新位置
+                        updateCarousel();
+                        
+                        // 防止滚动过快
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 600);
+                    }
+                });
+                
+                // 滚动事件处理（桌面设备）
                 window.addEventListener('wheel', function(e) {
                     if (isScrolling) return;
                     
@@ -304,16 +375,24 @@
                     setTimeout(() => {
                         isScrolling = false;
                     }, 600);
-                });
+                }, { passive: true });
                 
                 // 点击指示器切换图片
                 indicators.forEach(indicator => {
                     indicator.addEventListener('click', function() {
+                        if (isScrolling) return;
+                        
+                        isScrolling = true;
                         const index = parseInt(this.getAttribute('data-index'));
+                        
                         if (index !== currentIndex) {
                             currentIndex = index;
                             updateCarousel();
                         }
+                        
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 600);
                     });
                 });
             }
