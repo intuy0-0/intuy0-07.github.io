@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intuy0-0空间</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* 首页样式 */
+        #home-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+        
+        #home-page.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .home-logo {
+            width: 625.834px;
+            height: 864px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* 分类页面样式 */
+        #category-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #f5f5f7;
+        }
+        
+        #category-page.visible {
+            display: flex;
+        }
+        
+        /* 左侧logo区域 */
+        .left-panel {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-logo {
+            width: 467.926px;
+            height: 646px;
+            margin-left: 84px;
+        }
+        
+        /* 右侧导航区域 */
+        .right-panel {
+            width: 70%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scroll-container {
+            position: absolute;
+            top: 0;
+            right: 135px;
+            height: 100%;
+            width: 1188.24px;
+            perspective: 1000px;
+        }
+        
+        .carousel {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+        
+        .carousel-item {
+            width: 1188.24px;
+            height: 646.32px;
+            margin: 40px 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: transform 0.6s ease, opacity 0.6s ease;
+            position: absolute;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 标题样式 */
+        .page-title {
+            position: absolute;
+            top: 60px;
+            left: 84px;
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d1d1f;
+            letter-spacing: -0.5px;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1600px) {
+            .home-logo {
+                width: 500px;
+                height: 690px;
+            }
+            
+            .category-logo {
+                width: 380px;
+                height: 525px;
+            }
+            
+            .scroll-container {
+                right: 80px;
+                width: 900px;
+            }
+            
+            .carousel-item {
+                width: 900px;
+                height: 490px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 首页 -->
+    <div id="home-page">
+        <img src="logo.png" alt="Logo" class="home-logo" id="home-logo">
+    </div>
+
+    <!-- 分类主页面 -->
+    <div id="category-page">
+        <h1 class="page-title">intuy0-0空间</h1>
+        
+        <div class="left-panel">
+            <img src="logo.png" alt="Logo" class="category-logo">
+        </div>
+        
+        <div class="right-panel">
+            <div class="scroll-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="导航1.png" alt="导航1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="导航2.png" alt="导航2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="导航3.png" alt="导航3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="导航4.png" alt="导航4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="导航5.png" alt="导航5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="导航6.png" alt="导航6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const homePage = document.getElementById('home-page');
+            const categoryPage = document.getElementById('category-page');
+            const homeLogo = document.getElementById('home-logo');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            
+            // 点击首页logo跳转到分类页面
+            homeLogo.addEventListener('click', function() {
+                homePage.classList.add('hidden');
+                setTimeout(() => {
+                    categoryPage.classList.add('visible');
+                    initCarousel();
+                }, 500);
+            });
+            
+            // 初始化轮播效果
+            function initCarousel() {
+                const centerIndex = 2; // 中间显示的图片索引
+                
+                // 设置初始位置
+                carouselItems.forEach((item, index) => {
+                    if (index < centerIndex) {
+                        // 上方图片
+                        item.style.transform = `translateY(-${(centerIndex - index) * 120}%) scale(0.8)`;
+                        item.style.opacity = 0.6 - (centerIndex - index) * 0.2;
+                        item.style.zIndex = centerIndex - index;
+                    } else if (index === centerIndex) {
+                        // 中间图片
+                        item.style.transform = 'translateY(0) scale(1)';
+                        item.style.opacity = 1;
+                        item.style.zIndex = carouselItems.length;
+                    } else {
+                        // 下方图片
+                        item.style.transform = `translateY(${(index - centerIndex) * 120}%) scale(0.8)`;
+                        item.style.opacity = 0.6 - (index - centerIndex) * 0.2;
+                        item.style.zIndex = carouselItems.length - (index - centerIndex);
+                    }
+                });
+                
+                // 滚动事件处理
+                let currentIndex = centerIndex;
+                let isScrolling = false;
+                
+                window.addEventListener('wheel', function(e) {
+                    if (isScrolling) return;
+                    
+                    isScrolling = true;
+                    
+                    if (e.deltaY > 0 && currentIndex < carouselItems.length - 1) {
+                        // 向下滚动
+                        currentIndex++;
+                    } else if (e.deltaY < 0 && currentIndex > 0) {
+                        // 向上滚动
+                        currentIndex--;
+                    }
+                    
+                    // 更新位置
+                    carouselItems.forEach((item, index) => {
+                        if (index < currentIndex) {
+                            // 移动到上方
+                            item.style.transform = `translateY(-${(currentIndex - index) * 120}%) scale(0.8)`;
+                            item.style.opacity = 0.6 - (currentIndex - index) * 0.2;
+                            item.style.zIndex = currentIndex - index;
+                        } else if (index === currentIndex) {
+                            // 移动到中间
+                            item.style.transform = 'translateY(0) scale(1)';
+                            item.style.opacity = 1;
+                            item.style.zIndex = carouselItems.length;
+                        } else {
+                            // 移动到下方
+                            item.style.transform = `translateY(${(index - currentIndex) * 120}%) scale(0.8)`;
+                            item.style.opacity = 0.6 - (index - currentIndex) * 0.2;
+                            item.style.zIndex = carouselItems.length - (index - currentIndex);
+                        }
+                    });
+                    
+                    // 防止滚动过快
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 600);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
