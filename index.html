@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="intuy0-0空间 - 个人作品展示">
     <title>intuy0-0空间</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +11,7 @@
         :root {
             --primary-color: #000;
             --bg-color: #fff;
+            --text-color: #727171;
             --transition-timing: cubic-bezier(0.23, 1, 0.32, 1);
         }
         
@@ -19,7 +19,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', "黑体-简", "Heiti SC Medium", "SimHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         
         body {
@@ -211,6 +211,7 @@
             transform: translate3d(0, 0, 0);
             -webkit-font-smoothing: subpixel-antialiased;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
         }
         
         .carousel-item img {
@@ -249,6 +250,101 @@
             transform: scale(1.2);
         }
         
+        /* 学生时期作品页面样式 */
+        #student-works-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+        
+        #student-works-page.visible {
+            display: flex;
+        }
+        
+        /* 左侧固定导航区域 */
+        .left-nav {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 40px 0;
+            border-right: 1px solid #f0f0f0;
+        }
+        
+        .nav-logo {
+            width: 407.806px;
+            height: 563px;
+            margin-left: 35px;
+            margin-bottom: 50px;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .nav-item {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 20.28pt;
+            color: var(--text-color);
+            margin-bottom: 28px;
+            text-align: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            width: 100%;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-color);
+        }
+        
+        /* 右侧内容区域 */
+        .right-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .work-item {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .work-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 37.43pt;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .work-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .work-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
         /* 动画效果 */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -256,13 +352,45 @@
         }
         
         /* 响应式调整 */
+        @media (max-width: 1600px) {
+            .home-logo {
+                max-width: 80%;
+            }
+            
+            .category-logo {
+                max-height: 50vh;
+            }
+            
+            .nav-logo {
+                width: 350px;
+                height: 483px;
+            }
+            
+            .nav-item {
+                font-size: 18pt;
+            }
+            
+            .work-title {
+                font-size: 32pt;
+            }
+        }
+        
         @media (max-width: 1200px) {
             .left-panel {
-                width: 25%;
+                width: 28%;
             }
             
             .right-panel {
-                width: 75%;
+                width: 72%;
+            }
+            
+            .nav-logo {
+                width: 300px;
+                height: 415px;
+            }
+            
+            .right-content {
+                padding: 40px 80px 80px 40px;
             }
         }
         
@@ -292,13 +420,48 @@
                 right: 10%;
                 width: 80%;
             }
+            
+            .left-nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 30px 0;
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .right-content {
+                width: 100%;
+                position: relative;
+                padding: 30px 40px 60px;
+            }
+            
+            .nav-logo {
+                width: 250px;
+                height: 345px;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+            
+            .nav-menu {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .nav-item {
+                margin-bottom: 0;
+                width: auto;
+                padding: 0 15px;
+            }
+            
+            .work-title {
+                font-size: 28pt;
+            }
         }
         
         @media (max-width: 768px) {
-            .home-logo {
-                max-width: 80%;
-            }
-            
             .home-text {
                 font-size: 16px;
             }
@@ -323,9 +486,30 @@
             .indicators {
                 bottom: 10px;
             }
+            
+            .right-content {
+                padding: 20px 20px 40px;
+            }
+            
+            .nav-logo {
+                width: 200px;
+                height: 276px;
+            }
+            
+            .nav-item {
+                font-size: 16pt;
+            }
+            
+            .work-title {
+                font-size: 24pt;
+            }
+            
+            .work-item {
+                margin-bottom: 40px;
+            }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .home-text {
                 font-size: 14px;
                 text-align: center;
@@ -345,6 +529,37 @@
                 width: 6px;
                 height: 6px;
             }
+            
+            .nav-menu {
+                gap: 10px;
+            }
+            
+            .nav-item {
+                font-size: 14pt;
+                padding: 0 10px;
+            }
+            
+            .work-title {
+                font-size: 20pt;
+            }
+        }
+        
+        /* 自定义滚动条 */
+        .right-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .right-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .right-content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+        
+        .right-content::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
         }
     </style>
 </head>
@@ -378,7 +593,7 @@
             <div class="right-panel">
                 <div class="scroll-container">
                     <div class="carousel">
-                        <div class="carousel-item">
+                        <div class="carousel-item" data-target="student-works">
                             <img src="导航1.png" alt="导航1" loading="lazy">
                         </div>
                         <div class="carousel-item">
@@ -412,22 +627,98 @@
         </div>
     </div>
 
+    <!-- 学生时期作品页面 -->
+    <div id="student-works-page">
+        <!-- 左侧固定导航 -->
+        <div class="left-nav">
+            <img src="logo.png" alt="Logo" class="nav-logo">
+            <div class="nav-menu">
+                <div class="nav-item active">学生时期作品</div>
+                <div class="nav-item">海报设计</div>
+                <div class="nav-item">淘宝物料设计</div>
+                <div class="nav-item">菜单设计</div>
+                <div class="nav-item">其他设计</div>
+                <div class="nav-item">关于我</div>
+                <div class="nav-item" id="back-to-category">返回首页</div>
+            </div>
+        </div>
+        
+        <!-- 右侧内容区域 -->
+        <div class="right-content">
+            <div class="work-item">
+                <div class="work-title">文创设计</div>
+                <img src="文创设计.jpeg" alt="文创设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">网页设计</div>
+                <img src="网页设计.jpeg" alt="网页设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">插画设计</div>
+                <img src="插画设计.jpeg" alt="插画设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">包装设计</div>
+                <img src="包装设计.jpeg" alt="包装设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">书籍设计</div>
+                <img src="书籍设计.jpeg" alt="书籍设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">手工制作</div>
+                <img src="手工制作.jpeg" alt="手工制作" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">排版设计</div>
+                <img src="排版设计.jpeg" alt="排版设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">IP设计</div>
+                <img src="IP设计.jpeg" alt="IP设计" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">视频剪辑</div>
+                <img src="视频剪辑.jpeg" alt="视频剪辑" class="work-image">
+            </div>
+            
+            <div class="work-item">
+                <div class="work-title">毕业设计</div>
+                <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loader = document.getElementById('loader');
             const homePage = document.getElementById('home-page');
             const categoryPage = document.getElementById('category-page');
+            const studentWorksPage = document.getElementById('student-works-page');
             const homeLogo = document.getElementById('home-logo');
             const backButton = document.getElementById('back-button');
+            const backToCategoryButton = document.getElementById('back-to-category');
             const carouselItems = document.querySelectorAll('.carousel-item');
             const indicators = document.querySelectorAll('.indicator');
+            const navItems = document.querySelectorAll('.nav-item');
             
             // 预加载图片函数
             function preloadImages() {
                 const imageUrls = [
                     'logo.png',
                     '导航1.png', '导航2.png', '导航3.png',
-                    '导航4.png', '导航5.png', '导航6.png'
+                    '导航4.png', '导航5.png', '导航6.png',
+                    '文创设计.jpeg', '网页设计.jpeg', '插画设计.jpeg',
+                    '包装设计.jpeg', '书籍设计.jpeg', '手工制作.jpeg',
+                    '排版设计.jpeg', 'IP设计.jpeg', '视频剪辑.jpeg', '毕业设计.jpeg'
                 ];
                 
                 let loadedCount = 0;
@@ -447,6 +738,7 @@
                     };
                     img.onerror = () => {
                         loadedCount++;
+                        console.warn(`Failed to load image: ${url}`);
                         if (loadedCount === totalImages) {
                             setTimeout(() => {
                                 loader.classList.add('hidden');
@@ -475,6 +767,28 @@
                     setTimeout(() => {
                         homePage.classList.remove('hidden');
                     }, 500);
+                });
+                
+                // 返回到分类页面按钮
+                backToCategoryButton.addEventListener('click', function() {
+                    studentWorksPage.classList.remove('visible');
+                    setTimeout(() => {
+                        categoryPage.classList.add('visible');
+                    }, 500);
+                });
+                
+                // 导航项点击事件
+                navItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (this.id !== 'back-to-category') {
+                            navItems.forEach(nav => nav.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // 这里可以添加加载不同类别内容的逻辑
+                            const categoryName = this.textContent;
+                            console.log(`切换到: ${categoryName}`);
+                        }
+                    });
                 });
             }
             
@@ -533,6 +847,14 @@
                         }
                     });
                 }
+                
+                // 导航图片点击事件
+                carouselItems[0].addEventListener('click', function() {
+                    categoryPage.classList.remove('visible');
+                    setTimeout(() => {
+                        studentWorksPage.classList.add('visible');
+                    }, 500);
+                });
                 
                 // 触摸事件处理（移动设备）
                 const carousel = document.querySelector('.carousel');
