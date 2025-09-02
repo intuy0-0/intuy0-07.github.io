@@ -319,11 +319,185 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         
         .work-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 文创设计页面样式 */
+        #cultural-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+        
+        #cultural-design-page.visible {
+            display: flex;
+        }
+        
+        /* 文创设计页面左侧导航 */
+        .cultural-left-nav {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 40px 0;
+            border-right: 1px solid #f0f0f0;
+        }
+        
+        .cultural-nav-logo {
+            width: 407.806px;
+            height: 563px;
+            margin-left: 35px;
+            margin-bottom: 50px;
+            image-rendering: -webkit-optimize-contrast;
+            position: relative;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: #969797;
+            cursor: pointer;
+            z-index: 10;
+            text-decoration: none;
+        }
+        
+        .cultural-nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* 文创设计页面右侧内容 */
+        .cultural-right-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .cultural-vertical-images {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cultural-vertical-image {
+            width: 1219px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        
+        .cultural-carousel-container {
+            width: 100%;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cultural-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .cultural-carousel-item {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cultural-carousel-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .cultural-image-label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 37.43pt;
+            color: #727171;
+            letter-spacing: 300;
+        }
+        
+        .cultural-carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .cultural-carousel-btn {
+            background: none;
+            border: 1px solid #727171;
+            color: #727171;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+        }
+        
+        .cultural-description {
+            margin-top: 40px;
+            text-align: center;
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 29.81pt;
+            color: #727171;
+            letter-spacing: 300;
+            line-height: 1.5;
+        }
+        
+        /* 图片预览模态框 */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
         }
         
         /* 动画效果 */
@@ -342,7 +516,7 @@
                 max-height: 50vh;
             }
             
-            .nav-logo {
+            .nav-logo, .cultural-nav-logo {
                 width: 350px;
                 height: 483px;
             }
@@ -353,6 +527,14 @@
             
             .work-title {
                 font-size: 22pt; /* 响应式调整 */
+            }
+            
+            .cultural-image-label {
+                font-size: 32pt;
+            }
+            
+            .cultural-description {
+                font-size: 25pt;
             }
         }
         
@@ -365,17 +547,21 @@
                 width: 72%;
             }
             
-            .nav-logo {
+            .nav-logo, .cultural-nav-logo {
                 width: 300px;
                 height: 415px;
             }
             
-            .right-content {
+            .right-content, .cultural-right-content {
                 padding: 40px 80px 80px 40px;
             }
             
             .work-title {
                 font-size: 20pt; /* 响应式调整 */
+            }
+            
+            .cultural-vertical-image {
+                width: 100%;
             }
         }
         
@@ -406,7 +592,7 @@
                 width: 80%;
             }
             
-            .left-nav {
+            .left-nav, .cultural-left-nav {
                 width: 100%;
                 height: auto;
                 position: relative;
@@ -415,20 +601,20 @@
                 border-bottom: 1px solid #f0f0f0;
             }
             
-            .right-content {
+            .right-content, .cultural-right-content {
                 width: 100%;
                 position: relative;
                 padding: 30px 40px 60px;
             }
             
-            .nav-logo {
+            .nav-logo, .cultural-nav-logo {
                 width: 250px;
                 height: 345px;
                 margin-left: 0;
                 margin-bottom: 30px;
             }
             
-            .nav-menu {
+            .nav-menu, .cultural-nav-menu {
                 flex-direction: row;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -444,6 +630,14 @@
             
             .work-title {
                 font-size: 18pt; /* 响应式调整 */
+            }
+            
+            .cultural-image-label {
+                font-size: 28pt;
+            }
+            
+            .cultural-description {
+                font-size: 22pt;
             }
         }
         
@@ -469,11 +663,11 @@
                 bottom: 10px;
             }
             
-            .right-content {
+            .right-content, .cultural-right-content {
                 padding: 20px 20px 40px;
             }
             
-            .nav-logo {
+            .nav-logo, .cultural-nav-logo {
                 width: 200px;
                 height: 276px;
             }
@@ -489,6 +683,18 @@
             .work-item {
                 margin-bottom: 40px;
             }
+            
+            .cultural-image-label {
+                font-size: 24pt;
+            }
+            
+            .cultural-description {
+                font-size: 19pt;
+            }
+            
+            .cultural-carousel-item {
+                width: 250px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -502,7 +708,7 @@
                 height: 6px;
             }
             
-            .nav-menu {
+            .nav-menu, .cultural-nav-menu {
                 gap: 10px;
             }
             
@@ -514,23 +720,39 @@
             .work-title {
                 font-size: 14pt; /* 响应式调整 */
             }
+            
+            .cultural-image-label {
+                font-size: 20pt;
+            }
+            
+            .cultural-description {
+                font-size: 16pt;
+            }
+            
+            .cultural-carousel-item {
+                width: 200px;
+            }
         }
         
         /* 自定义滚动条 */
-        .right-content::-webkit-scrollbar {
+        .right-content::-webkit-scrollbar,
+        .cultural-right-content::-webkit-scrollbar {
             width: 6px;
         }
         
-        .right-content::-webkit-scrollbar-track {
+        .right-content::-webkit-scrollbar-track,
+        .cultural-right-content::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
         
-        .right-content::-webkit-scrollbar-thumb {
+        .right-content::-webkit-scrollbar-thumb,
+        .cultural-right-content::-webkit-scrollbar-thumb {
             background: #c1c1c1;
             border-radius: 3px;
         }
         
-        .right-content::-webkit-scrollbar-thumb:hover {
+        .right-content::-webkit-scrollbar-thumb:hover,
+        .cultural-right-content::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
     </style>
@@ -612,7 +834,7 @@
         
         <!-- 右侧内容区域 -->
         <div class="right-content">
-            <div class="work-item">
+            <div class="work-item" id="cultural-design-trigger">
                 <div class="work-title">文创设计</div>
                 <img src="文创设计.jpeg" alt="文创设计" class="work-image">
             </div>
@@ -664,17 +886,142 @@
         </div>
     </div>
 
+    <!-- 文创设计页面 -->
+    <div id="cultural-design-page">
+        <!-- 左侧固定导航 -->
+        <div class="cultural-left-nav">
+            <div class="cultural-nav-logo">
+                <a href="#" class="back-button" id="back-to-student">&lt;</a>
+                <img src="logo.png" alt="Logo" class="nav-logo">
+            </div>
+            <div class="cultural-nav-menu">
+                <div class="nav-item active">学生时期作品</div>
+                <div class="nav-item">海报设计</div>
+                <div class="nav-item">淘宝物料设计</div>
+                <div class="nav-item">菜单设计</div>
+                <div class="nav-item">其他设计</div>
+                <div class="nav-item">关于我</div>
+                <div class="nav-item">返回首页</div>
+            </div>
+        </div>
+        
+        <!-- 右侧内容区域 -->
+        <div class="cultural-right-content">
+            <!-- 7张纵向排列的图片 -->
+            <div class="cultural-vertical-images">
+                <img src="文创1.jpeg" alt="文创1" class="cultural-vertical-image" loading="lazy">
+                <img src="文创2.jpeg" alt="文创2" class="cultural-vertical-image" loading="lazy">
+                <img src="文创3.jpeg" alt="文创3" class="cultural-vertical-image" loading="lazy">
+                <img src="文创4.jpeg" alt="文创4" class="cultural-vertical-image" loading="lazy">
+                <img src="文创5.jpeg" alt="文创5" class="cultural-vertical-image" loading="lazy">
+                <img src="文创6.jpeg" alt="文创6" class="cultural-vertical-image" loading="lazy">
+                <img src="文创7.jpeg" alt="文创7" class="cultural-vertical-image" loading="lazy">
+            </div>
+            
+            <!-- 轮播图部分 -->
+            <div class="cultural-carousel-container">
+                <div class="cultural-carousel" id="cultural-carousel">
+                    <!-- 海报图片 -->
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">海报</div>
+                        <img src="文创海报1.jpeg" alt="文创海报1" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">海报</div>
+                        <img src="文创海报2.jpeg" alt="文创海报2" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">海报</div>
+                        <img src="文创海报3.jpeg" alt="文创海报3" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    
+                    <!-- 日历图片 -->
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">日历</div>
+                        <img src="文创日历1.jpeg" alt="文创日历1" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">日历</div>
+                        <img src="文创日历2.jpeg" alt="文创日历2" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">日历</div>
+                        <img src="文创日历3.jpeg" alt="文创日历3" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    
+                    <!-- 文创图片 -->
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图1.jpeg" alt="文创图1" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图2.jpeg" alt="文创图2" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图3.jpeg" alt="文创图3" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图4.jpeg" alt="文创图4" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图5.jpeg" alt="文创图5" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图6.jpeg" alt="文创图6" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                    <div class="cultural-carousel-item">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图7.jpeg" alt="文创图7" class="cultural-carousel-image" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="cultural-carousel-controls">
+                    <button class="cultural-carousel-btn" id="carousel-prev">上一张</button>
+                    <button class="cultural-carousel-btn" id="carousel-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 描述文字 -->
+            <div class="cultural-description">
+                将国宝文物进行简化、现代化，与明亮鲜艳的色彩搭配，<br>
+                将文物年轻化、图像化，便于生活在如此浮躁社会的我们阅读。
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片预览模态框 -->
+    <div class="image-modal" id="image-modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loader = document.getElementById('loader');
             const homePage = document.getElementById('home-page');
             const categoryPage = document.getElementById('category-page');
             const studentWorksPage = document.getElementById('student-works-page');
+            const culturalDesignPage = document.getElementById('cultural-design-page');
             const homeLogo = document.getElementById('home-logo');
             const backToCategoryButton = document.getElementById('back-to-category');
+            const backToStudentButton = document.getElementById('back-to-student');
+            const culturalDesignTrigger = document.getElementById('cultural-design-trigger');
             const carouselItems = document.querySelectorAll('.carousel-item');
             const indicators = document.querySelectorAll('.indicator');
             const navItems = document.querySelectorAll('.nav-item');
+            const imageModal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const closeModal = document.getElementById('close-modal');
+            const culturalCarousel = document.getElementById('cultural-carousel');
+            const carouselPrev = document.getElementById('carousel-prev');
+            const carouselNext = document.getElementById('carousel-next');
+            const verticalImages = document.querySelectorAll('.cultural-vertical-image');
+            const carouselImages = document.querySelectorAll('.cultural-carousel-image');
             
             // 预加载图片函数
             function preloadImages() {
@@ -684,7 +1031,13 @@
                     '导航4.png', '导航5.png', '导航6.png',
                     '文创设计.jpeg', '网页设计.jpeg', '插画设计.jpeg',
                     '包装设计.jpeg', '书籍设计.jpeg', '手工制作.jpeg',
-                    '排版设计.jpeg', 'IP设计.jpeg', '视频剪辑.jpeg', '毕业设计.jpeg'
+                    '排版设计.jpeg', 'IP设计.jpeg', '视频剪辑.jpeg', '毕业设计.jpeg',
+                    '文创1.jpeg', '文创2.jpeg', '文创3.jpeg', '文创4.jpeg', 
+                    '文创5.jpeg', '文创6.jpeg', '文创7.jpeg',
+                    '文创海报1.jpeg', '文创海报2.jpeg', '文创海报3.jpeg',
+                    '文创日历1.jpeg', '文创日历2.jpeg', '文创日历3.jpeg',
+                    '文创图1.jpeg', '文创图2.jpeg', '文创图3.jpeg', '文创图4.jpeg',
+                    '文创图5.jpeg', '文创图6.jpeg', '文创图7.jpeg'
                 ];
                 
                 let loadedCount = 0;
@@ -735,10 +1088,28 @@
                     }, 500);
                 });
                 
+                // 返回到学生作品页面按钮
+                backToStudentButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    culturalDesignPage.classList.remove('visible');
+                    setTimeout(() => {
+                        studentWorksPage.classList.add('visible');
+                    }, 500);
+                });
+                
+                // 点击文创设计图片跳转到文创设计页面
+                culturalDesignTrigger.addEventListener('click', function() {
+                    studentWorksPage.classList.remove('visible');
+                    setTimeout(() => {
+                        culturalDesignPage.classList.add('visible');
+                        initCulturalCarousel();
+                    }, 500);
+                });
+                
                 // 导航项点击事件
                 navItems.forEach(item => {
                     item.addEventListener('click', function() {
-                        if (this.id !== 'back-to-category') {
+                        if (this.textContent !== '返回首页') {
                             navItems.forEach(nav => nav.classList.remove('active'));
                             this.classList.add('active');
                             
@@ -748,9 +1119,83 @@
                         }
                     });
                 });
+                
+                // 图片预览功能
+                setupImagePreview();
             }
             
-            // 初始化轮播效果
+            // 设置图片预览功能
+            function setupImagePreview() {
+                // 纵向排列的图片点击预览
+                verticalImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        modalImage.src = this.src;
+                        imageModal.style.display = 'flex';
+                    });
+                });
+                
+                // 轮播图图片点击预览
+                carouselImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        modalImage.src = this.src;
+                        imageModal.style.display = 'flex';
+                    });
+                });
+                
+                // 关闭模态框
+                closeModal.addEventListener('click', function() {
+                    imageModal.style.display = 'none';
+                });
+                
+                // 点击模态框背景关闭
+                imageModal.addEventListener('click', function(e) {
+                    if (e.target === imageModal) {
+                        imageModal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // 初始化文创设计页面轮播
+            function initCulturalCarousel() {
+                let currentIndex = 0;
+                const itemWidth = 320; // 300px宽度 + 20px间距
+                const totalItems = document.querySelectorAll('.cultural-carousel-item').length;
+                
+                function updateCarousel() {
+                    culturalCarousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                }
+                
+                // 下一张按钮
+                carouselNext.addEventListener('click', function() {
+                    if (currentIndex < totalItems - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                });
+                
+                // 上一张按钮
+                carouselPrev.addEventListener('click', function() {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                });
+                
+                // 初始更新
+                updateCarousel();
+                
+                // 自动轮播
+                setInterval(function() {
+                    if (currentIndex < totalItems - 1) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    updateCarousel();
+                }, 3000);
+            }
+            
+            // 初始化分类页面轮播效果
             function initCarousel() {
                 let currentIndex = 0;
                 let isScrolling = false;
