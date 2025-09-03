@@ -808,118 +808,6 @@
             width: 1024px;
         }
         
-        /* 包装设计页面样式 */
-        #package-design-page {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            background: var(--bg-color);
-            overflow: hidden;
-        }
-        
-        #package-design-page.visible {
-            display: flex;
-        }
-        
-        /* 包装设计页面左侧导航 */
-        .package-left-nav {
-            width: 30%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding: 40px 0;
-            border-right: 1px solid #f0f0f0;
-        }
-        
-        .package-nav-header {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 0 35px;
-            margin-bottom: 20px;
-        }
-        
-        .package-back-button {
-            font-size: 18px;
-            color: #969797;
-            cursor: pointer;
-            text-decoration: none;
-            margin-right: 10px;
-        }
-        
-        .package-nav-title {
-            font-size: 18px;
-            font-weight: 500;
-        }
-        
-        .package-nav-logo {
-            width: 407.806px;
-            height: 563px;
-            margin-left: 35px;
-            margin-bottom: 50px;
-            image-rendering: -webkit-optimize-contrast;
-        }
-        
-        .package-nav-menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        
-        /* 包装设计页面右侧内容 */
-        .package-right-content {
-            width: 70%;
-            height: 100%;
-            position: absolute;
-            right: 0;
-            top: 0;
-            overflow-y: auto;
-            padding: 40px 112px 80px 40px;
-        }
-        
-        .package-section {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .package-subtitle {
-            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
-            font-size: 24pt;
-            color: #727171;
-            letter-spacing: 300;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .package-image {
-            width: 1182px;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-        
-        .package-small-image {
-            width: 1168px;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        
-        .package-image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
         /* 图片预览模态框 */
         .image-modal {
             display: none;
@@ -964,7 +852,7 @@
                 max-height: 50vh;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo {
                 width: 350px;
                 height: 483px;
             }
@@ -995,14 +883,6 @@
             .illustration-mixed-carousel-item {
                 width: 100% !important;
             }
-            
-            .package-image {
-                width: 100%;
-            }
-            
-            .package-small-image {
-                width: 100%;
-            }
         }
         
         @media (max-width: 1200px) {
@@ -1014,12 +894,12 @@
                 width: 72%;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo {
                 width: 300px;
                 height: 415px;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content {
                 padding: 40px 80px 80px 40px;
             }
             
@@ -1059,7 +939,7 @@
                 width: 80%;
             }
             
-            .left-nav, .cultural-left-nav, .web-left-nav, .illustration-left-nav, .package-left-nav {
+            .left-nav, .cultural-left-nav, .web-left-nav, .illustration-left-nav {
                 width: 100%;
                 height: auto;
                 position: relative;
@@ -1068,20 +948,20 @@
                 border-bottom: 1px solid #f0f0f0;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content {
                 width: 100%;
                 position: relative;
                 padding: 30px 40px 60px;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo {
                 width: 250px;
                 height: 345px;
                 margin-left: 0;
                 margin-bottom: 30px;
             }
             
-            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .package-nav-menu {
+            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu {
                 flex-direction: row;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -1104,7 +984,7 @@
                 top: -35px;
             }
             
-            .web-image-title, .illustration-subtitle, .package-subtitle {
+            .web-image-title, .illustration-subtitle {
                 font-size: 20pt;
             }
         }
@@ -1131,11 +1011,11 @@
                 bottom: 10px;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content {
                 padding: 20px 20px 40px;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo {
                 width: 200px;
                 height: 276px;
             }
@@ -1161,7 +1041,7 @@
                 width: 250px;
             }
             
-            .web-image-title, .illustration-subtitle, .package-subtitle {
+            .web-image-title, .illustration-subtitle {
                 font-size: 18pt;
             }
             
@@ -1181,7 +1061,7 @@
                 height: 6px;
             }
             
-            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .package-nav-menu {
+            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu {
                 gap: 10px;
             }
             
@@ -1207,7 +1087,7 @@
                 font-size: 14pt;
             }
             
-            .web-image-title, .illustration-subtitle, .package-subtitle {
+            .web-image-title, .illustration-subtitle {
                 font-size: 16pt;
             }
         }
@@ -1216,24 +1096,21 @@
         .right-content::-webkit-scrollbar,
         .cultural-right-content::-webkit-scrollbar,
         .web-right-content::-webkit-scrollbar,
-        .illustration-right-content::-webkit-scrollbar,
-        .package-right-content::-webkit-scrollbar {
+        .illustration-right-content::-webkit-scrollbar {
             width: 6px;
         }
         
         .right-content::-webkit-scrollbar-track,
         .cultural-right-content::-webkit-scrollbar-track,
         .web-right-content::-webkit-scrollbar-track,
-        .illustration-right-content::-webkit-scrollbar-track,
-        .package-right-content::-webkit-scrollbar-track {
+        .illustration-right-content::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
         
         .right-content::-webkit-scrollbar-thumb,
         .cultural-right-content::-webkit-scrollbar-thumb,
         .web-right-content::-webkit-scrollbar-thumb,
-        .illustration-right-content::-webkit-scrollbar-thumb,
-        .package-right-content::-webkit-scrollbar-thumb {
+        .illustration-right-content::-webkit-scrollbar-thumb {
             background: #c1c1c1;
             border-radius: 3px;
         }
@@ -1241,8 +1118,7 @@
         .right-content::-webkit-scrollbar-thumb:hover,
         .cultural-right-content::-webkit-scrollbar-thumb:hover,
         .web-right-content::-webkit-scrollbar-thumb:hover,
-        .illustration-right-content::-webkit-scrollbar-thumb:hover,
-        .package-right-content::-webkit-scrollbar-thumb:hover {
+        .illustration-right-content::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
     </style>
@@ -1339,7 +1215,7 @@
                 <img src="插画设计.jpeg" alt="插画设计" class="work-image">
             </div>
             
-            <div class="work-item" id="package-design-trigger">
+            <div class="work-item">
                 <div class="work-title">包装设计</div>
                 <img src="包装设计.jpeg" alt="包装设计" class="work-image">
             </div>
@@ -1715,54 +1591,13 @@
         </div>
     </div>
 
-    <!-- 包装设计页面 -->
-    <div id="package-design-page">
-        <!-- 左侧固定导航 -->
-        <div class="package-left-nav">
-            <div class="package-nav-header">
-                <a href="#" class="package-back-button" id="back-to-student-from-package">返回</a>
-                <div class="package-nav-title">包装设计</div>
-            </div>
-            
-            <img src="logo.png" alt="Logo" class="package-nav-logo">
-            
-            <div class="package-nav-menu">
-                <div class="nav-item active">学生时期作品</div>
-                <div class="nav-item">海报设计</div>
-                <div class="nav-item">淘宝物料设计</div>
-                <div class="nav-item">菜单设计</div>
-                <div class="nav-item">其他设计</div>
-                <div class="nav-item">关于我</div>
-                <div class="nav-item">返回首页</div>
-            </div>
-        </div>
-        
-        <!-- 右侧内容区域 -->
-        <div class="package-right-content">
-            <!-- 百丈枇杷包装设计 -->
-            <div class="package-section">
-                <div class="package-subtitle">百丈枇杷包装设计</div>
-                <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="package-image" loading="lazy">
-            </div>
-            
-            <!-- 哇哈哈包装设计 -->
-            <div class="package-section">
-                <div class="package-subtitle">哇哈哈包装设计</div>
-                <div class="package-image-container">
-                    <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="package-small-image" loading="lazy">
-                    <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="package-small-image" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
         <img class="modal-content" id="modal-image">
     </div>
 
-   <script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         const loader = document.getElementById('loader');
         const homePage = document.getElementById('home-page');
@@ -1771,17 +1606,14 @@
         const culturalDesignPage = document.getElementById('cultural-design-page');
         const webDesignPage = document.getElementById('web-design-page');
         const illustrationDesignPage = document.getElementById('illustration-design-page');
-        const packageDesignPage = document.getElementById('package-design-page');
         const homeLogo = document.getElementById('home-logo');
         const backToCategoryButton = document.getElementById('back-to-category');
         const backToStudentButton = document.getElementById('back-to-student');
         const backToStudentFromWebButton = document.getElementById('back-to-student-from-web');
         const backToStudentFromIllustrationButton = document.getElementById('back-to-student-from-illustration');
-        const backToStudentFromPackageButton = document.getElementById('back-to-student-from-package');
         const culturalDesignTrigger = document.getElementById('cultural-design-trigger');
         const webDesignTrigger = document.getElementById('web-design-trigger');
         const illustrationDesignTrigger = document.getElementById('illustration-design-trigger');
-        const packageDesignTrigger = document.getElementById('package-design-trigger');
         const carouselItems = document.querySelectorAll('.carousel-item');
         const indicators = document.querySelectorAll('.indicator');
         const navItems = document.querySelectorAll('.nav-item');
@@ -1819,9 +1651,6 @@
         const runfaCulturalNext = document.getElementById('runfa-cultural-next');
         const illustrationImages = document.querySelectorAll('.illustration-main-image, .illustration-carousel-image');
         
-        // 包装设计页面元素
-        const packageImages = document.querySelectorAll('.package-image, .package-small-image');
-        
         // 预加载图片函数
         function preloadImages() {
             const imageUrls = [
@@ -1844,9 +1673,7 @@
                 '绿茶插画1.jpeg', '绿茶插画2.jpeg', '绿茶插画3.jpeg',
                 '绿茶平铺1.jpeg', '绿茶平铺2.jpeg', '绿茶平铺3.jpeg',
                 '润发海报1.jpeg', '润发海报2.jpeg',
-                '润发文创1.jpeg', '润发文创2.png',
-                // 包装设计页面图片
-                '枇杷.jpeg', '哇哈哈1.jpeg', '哇哈哈2.jpeg'
+                '润发文创1.jpeg', '润发文创2.png'
             ];
             
             let loadedCount = 0;
@@ -1924,15 +1751,6 @@
                 }, 500);
             });
             
-            // 返回到学生作品页面按钮（从包装设计页面）
-            backToStudentFromPackageButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                packageDesignPage.classList.remove('visible');
-                setTimeout(() => {
-                    studentWorksPage.classList.add('visible');
-                }, 500);
-            });
-            
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
                 studentWorksPage.classList.remove('visible');
@@ -1957,14 +1775,6 @@
                 setTimeout(() => {
                     illustrationDesignPage.classList.add('visible');
                     initIllustrationCarousels();
-                }, 500);
-            });
-            
-            // 点击包装设计图片跳转到包装设计页面
-            packageDesignTrigger.addEventListener('click', function() {
-                studentWorksPage.classList.remove('visible');
-                setTimeout(() => {
-                    packageDesignPage.classList.add('visible');
                 }, 500);
             });
             
@@ -2014,14 +1824,6 @@
             
             // 插画设计页面图片点击预览
             illustrationImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    modalImage.src = this.src;
-                    imageModal.style.display = 'flex';
-                });
-            });
-            
-            // 包装设计页面图片点击预览
-            packageImages.forEach(image => {
                 image.addEventListener('click', function() {
                     modalImage.src = this.src;
                     imageModal.style.display = 'flex';
