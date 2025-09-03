@@ -1361,6 +1361,243 @@
         .book-right-content::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
+
+   /* 手工制作页面样式 */
+        #handmade-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: var(--bg-color);
+            overflow: hidden;
+        }
+        
+        #handmade-page.visible {
+            display: flex;
+        }
+        
+        /* 手工制作页面左侧导航 */
+        .handmade-left-nav {
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 40px 0;
+            border-right: 1px solid #f0f0f0;
+        }
+        
+        .handmade-nav-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0 35px;
+            margin-bottom: 20px;
+        }
+        
+        .handmade-back-button {
+            font-size: 18px;
+            color: #969797;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        
+        .handmade-nav-title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .handmade-nav-logo {
+            width: 407.806px;
+            height: 563px;
+            margin-left: 35px;
+            margin-bottom: 50px;
+            image-rendering: -webkit-optimize-contrast;
+        }
+        
+        .handmade-nav-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* 手工制作页面右侧内容 */
+        .handmade-right-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .handmade-section {
+            margin-bottom: 60px;
+        }
+        
+        .handmade-subtitle {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 24pt;
+            color: #727171;
+            letter-spacing: 300;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .handmade-main-image {
+            width: 1074.816px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .handmade-description {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 16pt;
+            color: #727171;
+            letter-spacing: 300;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .handmade-carousel-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .handmade-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .handmade-carousel-item {
+            flex: 0 0 auto;
+            width: 1074.816px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .handmade-carousel-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .handmade-carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .handmade-carousel-btn {
+            background: none;
+            border: 1px solid #727171;
+            color: #727171;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1600px) {
+            .handmade-main-image, .handmade-carousel-item {
+                width: 100%;
+            }
+            
+            .handmade-nav-logo {
+                width: 350px;
+                height: 483px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .handmade-right-content {
+                padding: 40px 80px 80px 40px;
+            }
+            
+            .handmade-nav-logo {
+                width: 300px;
+                height: 415px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .handmade-left-nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 30px 0;
+                border-right: none;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .handmade-right-content {
+                width: 100%;
+                position: relative;
+                padding: 30px 40px 60px;
+            }
+            
+            .handmade-nav-logo {
+                width: 250px;
+                height: 345px;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+            
+            .handmade-nav-menu {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .handmade-subtitle {
+                font-size: 20pt;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .handmade-right-content {
+                padding: 20px 20px 40px;
+            }
+            
+            .handmade-nav-logo {
+                width: 200px;
+                height: 276px;
+            }
+            
+            .handmade-subtitle {
+                font-size: 18pt;
+            }
+            
+            .handmade-description {
+                font-size: 14pt;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .handmade-subtitle {
+                font-size: 16pt;
+            }
+            
+            .handmade-description {
+                font-size: 14pt;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1465,10 +1702,10 @@
                 <img src="书籍设计.jpeg" alt="书籍设计" class="work-image">
             </div>
             
-            <div class="work-item">
-                <div class="work-title">手工制作</div>
-                <img src="手工制作.jpeg" alt="手工制作" class="work-image">
-            </div>
+           <div class="work-item" id="handmade-trigger">
+    <div class="work-title">手工制作</div>
+    <img src="手工制作.jpeg" alt="手工制作" class="work-image">
+</div>
             
             <div class="work-item">
                 <div class="work-title">排版设计</div>
@@ -1912,6 +2149,90 @@
         </div>
     </div>
 
+<!-- 手工制作页面 -->
+<div id="handmade-page">
+    <!-- 左侧固定导航 -->
+    <div class="handmade-left-nav">
+        <div class="handmade-nav-header">
+            <a href="#" class="handmade-back-button" id="back-to-student-from-handmade">返回</a>
+            <div class="handmade-nav-title">手工制作</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="handmade-nav-logo">
+        
+        <div class="handmade-nav-menu">
+            <div class="nav-item active">学生时期作品</div>
+            <div class="nav-item">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+            <div class="nav-item">返回首页</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="handmade-right-content">
+        <!-- 二十四节气纤维艺术部分 -->
+        <div class="handmade-section">
+            <div class="handmade-subtitle">二十四节气纤维艺术</div>
+            <img src="壹色.png" alt="二十四节气纤维艺术" class="handmade-main-image" loading="lazy">
+            <div class="handmade-description">
+                二十四节气与纤维艺术相结合，以现代表现方式体现新的视觉效果，
+                将二十四节气无形的非遗转换为有形的商品，将非遗以人们喜闻
+                乐见的形式表现出来，吸引人们的关注和喜爱，更好的将二十四节
+                气非遗传播和推广出去。
+            </div>
+        </div>
+        
+        <!-- 参考中国传统色部分 -->
+        <div class="handmade-section">
+            <img src="手工1.png" alt="手工制作1" class="handmade-main-image" loading="lazy">
+            <div class="handmade-description">
+                参考《中国传统色》这本书籍，根据24节气72物候，在几十万件故宫文物中选取应时应节的96件，从文物中提取传统色。
+            </div>
+        </div>
+        
+        <!-- 色名与色值部分 -->
+        <div class="handmade-section">
+            <img src="手工2.png" alt="手工制作2" class="handmade-main-image" loading="lazy">
+            <div class="handmade-description">
+                色名与色值两相对应，互为考证，最终完成以时间为轴，以二十四节气为依托，展现中国传统文化的魅力。
+            </div>
+        </div>
+        
+        <!-- 手工制作轮播部分 -->
+        <div class="handmade-section">
+            <div class="handmade-carousel-container">
+                <div class="handmade-carousel" id="handmade-carousel">
+                    <div class="handmade-carousel-item">
+                        <img src="手工3.png" alt="手工制作3" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                    <div class="handmade-carousel-item">
+                        <img src="手工4.png" alt="手工制作4" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                    <div class="handmade-carousel-item">
+                        <img src="手工5.png" alt="手工制作5" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                    <div class="handmade-carousel-item">
+                        <img src="手工6.png" alt="手工制作6" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                    <div class="handmade-carousel-item">
+                        <img src="手工7.png" alt="手工制作7" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                    <div class="handmade-carousel-item">
+                        <img src="手工8.png" alt="手工制作8" class="handmade-carousel-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="handmade-carousel-controls">
+                <button class="handmade-carousel-btn" id="handmade-prev">上一张</button>
+                <button class="handmade-carousel-btn" id="handmade-next">下一张</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -1983,6 +2304,15 @@
         
         // 书籍设计页面元素
         const bookImages = document.querySelectorAll('.book-vertical-image');
+
+// 手工制作页面元素
+const handmadePage = document.getElementById('handmade-page');
+const backToStudentFromHandmadeButton = document.getElementById('back-to-student-from-handmade');
+const handmadeTrigger = document.getElementById('handmade-trigger');
+const handmadeImages = document.querySelectorAll('.handmade-main-image, .handmade-carousel-image');
+const handmadeCarousel = document.getElementById('handmade-carousel');
+const handmadePrev = document.getElementById('handmade-prev');
+const handmadeNext = document.getElementById('handmade-next');
         
         // 预加载图片函数
         function preloadImages() {
@@ -2012,7 +2342,11 @@
                 // 书籍设计页面图片
                 '书籍1.jpeg', '书籍2.jpeg', '书籍3.jpeg', '书籍4.jpeg', 
                 '书籍5.jpeg', '书籍6.jpeg', '书籍7.jpeg', '书籍8.jpeg', 
-                '书籍9.jpeg', '书籍10.jpeg', '书籍11.jpeg'
+                '书籍9.jpeg', '书籍10.jpeg', '书籍11.jpeg',
+                // 手工制作页面图片
+                '壹色.png', '手工1.png', '手工2.png', 
+                '手工3.png', '手工4.png', '手工5.png', 
+                '手工6.png', '手工7.png', '手工8.png'
             ];
             
             let loadedCount = 0;
@@ -2108,6 +2442,15 @@
                 }, 500);
             });
             
+            // 返回到学生作品页面按钮（从手工制作页面）
+            backToStudentFromHandmadeButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                handmadePage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+            
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
                 studentWorksPage.classList.remove('visible');
@@ -2148,6 +2491,15 @@
                 studentWorksPage.classList.remove('visible');
                 setTimeout(() => {
                     bookDesignPage.classList.add('visible');
+                }, 500);
+            });
+            
+            // 点击手工制作图片跳转到手工制作页面
+            handmadeTrigger.addEventListener('click', function() {
+                studentWorksPage.classList.remove('visible');
+                setTimeout(() => {
+                    handmadePage.classList.add('visible');
+                    initHandmadeCarousel();
                 }, 500);
             });
             
@@ -2213,6 +2565,14 @@
             
             // 书籍设计页面图片点击预览
             bookImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    modalImage.src = this.src;
+                    imageModal.style.display = 'flex';
+                });
+            });
+            
+            // 手工制作页面图片点击预览
+            handmadeImages.forEach(image => {
                 image.addEventListener('click', function() {
                     modalImage.src = this.src;
                     imageModal.style.display = 'flex';
@@ -2594,6 +2954,36 @@
         
         // 启动初始化
         init();
+// 启动初始化
+        init();
+        
+        // 初始化手工制作页面轮播
+        function initHandmadeCarousel() {
+            let currentIndex = 0;
+            const itemWidth = 1094.816;
+            const totalItems = document.querySelectorAll('.handmade-carousel-item').length;
+            
+            function updateCarousel() {
+                handmadeCarousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            }
+            
+            handmadeNext.addEventListener('click', function() {
+                if (currentIndex < totalItems - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            handmadePrev.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            updateCarousel();
+        }
+    });
     });
 </script>
 </body>
