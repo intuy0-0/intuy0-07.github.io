@@ -176,7 +176,7 @@
         }
         
         .carousel-item {
-            width: 极%;
+            width: 100%;
             height: auto;
             aspect-ratio: 1.84 / 1;
             margin: 20px 0;
@@ -189,7 +189,7 @@
             backface-visibility: hidden;
             transform: translate3d(0, 0, 0);
             -webkit-font-smoothing: subpixel-antialiased;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 极.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             cursor: pointer;
         }
         
@@ -211,7 +211,7 @@
             gap: 10px;
             z-index: 20;
             background: rgba(255, 255, 255, 0.7);
-            padding: 10极 15px;
+            padding: 10px 15px;
             border-radius: 20px;
         }
         
@@ -310,7 +310,7 @@
             color: var(--text-color);
             margin-bottom: 20px;
             font-weight: 500;
-            letter-spacing: 300; /* 极间距300 */
+            letter-spacing: 300; /* 字间距300 */
         }
         
         .work-image {
@@ -331,7 +331,7 @@
         #cultural-design-page {
             display: none;
             width: 100%;
-           极eight: 100vh;
+            height: 100vh;
             position: relative;
             background: var(--bg-color);
             overflow: hidden;
@@ -356,7 +356,7 @@
         }
         
         .cultural-nav-header {
-            display:极;
+            display: flex;
             align-items: center;
             width: 100%;
             padding: 0 35px;
@@ -378,7 +378,7 @@
         
         .cultural-nav-logo {
             width: 407.806px;
-            height: 563极;
+            height: 563px;
             margin-left: 35px;
             margin-bottom: 50px;
             image-rendering: -webkit-optimize-contrast;
@@ -561,7 +561,7 @@
             margin-bottom: 40px;
         }
         
-        .web-v极eo {
+        .web-video {
             width: 1219px;
             max-width: 100%;
             height: auto;
@@ -570,7 +570,7 @@
         }
         
         .web-image-section {
-            margin-bottom: 40极;
+            margin-bottom: 40px;
         }
         
         .web-image-title {
@@ -660,7 +660,7 @@
         .illustration-left-nav {
             width: 30%;
             height: 100%;
-            display:极;
+            display: flex;
             flex-direction: column;
             align-items: center;
             position: fixed;
@@ -691,7 +691,7 @@
             font-weight: 500;
         }
         
-        .illustration-nav-l极o {
+        .illustration-nav-logo {
             width: 407.806px;
             height: 563px;
             margin-left: 35px;
@@ -809,7 +809,7 @@
         }
         
         /* 包装设计页面样式 */
-        #packaging-design-page {
+        #package-design-page {
             display: none;
             width: 100%;
             height: 100vh;
@@ -818,12 +818,12 @@
             overflow: hidden;
         }
         
-        #packaging-design-page.visible {
+        #package-design-page.visible {
             display: flex;
         }
         
         /* 包装设计页面左侧导航 */
-        .packaging-left-nav {
+        .package-left-nav {
             width: 30%;
             height: 100%;
             display: flex;
@@ -833,10 +833,10 @@
             left: 0;
             top: 0;
             padding: 40px 0;
-            border-right: 1px solid #f0f0f极;
+            border-right: 1px solid #f0f0f0;
         }
         
-        .packaging-nav-header {
+        .package-nav-header {
             display: flex;
             align-items: center;
             width: 100%;
@@ -844,7 +844,7 @@
             margin-bottom: 20px;
         }
         
-        .packaging-back-button {
+        .package-back-button {
             font-size: 18px;
             color: #969797;
             cursor: pointer;
@@ -852,12 +852,12 @@
             margin-right: 10px;
         }
         
-        .packaging-nav-title {
+        .package-nav-title {
             font-size: 18px;
             font-weight: 500;
         }
         
-        .packaging-nav-logo {
+        .package-nav-logo {
             width: 407.806px;
             height: 563px;
             margin-left: 35px;
@@ -865,7 +865,7 @@
             image-rendering: -webkit-optimize-contrast;
         }
         
-        .packaging-nav-menu {
+        .package-nav-menu {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -873,7 +873,7 @@
         }
         
         /* 包装设计页面右侧内容 */
-        .packaging-right-content {
+        .package-right-content {
             width: 70%;
             height: 100%;
             position: absolute;
@@ -883,11 +883,12 @@
             padding: 40px 112px 80px 40px;
         }
         
-        .packaging-section {
+        .package-section {
             margin-bottom: 60px;
+            text-align: center;
         }
         
-        .packaging-subtitle {
+        .package-subtitle {
             font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
             font-size: 24pt;
             color: #727171;
@@ -896,7 +897,7 @@
             text-align: center;
         }
         
-        .packaging-main-image {
+        .package-image {
             width: 1182px;
             max-width: 100%;
             height: auto;
@@ -904,12 +905,19 @@
             cursor: pointer;
         }
         
-        .packaging-vertical-image {
+        .package-small-image {
             width: 1168px;
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
             cursor: pointer;
+        }
+        
+        .package-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
         
         /* 图片预览模态框 */
@@ -956,7 +964,7 @@
                 max-height: 50vh;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .packaging-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
                 width: 350px;
                 height: 483px;
             }
@@ -988,8 +996,11 @@
                 width: 100% !important;
             }
             
-            .packaging-main-image,
-            .packaging-vertical-image {
+            .package-image {
+                width: 100%;
+            }
+            
+            .package-small-image {
                 width: 100%;
             }
         }
@@ -1003,13 +1014,13 @@
                 width: 72%;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .packaging-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
                 width: 300px;
                 height: 415px;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .packaging-right-content {
-                padding: 40px 80px 极0px 40px;
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
+                padding: 40px 80px 80px 40px;
             }
             
             .work-title {
@@ -1048,7 +1059,7 @@
                 width: 80%;
             }
             
-            .left-nav, .cultural-left-nav, .web-left-nav, .illustration-left-nav, .packaging-left-nav {
+            .left-nav, .cultural-left-nav, .web-left-nav, .illustration-left-nav, .package-left-nav {
                 width: 100%;
                 height: auto;
                 position: relative;
@@ -1057,20 +1068,20 @@
                 border-bottom: 1px solid #f0f0f0;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .packaging-right-content {
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
                 width: 100%;
                 position: relative;
                 padding: 30px 40px 60px;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .packaging-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
                 width: 250px;
                 height: 345px;
                 margin-left: 0;
                 margin-bottom: 30px;
             }
             
-            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .packaging-nav-menu {
+            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .package-nav-menu {
                 flex-direction: row;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -1093,7 +1104,7 @@
                 top: -35px;
             }
             
-            .web-image-title, .illustration-subtitle, .packaging-subtitle {
+            .web-image-title, .illustration-subtitle, .package-subtitle {
                 font-size: 20pt;
             }
         }
@@ -1120,11 +1131,11 @@
                 bottom: 10px;
             }
             
-            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .packaging-right-content {
+            .right-content, .cultural-right-content, .web-right-content, .illustration-right-content, .package-right-content {
                 padding: 20px 20px 40px;
             }
             
-            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .packaging-nav-logo {
+            .nav-logo, .cultural-nav-logo, .web-nav-logo, .illustration-nav-logo, .package-nav-logo {
                 width: 200px;
                 height: 276px;
             }
@@ -1146,11 +1157,11 @@
                 top: -30px;
             }
             
-            .cultural-carousel-item, .极-carousel-item {
+            .cultural-carousel-item, .web-carousel-item {
                 width: 250px;
             }
             
-            .web-image-title, .illustration-subtitle, .packaging-subtitle {
+            .web-image-title, .illustration-subtitle, .package-subtitle {
                 font-size: 18pt;
             }
             
@@ -1170,7 +1181,7 @@
                 height: 6px;
             }
             
-            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .packaging-nav-menu {
+            .nav-menu, .cultural-nav-menu, .web-nav-menu, .illustration-nav-menu, .package-nav-menu {
                 gap: 10px;
             }
             
@@ -1180,7 +1191,7 @@
             }
             
             .work-title {
-                font-size: 14pt; /* 响应式极整 */
+                font-size: 14pt; /* 响应式调整 */
             }
             
             .cultural-image-label {
@@ -1193,10 +1204,10 @@
             }
             
             .cultural-description, .web-description {
-                font-size: 14极;
+                font-size: 14pt;
             }
             
-            .web-image-title, .illustration-subtitle, .packaging-subtitle {
+            .web-image-title, .illustration-subtitle, .package-subtitle {
                 font-size: 16pt;
             }
         }
@@ -1206,7 +1217,7 @@
         .cultural-right-content::-webkit-scrollbar,
         .web-right-content::-webkit-scrollbar,
         .illustration-right-content::-webkit-scrollbar,
-        .packaging-right-content::-webkit-scrollbar {
+        .package-right-content::-webkit-scrollbar {
             width: 6px;
         }
         
@@ -1214,7 +1225,7 @@
         .cultural-right-content::-webkit-scrollbar-track,
         .web-right-content::-webkit-scrollbar-track,
         .illustration-right-content::-webkit-scrollbar-track,
-        .packaging-right-content::-webkit-scrollbar-track {
+        .package-right-content::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
         
@@ -1222,7 +1233,7 @@
         .cultural-right-content::-webkit-scrollbar-thumb,
         .web-right-content::-webkit-scrollbar-thumb,
         .illustration-right-content::-webkit-scrollbar-thumb,
-        .packaging-right-content::-webkit-scrollbar-thumb {
+        .package-right-content::-webkit-scrollbar-thumb {
             background: #c1c1c1;
             border-radius: 3px;
         }
@@ -1231,7 +1242,7 @@
         .cultural-right-content::-webkit-scrollbar-thumb:hover,
         .web-right-content::-webkit-scrollbar-thumb:hover,
         .illustration-right-content::-webkit-scrollbar-thumb:hover,
-        .packaging-right-content::-webkit-scrollbar-thumb:hover {
+        .package-right-content::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
     </style>
@@ -1287,15 +1298,15 @@
         <!-- 指示器 -->
         <div class="indicators">
             <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="极"></div>
+            <div class="indicator" data-index="1"></div>
             <div class="indicator" data-index="2"></div>
             <div class="indicator" data-index="3"></div>
-            <div class极indicator" data-index="4"></div>
+            <div class="indicator" data-index="4"></div>
             <div class="indicator" data-index="5"></div>
         </div>
     </div>
 
- <!-- 学生时期作品页面 -->
+    <!-- 学生时期作品页面 -->
     <div id="student-works-page">
         <!-- 左侧固定导航 -->
         <div class="left-nav">
@@ -1328,7 +1339,7 @@
                 <img src="插画设计.jpeg" alt="插画设计" class="work-image">
             </div>
             
-            <div class="work-item" id="packaging-design-trigger">
+            <div class="work-item" id="package-design-trigger">
                 <div class="work-title">包装设计</div>
                 <img src="包装设计.jpeg" alt="包装设计" class="work-image">
             </div>
@@ -1339,7 +1350,7 @@
             </div>
             
             <div class="work-item">
-                <div class="极-title">手工制作</div>
+                <div class="work-title">手工制作</div>
                 <img src="手工制作.jpeg" alt="手工制作" class="work-image">
             </div>
             
@@ -1376,7 +1387,7 @@
             
             <img src="logo.png" alt="Logo" class="cultural-nav-logo">
             
-            <极 class="cultural-nav-menu">
+            <div class="cultural-nav-menu">
                 <div class="nav-item active">学生时期作品</div>
                 <div class="nav-item">海报设计</div>
                 <div class="nav-item">淘宝物料设计</div>
@@ -1397,7 +1408,7 @@
                 <img src="文创4.jpeg" alt="文创4" class="cultural-vertical-image" loading="lazy">
                 <img src="文创5.jpeg" alt="文创5" class="cultural-vertical-image" loading="lazy">
                 <img src="文创6.jpeg" alt="文创6" class="cultural-vertical-image" loading="lazy">
-                <img src="文创7.jpeg"极t="文创7" class="cultural-vertical-image" loading="lazy">
+                <img src="文创7.jpeg" alt="文创7" class="cultural-vertical-image" loading="lazy">
             </div>
             
             <!-- 轮播图部分 -->
@@ -1414,19 +1425,19 @@
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">海报</div>
-                        <img src="文创海报3.jpeg" alt="文创海报3" class="cultural-carousel-image" loading="lazy">
+                        <img src="文创海报3.jpeg" alt="文创海报3" class="cultural-carousel-image' loading="lazy">
                     </div>
                     
                     <!-- 日历图片 -->
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">日历</div>
-                        <img src极文创日历1.jpeg" alt="文创日历1" class="cultural-carousel-image" loading="lazy">
+                        <img src="文创日历1.jpeg" alt="文创日历1" class="cultural-carousel-image" loading="lazy">
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">日历</div>
                         <img src="文创日历2.jpeg" alt="文创日历2" class="cultural-carousel-image" loading="lazy">
                     </div>
-                    <div class="cultural极rousel-item">
+                    <div class="cultural-carousel-item">
                         <div class="cultural-image-label">日历</div>
                         <img src="文创日历3.jpeg" alt="文创日历3" class="cultural-carousel-image" loading="lazy">
                     </div>
@@ -1442,11 +1453,11 @@
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">文创</div>
-                        <img src="文创极3.jpeg" alt="文创图3" class="cultural-carousel-image" loading="lazy">
+                        <img src="文创图3.jpeg" alt="文创图3" class="cultural-carousel-image" loading="lazy">
                     </div>
                     <div class="cultural-carousel-item">
-                        <极 class="cultural-image-label">文创</div>
-                        <img src="文创图4.jpeg" alt="文创图4" class="cultural-carousel-image" loading="极zy">
+                        <div class="cultural-image-label">文创</div>
+                        <img src="文创图4.jpeg" alt="文创图4" class="cultural-carousel-image" loading="lazy">
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">文创</div>
@@ -1454,7 +1465,7 @@
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">文创</div>
-                        <img src="文创图6.jpeg" alt="文创极6" class="cultural-carousel-image" loading="lazy">
+                        <img src="文创图6.jpeg" alt="文创图6" class="cultural-carousel-image" loading="lazy">
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">文创</div>
@@ -1493,7 +1504,7 @@
                 <div class="nav-item">淘宝物料设计</div>
                 <div class="nav-item">菜单设计</div>
                 <div class="nav-item">其他设计</div>
-                <div class="nav极">关于我</div>
+                <div class="nav-item">关于我</div>
                 <div class="nav-item">返回首页</div>
             </div>
         </div>
@@ -1509,9 +1520,9 @@
             </div>
             
             <!-- 首页图片部分 -->
-            <div class="极-image-section">
+            <div class="web-image-section">
                 <div class="web-image-title">首页</div>
-                <img src="网页首页.png" alt极网页首页" class="web-main-image" loading="lazy">
+                <img src="网页首页.png" alt="网页首页" class="web-main-image" loading="lazy">
                 <div class="web-description">
                     网站首页以插画的形式表现，不仅能够让妖怪看起来直观可爱，还具有一定的视觉冲击力，
                     网站整体色调是景色，吸引观看者目光，所有妖怪都朝识妖谱的方向汇集，体现出识妖谱的魅力
@@ -1536,7 +1547,7 @@
                 </div>
                 <div class="web-carousel-controls">
                     <button class="web-carousel-btn" id="secondary-prev">上一张</button>
-                    <button class="web-carousel-btn"极d="secondary-next">下一张</button>
+                    <button class="web-carousel-btn" id="secondary-next">下一张</button>
                 </div>
                 <div class="web-description">
                     二级页面整体给人一种古风绘画本的风格，给人一种治愈的感觉。
@@ -1569,7 +1580,7 @@
                 <div class="web-description">
                     三级页面整体给人一种古风绘画本的风格，给人一种治愈的感觉。
                     插画采用的是一半上色一半不上色的形式，这样也就不会导致网页过满，
-                    而不知道主题在哪里得情况。插画也是选自首页的极画，做了一些改动，
+                    而不知道主题在哪里得情况。插画也是选自首页的插画，做了一些改动，
                     这样整个网站就看起来很整体。
                 </div>
             </div>
@@ -1629,7 +1640,7 @@
                 <!-- 绿茶插画轮播 -->
                 <div class="illustration-carousel-container">
                     <div class="illustration-carousel" id="greentea-illustration-carousel">
-                        <div class="极llustration-small-carousel-item">
+                        <div class="illustration-small-carousel-item">
                             <img src="绿茶插画1.jpeg" alt="绿茶插画1" class="illustration-carousel-image" loading="lazy">
                         </div>
                         <div class="illustration-small-carousel-item">
@@ -1647,7 +1658,7 @@
                 
                 <!-- 绿茶平铺轮播 -->
                 <div class="illustration-carousel-container">
-                    <div class="illustration-carousel"极d="greentea-pattern-carousel">
+                    <div class="illustration-carousel" id="greentea-pattern-carousel">
                         <div class="illustration-medium-carousel-item">
                             <img src="绿茶平铺1.jpeg" alt="绿茶平铺1" class="illustration-carousel-image" loading="lazy">
                         </div>
@@ -1677,7 +1688,7 @@
                         </div>
                         <div class="illustration-medium-carousel-item">
                             <img src="润发海报2.jpeg" alt="润发海报2" class="illustration-carousel-image" loading="lazy">
-                        </极>
+                        </div>
                     </div>
                 </div>
                 <div class="illustration-carousel-controls">
@@ -1705,17 +1716,17 @@
     </div>
 
     <!-- 包装设计页面 -->
-    <div id="packaging-design-page">
+    <div id="package-design-page">
         <!-- 左侧固定导航 -->
-        <div class="packaging-left-nav">
-            <div class="packaging-nav-header">
-                <a href="#" class="packaging-back-button" id="back-to-student-from-packaging">返回</a>
-                <div class="packaging-nav-title">包装设计</div>
+        <div class="package-left-nav">
+            <div class="package-nav-header">
+                <a href="#" class="package-back-button" id="back-to-student-from-package">返回</a>
+                <div class="package-nav-title">包装设计</div>
             </div>
             
-            <img src="logo.png" alt="Logo" class="packaging-nav-logo">
+            <img src="logo.png" alt="Logo" class="package-nav-logo">
             
-            <div class="packaging-nav-menu">
+            <div class="package-nav-menu">
                 <div class="nav-item active">学生时期作品</div>
                 <div class="nav-item">海报设计</div>
                 <div class="nav-item">淘宝物料设计</div>
@@ -1727,18 +1738,20 @@
         </div>
         
         <!-- 右侧内容区域 -->
-        <div class="packaging-right-content">
-            <!-- 百丈枇杷包装设计部分 -->
-            <div class="packaging-section">
-                <div class="packaging-subtitle">百丈枇杷包装设计</div>
-                <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="packaging-main-image" loading="lazy">
+        <div class="package-right-content">
+            <!-- 百丈枇杷包装设计 -->
+            <div class="package-section">
+                <div class="package-subtitle">百丈枇杷包装设计</div>
+                <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="package-image" loading="lazy">
             </div>
             
-            <!-- 哇哈哈包装设计部分 -->
-            <div class="packaging-section">
-                <div class="packaging-subtitle">哇哈哈包装设计</div>
-                <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="packaging-vertical-image" loading="lazy">
-                <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="packaging-vertical-image" loading="lazy">
+            <!-- 哇哈哈包装设计 -->
+            <div class="package-section">
+                <div class="package-subtitle">哇哈哈包装设计</div>
+                <div class="package-image-container">
+                    <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="package-small-image" loading="lazy">
+                    <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="package-small-image" loading="lazy">
+                </div>
             </div>
         </div>
     </div>
@@ -1750,11 +1763,6 @@
     </div>
 
     <script>
-        // JavaScript代码将在下一部分提供
-    </script>
-</body>
-</html>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const loader = document.getElementById('loader');
@@ -1764,17 +1772,17 @@
         const culturalDesignPage = document.getElementById('cultural-design-page');
         const webDesignPage = document.getElementById('web-design-page');
         const illustrationDesignPage = document.getElementById('illustration-design-page');
-        const packagingDesignPage = document.getElementById('packaging-design-page');
+        const packageDesignPage = document.getElementById('package-design-page');
         const homeLogo = document.getElementById('home-logo');
         const backToCategoryButton = document.getElementById('back-to-category');
         const backToStudentButton = document.getElementById('back-to-student');
         const backToStudentFromWebButton = document.getElementById('back-to-student-from-web');
         const backToStudentFromIllustrationButton = document.getElementById('back-to-student-from-illustration');
-        const backToStudentFromPackagingButton = document.getElementById('back-to-student-from-packaging');
+        const backToStudentFromPackageButton = document.getElementById('back-to-student-from-package');
         const culturalDesignTrigger = document.getElementById('cultural-design-trigger');
         const webDesignTrigger = document.getElementById('web-design-trigger');
         const illustrationDesignTrigger = document.getElementById('illustration-design-trigger');
-        const packagingDesignTrigger = document.getElementById('packaging-design-trigger');
+        const packageDesignTrigger = document.getElementById('package-design-trigger');
         const carouselItems = document.querySelectorAll('.carousel-item');
         const indicators = document.querySelectorAll('.indicator');
         const navItems = document.querySelectorAll('.nav-item');
@@ -1813,8 +1821,8 @@
         const illustrationImages = document.querySelectorAll('.illustration-main-image, .illustration-carousel-image');
         
         // 包装设计页面元素
-        const packagingImages = document.querySelectorAll('.packaging-main-image, .packaging-vertical-image');
-
+        const packageImages = document.querySelectorAll('.package-image, .package-small-image');
+        
         // 预加载图片函数
         function preloadImages() {
             const imageUrls = [
@@ -1828,14 +1836,14 @@
                 '文创5.jpeg', '文创6.jpeg', '文创7.jpeg',
                 '文创海报1.jpeg', '文创海报2.jpeg', '文创海报3.jpeg',
                 '文创日历1.jpeg', '文创日历2.jpeg', '文创日历3.jpeg',
-                '文创极1.jpeg', '文创图2.jpeg', '文创图3.jpeg', '文创图4.jpeg',
+                '文创图1.jpeg', '文创图2.jpeg', '文创图3.jpeg', '文创图4.jpeg',
                 '文创图5.jpeg', '文创图6.jpeg', '文创图7.jpeg',
                 '网页首页.png', '二级页面1.png', '二级页面2.png', '二级页面3.png',
                 '三级页面1.png', '三级页面2.png', '三级页面3.png',
                 // 插画设计页面图片
                 '锥栗插画.png', '锥栗平铺1.png', '锥栗平铺2.png',
                 '绿茶插画1.jpeg', '绿茶插画2.jpeg', '绿茶插画3.jpeg',
-                '绿茶平铺1.jpeg', '绿茶平铺2.jpeg', '极茶平铺3.jpeg',
+                '绿茶平铺1.jpeg', '绿茶平铺2.jpeg', '绿茶平铺3.jpeg',
                 '润发海报1.jpeg', '润发海报2.jpeg',
                 '润发文创1.jpeg', '润发文创2.png',
                 // 包装设计页面图片
@@ -1902,7 +1910,7 @@
             // 返回到学生作品页面按钮（从网页设计页面）
             backToStudentFromWebButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                webDesign极.classList.remove('visible');
+                webDesignPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
                 }, 500);
@@ -1918,9 +1926,9 @@
             });
             
             // 返回到学生作品页面按钮（从包装设计页面）
-            backToStudentFromPackagingButton.addEventListener('click', function(e) {
+            backToStudentFromPackageButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                packagingDesignPage.classList.remove('visible');
+                packageDesignPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
                 }, 500);
@@ -1954,10 +1962,10 @@
             });
             
             // 点击包装设计图片跳转到包装设计页面
-            packagingDesignTrigger.addEventListener('click', function() {
+            packageDesignTrigger.addEventListener('click', function() {
                 studentWorksPage.classList.remove('visible');
                 setTimeout(() => {
-                    packagingDesignPage.classList.add('visible');
+                    packageDesignPage.classList.add('visible');
                 }, 500);
             });
             
@@ -2009,12 +2017,12 @@
             illustrationImages.forEach(image => {
                 image.addEventListener('click', function() {
                     modalImage.src = this.src;
-                    imageModal.style.display = '极lex';
+                    imageModal.style.display = 'flex';
                 });
             });
             
             // 包装设计页面图片点击预览
-            packagingImages.forEach(image => {
+            packageImages.forEach(image => {
                 image.addEventListener('click', function() {
                     modalImage.src = this.src;
                     imageModal.style.display = 'flex';
@@ -2076,7 +2084,7 @@
             }
             
             secondaryNext.addEventListener('click', function() {
-                if (secondaryIndex极secondaryTotalItems - 1) {
+                if (secondaryIndex < secondaryTotalItems - 1) {
                     secondaryIndex++;
                     updateSecondaryCarousel();
                 }
@@ -2125,7 +2133,7 @@
             const chestnutTotalItems = document.querySelectorAll('#chestnut-carousel .illustration-carousel-item').length;
             
             function updateChestnutCarousel() {
-                chestnutCarousel.style.transform = `translateX(-${chestnutIndex * chestnut极temWidth}px)`;
+                chestnutCarousel.style.transform = `translateX(-${chestnutIndex * chestnutItemWidth}px)`;
             }
             
             chestnutNext.addEventListener('click', function() {
@@ -2167,7 +2175,7 @@
             
             // 绿茶平铺轮播
             let greenteaPatternIndex = 0;
-            const greenteaPatternItemWidth = 1210.64; // 1190.极4px + 20px间距
+            const greenteaPatternItemWidth = 1210.64; // 1190.64px + 20px间距
             const greenteaPatternTotalItems = document.querySelectorAll('#greentea-pattern-carousel .illustration-medium-carousel-item').length;
             
             function updateGreenteaPatternCarousel() {
@@ -2272,7 +2280,7 @@
                         position -= carouselItems.length;
                     }
                     
-                    // 设置位置极样式
+                    // 设置位置和样式
                     if (position === 0) {
                         // 中间图片
                         item.style.transform = 'translateY(0) scale(1)';
@@ -2382,7 +2390,7 @@
                     isScrolling = true;
                     const index = parseInt(this.getAttribute('data-index'));
                     
-                    if (index !== current极dex) {
+                    if (index !== currentIndex) {
                         currentIndex = index;
                         updateCarousel();
                     }
@@ -2397,4 +2405,6 @@
         // 启动初始化
         init();
     });
-</script>
+    </script>
+</body>
+</html>
