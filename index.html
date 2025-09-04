@@ -2737,6 +2737,216 @@
         font-size: 14px;
     }
 }
+
+/* 淘宝物料设计页面样式 */
+#taobao-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#taobao-design-page.visible {
+    display: flex;
+}
+
+/* 淘宝物料设计页面左侧导航 */
+.taobao-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.taobao-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.taobao-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.taobao-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.taobao-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.taobao-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 淘宝物料设计页面右侧内容 */
+.taobao-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.taobao-section {
+    margin-bottom: 60px;
+}
+
+.taobao-subtitle {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.taobao-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.taobao-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.taobao-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.taobao-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .taobao-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .taobao-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .taobao-right-content {
+        padding: 40px 30px;
+    }
+    
+    .taobao-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+    
+    .taobao-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .taobao-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .taobao-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 20px;
+    }
+    
+    .taobao-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .taobao-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .taobao-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .taobao-right-content {
+        padding: 20px 15px;
+    }
+    
+    .taobao-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .taobao-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .taobao-section {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .taobao-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .taobao-subtitle {
+        font-size: 13pt;
+    }
+}
     </style>
 </head>
 <body>
@@ -3755,6 +3965,90 @@
     </div>
 </div>
 
+<!-- 淘宝物料设计页面 -->
+<div id="taobao-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="taobao-left-nav">
+        <div class="taobao-nav-header">
+            <a href="#" class="taobao-back-button" id="back-to-category-from-taobao">返回首页</a>
+            <div class="taobao-nav-title">淘宝物料设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="taobao-nav-logo">
+        
+        <div class="taobao-nav-menu">
+            <div class="nav-item" id="go-to-student-works-from-taobao">学生时期作品</div>
+            <div class="nav-item active">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="taobao-right-content">
+        <!-- 淘宝海报部分 -->
+        <div class="taobao-section">
+            <div class="taobao-subtitle">淘宝海报</div>
+            <div class="taobao-grid">
+                <div class="taobao-item">
+                    <img src="淘宝海报1.jpeg" alt="淘宝海报1" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="淘宝海报2.jpeg" alt="淘宝海报2" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="淘宝海报3.jpeg" alt="淘宝海报3" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="淘宝海报4.jpeg" alt="淘宝海报4" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="淘宝海报5.png" alt="淘宝海报5" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="淘宝海报6.jpeg" alt="淘宝海报6" class="taobao-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 品销宝部分 -->
+        <div class="taobao-section">
+            <div class="taobao-subtitle">品销宝</div>
+            <div class="taobao-grid" id="pinxiaobao-grid">
+                <!-- 品销宝图片将通过JavaScript动态添加 -->
+            </div>
+        </div>
+        
+        <!-- 淘宝首页部分 -->
+        <div class="taobao-section">
+            <div class="taobao-subtitle">淘宝首页</div>
+            <div class="taobao-grid" id="homepage-grid">
+                <!-- 淘宝首页图片将通过JavaScript动态添加 -->
+            </div>
+        </div>
+        
+        <!-- 淘宝详情页部分 -->
+        <div class="taobao-section">
+            <div class="taobao-subtitle">淘宝详情页</div>
+            <div class="taobao-grid">
+                <div class="taobao-item">
+                    <img src="详情页1.jpeg" alt="详情页1" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="详情页2.jpeg" alt="详情页2" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="详情页3.jpeg" alt="详情页3" class="taobao-image">
+                </div>
+                <div class="taobao-item">
+                    <img src="详情页4.jpeg" alt="详情页4" class="taobao-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -3864,6 +4158,13 @@ const posterDesignPage = document.getElementById('poster-design-page');
 const backToCategoryFromPosterButton = document.getElementById('back-to-category-from-poster');
 const goToStudentWorksButton = document.getElementById('go-to-student-works');
 const posterGrid = document.getElementById('poster-grid');
+
+// 淘宝物料设计页面元素
+const taobaoDesignPage = document.getElementById('taobao-design-page');
+const backToCategoryFromTaobaoButton = document.getElementById('back-to-category-from-taobao');
+const goToStudentWorksFromTaobaoButton = document.getElementById('go-to-student-works-from-taobao');
+const pinxiaobaoGrid = document.getElementById('pinxiaobao-grid');
+const homepageGrid = document.getElementById('homepage-grid');
         
         // 预加载图片函数
         function preloadImages() {
@@ -3921,7 +4222,15 @@ const posterGrid = document.getElementById('poster-grid');
 '61.jpeg', '62.jpeg', '63.jpeg', '64.jpeg', '65.jpeg', '66.jpeg', '67.jpeg', '68.jpeg', '69.jpeg', '70.jpeg',
 '71.jpeg', '72.jpeg', '73.jpeg', '74.jpeg', '75.jpeg', '76.jpeg', '77.jpeg', '78.jpeg', '79.jpeg', '80.jpeg',
 '81.jpeg', '82.jpeg', '83.jpeg', '84.png', '85.jpeg', '86.png', '87.jpeg', '88.jpeg', '89.jpeg', '90.jpeg',
-'91.jpeg', '92.jpeg', '93.jpeg', '94.jpeg'
+'91.jpeg', '92.jpeg', '93.jpeg', '94.jpeg', 
+// 淘宝物料设计页面图片
+'淘宝海报1.jpeg', '淘宝海报2.jpeg', '淘宝海报3.jpeg', '淘宝海报4.jpeg', '淘宝海报5.png', '淘宝海报6.jpeg',
+'品销宝1.jpeg', '品销宝2.jpeg', '品销宝3.jpeg', '品销宝4.jpeg', '品销宝5.jpeg', '品销宝6.jpeg', 
+'品销宝7.jpeg', '品销宝8.jpeg', '品销宝9.jpeg', '品销宝10.jpeg', '品销宝11.jpeg', '品销宝12.jpeg',
+'品销宝13.jpeg', '品销宝14.jpeg', '品销宝15.jpeg', '品销宝16.jpeg', '品销宝17.jpeg', '品销宝18.jpeg', 
+'品销宝19.jpeg',
+'长图1.jpeg', '长图2.jpeg', '长图3.jpeg', '长图4.jpeg', '长图5.jpeg', '长图6.jpeg',
+'详情页1.jpeg', '详情页2.jpeg', '详情页3.jpeg', '详情页4.jpeg'
             ];
             
             let loadedCount = 0;
@@ -4070,6 +4379,15 @@ const posterGrid = document.getElementById('poster-grid');
                     categoryPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到分类页面按钮（从淘宝物料设计页面）
+            backToCategoryFromTaobaoButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                taobaoDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    categoryPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -4165,9 +4483,26 @@ const posterGrid = document.getElementById('poster-grid');
                 }, 500);
             });
 
+            // 点击导航3图片跳转到淘宝物料设计页面
+            carouselItems[2].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    taobaoDesignPage.classList.add('visible');
+                    initTaobaoGrids(); // 初始化淘宝物料网格
+                }, 500);
+            });
+
             // 跳转到学生作品页面按钮
             goToStudentWorksButton.addEventListener('click', function() {
                 posterDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 跳转到学生作品页面按钮（从淘宝物料设计页面）
+            goToStudentWorksFromTaobaoButton.addEventListener('click', function() {
+                taobaoDesignPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
                 }, 500);
@@ -4449,7 +4784,67 @@ const posterGrid = document.getElementById('poster-grid');
                     }, 300);
                 }
             }
-        }
+
+                // 初始化淘宝物料网格
+                function initTaobaoGrids() {
+                    // 初始化品销宝网格
+                    initPinxiaobaoGrid();
+                    
+                    // 初始化淘宝首页网格
+                    initHomepageGrid();
+                    
+                    // 为所有淘宝图片添加点击事件
+                    addTaobaoImageClickEvents();
+                }
+                
+                // 初始化品销宝网格
+                function initPinxiaobaoGrid() {
+                    pinxiaobaoGrid.innerHTML = '';
+                    
+                    for (let i = 1; i <= 19; i++) {
+                        const item = document.createElement('div');
+                        item.className = 'taobao-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = `品销宝${i}.jpeg`;
+                        img.alt = `品销宝${i}`;
+                        img.className = 'taobao-image';
+                        img.loading = 'lazy';
+                        
+                        item.appendChild(img);
+                        pinxiaobaoGrid.appendChild(item);
+                    }
+                }
+                
+                // 初始化淘宝首页网格
+                function initHomepageGrid() {
+                    homepageGrid.innerHTML = '';
+                    
+                    for (let i = 1; i <= 6; i++) {
+                        const item = document.createElement('div');
+                        item.className = 'taobao-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = `长图${i}.jpeg`;
+                        img.alt = `淘宝首页${i}`;
+                        img.className = 'taobao-image';
+                        img.loading = 'lazy';
+                        
+                        item.appendChild(img);
+                        homepageGrid.appendChild(item);
+                    }
+                }
+                
+                // 为所有淘宝图片添加点击事件
+                function addTaobaoImageClickEvents() {
+                    const taobaoImages = document.querySelectorAll('.taobao-image');
+                    taobaoImages.forEach(img => {
+                        img.addEventListener('click', function() {
+                            openPosterModal(this.src);
+                        });
+                    });
+                }
+            } 
         
         // 设置图片预览功能
         function setupImagePreview() {
@@ -4831,6 +5226,15 @@ const posterGrid = document.getElementById('poster-grid');
                 setTimeout(() => {
                     posterDesignPage.classList.add('visible');
                     initPosterGrid(); // 初始化海报网格
+                }, 500);
+            });
+
+            // 导航3点击事件 - 跳转到淘宝物料设计页面
+            carouselItems[2].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    taobaoDesignPage.classList.add('visible');
+                    initTaobaoGrids(); // 初始化淘宝物料网格
                 }, 500);
             });
             
