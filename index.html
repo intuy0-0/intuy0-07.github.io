@@ -2237,6 +2237,255 @@
         line-height: 1.5;
     }
 }
+
+/* 毕业设计页面样式 */
+#graduation-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#graduation-design-page.visible {
+    display: flex;
+}
+
+/* 毕业设计页面左侧导航 */
+.graduation-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.graduation-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.graduation-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.graduation-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.graduation-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.graduation-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 毕业设计页面右侧内容 */
+.graduation-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px 112px 80px 40px;
+}
+
+.graduation-full-image {
+    width: 1262px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.graduation-section {
+    margin-bottom: 60px;
+}
+
+.graduation-subsection {
+    margin-bottom: 40px;
+}
+
+.graduation-subtitle {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.graduation-carousel-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.graduation-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.graduation-carousel-item {
+    flex: 0 0 auto;
+    width: 1262px;
+    margin-right: 20px;
+}
+
+.graduation-carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.graduation-carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.graduation-carousel-btn {
+    background: none;
+    border: 1px solid #727171;
+    color: #727171;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+}
+
+.graduation-images-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.graduation-description {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .graduation-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .graduation-full-image, .graduation-carousel-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .graduation-right-content {
+        padding: 40px 80px 80px 40px;
+    }
+    
+    .graduation-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+}
+
+@media (max-width: 992px) {
+    .graduation-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .graduation-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 40px 60px;
+    }
+    
+    .graduation-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .graduation-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .graduation-description {
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 768px) {
+    .graduation-right-content {
+        padding: 20px 20px 40px;
+    }
+    
+    .graduation-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .graduation-description {
+        font-size: 12pt;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 576px) {
+    .graduation-description {
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+    
+    .graduation-carousel-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -2361,7 +2610,7 @@
                 <img src="视频剪辑.jpeg" alt="视频剪辑" class="work-image">
             </div>
             
-            <div class="work-item">
+            <div class="work-item" id="graduation-design-trigger">
                 <div class="work-title">毕业设计</div>
                 <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
             </div>
@@ -3029,6 +3278,203 @@
     </div>
 </div>
 
+<!-- 毕业设计页面 -->
+<div id="graduation-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="graduation-left-nav">
+        <div class="graduation-nav-header">
+            <a href="#" class="graduation-back-button" id="back-to-student-from-graduation">返回</a>
+            <div class="graduation-nav-title">毕业设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="graduation-nav-logo">
+        
+        <div class="graduation-nav-menu">
+            <div class="nav-item active">学生时期作品</div>
+            <div class="nav-item">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+            <div class="nav-item">返回首页</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="graduation-right-content">
+        <!-- 展板部分 -->
+        <img src="展板.jpeg" alt="毕业设计展板" class="graduation-full-image" loading="lazy">
+        
+        <!-- 丧葬海报轮播 -->
+        <div class="graduation-section">
+            <div class="graduation-carousel-container">
+                <div class="graduation-carousel" id="poster-carousel">
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报1.png" alt="丧葬海报1" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报2.png" alt="丧葬海报2" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报3.png" alt="丧葬海报3" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报4.png" alt="丧葬海报4" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报5.png" alt="丧葬海报5" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                    <div class="graduation-carousel-item">
+                        <img src="丧葬海报6.png" alt="丧葬海报6" class="graduation-carousel-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="graduation-carousel-controls">
+                <button class="graduation-carousel-btn" id="poster-prev">上一张</button>
+                <button class="graduation-carousel-btn" id="poster-next">下一张</button>
+            </div>
+            
+            <div class="graduation-description">
+                "宴终"海报设计分为主海报与次海报。主海报是整个设计项目的核心部分，主要呈现作品的整体形象。次海报则是为了更好地展示作品细节的部分。
+            </div>
+        </div>
+        
+        <!-- 宣传册部分 -->
+        <div class="graduation-section">
+            <div class="graduation-images-row">
+                <img src="宣传册1.jpeg" alt="宣传册1" class="graduation-full-image" loading="lazy">
+                <img src="宣传册2.jpeg" alt="宣传册2" class="graduation-full-image" loading="lazy">
+                <img src="宣传册3.jpeg" alt="宣传册3" class="graduation-full-image" loading="lazy">
+                <img src="宣传册4.jpeg" alt="宣传册4" class="graduation-full-image" loading="lazy">
+                <img src="宣传册5.jpeg" alt="宣传册5" class="graduation-full-image" loading="lazy">
+                <img src="宣传册6.jpeg" alt="宣传册6" class="graduation-full-image" loading="lazy">
+            </div>
+            
+            <div class="graduation-description">
+                《宴终》宣传册设计风格也沿用了海报的排版与设计。封面的设计截取于主海报的插画。排版上清新规整方便观看者阅读。整体风格统一。宣传册详细的介绍了每一种丧葬文化的知识，包含来源、方式、分类、程序、代表国家与地区等等。考虑到展出效果，装订方式选用了经折装，将宣传册树立在桌面上，可以吸引观者的阅读兴趣，起到宣传科普作用。这样的摆放方式又像祭祀时排位的摆放，与丧葬文化的主题相呼应。
+            </div>
+        </div>
+        
+        <!-- 装置设计部分 -->
+        <div class="graduation-section">
+            <!-- 土葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">土葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="burial-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置1.jpeg" alt="土葬装置1" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="装置2.jpeg" alt="土葬装置2" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="burial-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="burial-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 火葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">火葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="cremation-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置3.jpeg" alt="火葬装置3" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="装置4.jpeg" alt="火葬装置4" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="cremation-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="cremation-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 水葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">水葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="water-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置5.jpeg" alt="水葬装置5" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="装置6.jpeg" alt="水葬装置6" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="water-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="water-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 风葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">风葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="wind-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置7.jpeg" alt="风葬装置7" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="装置8.jpeg" alt="风葬装置8" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="wind-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="wind-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 冰葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">冰葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="ice-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置9.jpeg" alt="冰葬装置9" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="装置10.jpeg" alt="冰葬装置10" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="ice-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="ice-next">下一张</button>
+                </div>
+            </div>
+            
+            <!-- 天葬 -->
+            <div class="graduation-subsection">
+                <div class="graduation-subtitle">天葬</div>
+                <div class="graduation-carousel-container">
+                    <div class="graduation-carousel" id="sky-carousel">
+                        <div class="graduation-carousel-item">
+                            <img src="装置11.jpeg" alt="天葬装置11" class="graduation-carousel-image" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="graduation-carousel-controls">
+                    <button class="graduation-carousel-btn" id="sky-prev">上一张</button>
+                    <button class="graduation-carousel-btn" id="sky-next">下一张</button>
+                </div>
+            </div>
+            
+            <div class="graduation-description">
+                "宴终"装置设计将圆桌作为载体，围绕圆形展开，通过使用不同材质，使装置呈现出不同丧葬文化的美好寓意。每一个微景观都是一个独立的故事，每一件摆设都有自己的意义，每一个摆设都承载着某种特殊的情感。装置将六种不同的丧葬仪式，以聚餐的形式齐聚在一起，从多种多样的表现形中，体现出其中共同的内在核心——对已逝之人的美好祝愿与不舍。
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -3126,6 +3572,12 @@ const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip
 const videoEditingPage = document.getElementById('video-editing-page');
 const backToStudentFromVideoButton = document.getElementById('back-to-student-from-video');
 const videoEditingTrigger = document.getElementById('video-editing-trigger');
+
+// 毕业设计页面元素
+const graduationDesignPage = document.getElementById('graduation-design-page');
+const backToStudentFromGraduationButton = document.getElementById('back-to-student-from-graduation');
+const graduationDesignTrigger = document.getElementById('graduation-design-trigger');
+const graduationImages = document.querySelectorAll('.graduation-full-image, .graduation-carousel-image');
         
         // 预加载图片函数
         function preloadImages() {
@@ -3166,7 +3618,13 @@ const videoEditingTrigger = document.getElementById('video-editing-trigger');
                 '牙膏1.jpeg', '牙膏2.jpeg', '牙膏3.jpeg',
                 '美湖1.png', '美湖2.png', '美湖3.png',
                 // 视频剪辑页面视频
-                '网页设计.mp4'
+                '网页设计.mp4',
+                // 毕业设计页面图片
+                '展板.jpeg',
+                '丧葬海报1.png', '丧葬海报2.png', '丧葬海报3.png', '丧葬海报4.png', '丧葬海报5.png', '丧葬海报6.png',
+                '宣传册1.jpeg', '宣传册2.jpeg', '宣传册3.jpeg', '宣传册4.jpeg', '宣传册5.jpeg', '宣传册6.jpeg',
+                '装置1.jpeg', '装置2.jpeg', '装置3.jpeg', '装置4.jpeg', '装置5.jpeg', '装置6.jpeg', 
+                '装置7.jpeg', '装置8.jpeg', '装置9.jpeg', '装置10.jpeg', '装置11.jpeg'
             ];
             
             let loadedCount = 0;
@@ -3297,6 +3755,15 @@ const videoEditingTrigger = document.getElementById('video-editing-trigger');
                     studentWorksPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到学生作品页面按钮（从毕业设计页面）
+            backToStudentFromGraduationButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                graduationDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -3373,6 +3840,188 @@ const videoEditingTrigger = document.getElementById('video-editing-trigger');
                     videoEditingPage.classList.add('visible');
                 }, 500);
             });
+
+            // 点击毕业设计图片跳转到毕业设计页面
+            graduationDesignTrigger.addEventListener('click', function() {
+                studentWorksPage.classList.remove('visible');
+                setTimeout(() => {
+                    graduationDesignPage.classList.add('visible');
+                    initGraduationCarousels();
+                }, 500);
+            });
+
+            // 初始化毕业设计页面轮播
+            function initGraduationCarousels() {
+                // 丧葬海报轮播
+                let posterIndex = 0;
+                const posterItemWidth = 1282; // 1262px + 20px间距
+                const posterTotalItems = document.querySelectorAll('#poster-carousel .graduation-carousel-item').length;
+                
+                function updatePosterCarousel() {
+                    document.getElementById('poster-carousel').style.transform = `translateX(-${posterIndex * posterItemWidth}px)`;
+                }
+                
+                document.getElementById('poster-next').addEventListener('click', function() {
+                    if (posterIndex < posterTotalItems - 1) {
+                        posterIndex++;
+                        updatePosterCarousel();
+                    }
+                });
+                
+                document.getElementById('poster-prev').addEventListener('click', function() {
+                    if (posterIndex > 0) {
+                        posterIndex--;
+                        updatePosterCarousel();
+                    }
+                });
+                
+                // 土葬轮播
+                let burialIndex = 0;
+                const burialItemWidth = 1282;
+                const burialTotalItems = document.querySelectorAll('#burial-carousel .graduation-carousel-item').length;
+                
+                function updateBurialCarousel() {
+                    document.getElementById('burial-carousel').style.transform = `translateX(-${burialIndex * burialItemWidth}px)`;
+                }
+                
+                document.getElementById('burial-next').addEventListener('click', function() {
+                    if (burialIndex < burialTotalItems - 1) {
+                        burialIndex++;
+                        updateBurialCarousel();
+                    }
+                });
+                
+                document.getElementById('burial-prev').addEventListener('click', function() {
+                    if (burialIndex > 0) {
+                        burialIndex--;
+                        updateBurialCarousel();
+                    }
+                });
+
+                // 火葬轮播
+                let cremationIndex = 0;
+                const cremationItemWidth = 1282;
+                const cremationTotalItems = document.querySelectorAll('#cremation-carousel .graduation-carousel-item').length;
+                
+                function updateCremationCarousel() {
+                    document.getElementById('cremation-carousel').style.transform = `translateX(-${cremationIndex * cremationItemWidth}px)`;
+                }
+                
+                document.getElementById('cremation-next').addEventListener('click', function() {
+                    if (cremationIndex < cremationTotalItems - 1) {
+                        cremationIndex++;
+                        updateCremationCarousel();
+                    }
+                });
+                
+                document.getElementById('cremation-prev').addEventListener('click', function() {
+                    if (cremationIndex > 0) {
+                        cremationIndex--;
+                        updateCremationCarousel();
+                    }
+                });
+                
+                // 水葬轮播
+                let waterIndex = 0;
+                const waterItemWidth = 1282;
+                const waterTotalItems = document.querySelectorAll('#water-carousel .graduation-carousel-item').length;
+                
+                function updateWaterCarousel() {
+                    document.getElementById('water-carousel').style.transform = `translateX(-${waterIndex * waterItemWidth}px)`;
+                }
+                
+                document.getElementById('water-next').addEventListener('click', function() {
+                    if (waterIndex < waterTotalItems - 1) {
+                        waterIndex++;
+                        updateWaterCarousel();
+                    }
+                });
+                
+                document.getElementById('water-prev').addEventListener('click', function() {
+                    if (waterIndex > 0) {
+                        waterIndex--;
+                        updateWaterCarousel();
+                    }
+                });
+                
+                // 风葬轮播
+                let windIndex = 0;
+                const windItemWidth = 1282;
+                const windTotalItems = document.querySelectorAll('#wind-carousel .graduation-carousel-item').length;
+                
+                function updateWindCarousel() {
+                    document.getElementById('wind-carousel').style.transform = `translateX(-${windIndex * windItemWidth}px)`;
+                }
+                
+                document.getElementById('wind-next').addEventListener('click', function() {
+                    if (windIndex < windTotalItems - 1) {
+                        windIndex++;
+                        updateWindCarousel();
+                    }
+                });
+                
+                document.getElementById('wind-prev').addEventListener('click', function() {
+                    if (windIndex > 0) {
+                        windIndex--;
+                        updateWindCarousel();
+                    }
+                });
+                
+                // 冰葬轮播
+                let iceIndex = 0;
+                const iceItemWidth = 1282;
+                const iceTotalItems = document.querySelectorAll('#ice-carousel .graduation-carousel-item').length;
+                
+                function updateIceCarousel() {
+                    document.getElementById('ice-carousel').style.transform = `translateX(-${iceIndex * iceItemWidth}px)`;
+                }
+                
+                document.getElementById('ice-next').addEventListener('click', function() {
+                    if (iceIndex < iceTotalItems - 1) {
+                        iceIndex++;
+                        updateIceCarousel();
+                    }
+                });
+                
+                document.getElementById('ice-prev').addEventListener('click', function() {
+                    if (iceIndex > 0) {
+                        iceIndex--;
+                        updateIceCarousel();
+                    }
+                });
+                
+                // 天葬轮播
+                let skyIndex = 0;
+                const skyItemWidth = 1282;
+                const skyTotalItems = document.querySelectorAll('#sky-carousel .graduation-carousel-item').length;
+                
+                function updateSkyCarousel() {
+                    document.getElementById('sky-carousel').style.transform = `translateX(-${skyIndex * skyItemWidth}px)`;
+                }
+                
+                document.getElementById('sky-next').addEventListener('click', function() {
+                    if (skyIndex < skyTotalItems - 1) {
+                        skyIndex++;
+                        updateSkyCarousel();
+                    }
+                });
+                
+                document.getElementById('sky-prev').addEventListener('click', function() {
+                    if (skyIndex > 0) {
+                        skyIndex--;
+                        updateSkyCarousel();
+                    }
+                });
+                
+               // 初始更新
+                updatePosterCarousel();
+                updateBurialCarousel();
+                updateCremationCarousel();
+                updateWaterCarousel();
+                updateWindCarousel();
+                updateIceCarousel();
+                updateSkyCarousel();
+            }
 
             // 导航项点击事件
             navItems.forEach(item => {
@@ -3460,6 +4109,14 @@ const videoEditingTrigger = document.getElementById('video-editing-trigger');
 
             // IP设计页面图片点击预览
             ipImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    modalImage.src = this.src;
+                    imageModal.style.display = 'flex';
+                });
+            });
+
+            // 毕业设计页面图片点击预览
+            graduationImages.forEach(image => {
                 image.addEventListener('click', function() {
                     modalImage.src = this.src;
                     imageModal.style.display = 'flex';
