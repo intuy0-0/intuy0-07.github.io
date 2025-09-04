@@ -2017,6 +2017,226 @@
         line-height: 1.6;
     }
 }
+
+/* 视频剪辑页面样式 */
+#video-editing-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#video-editing-page.visible {
+    display: flex;
+}
+
+/* 视频剪辑页面左侧导航 */
+.video-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.video-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.video-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.video-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.video-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.video-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 视频剪辑页面右侧内容 */
+.video-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px 112px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-description {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 1000px;
+}
+
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.video-player {
+    width: 1219px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-title {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 130.04pt;
+    color: #727171;
+    letter-spacing: 300;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.video-poem {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    line-height: 2;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .video-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .video-title {
+        font-size: 100pt;
+    }
+}
+
+@media (max-width: 1200px) {
+    .video-right-content {
+        padding: 40px 80px 80px 40px;
+    }
+    
+    .video-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+    
+    .video-title {
+        font-size: 80pt;
+    }
+}
+
+@media (max-width: 992px) {
+    .video-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .video-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 40px 60px;
+    }
+    
+    .video-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .video-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .video-title {
+        font-size: 60pt;
+    }
+    
+    .video-description, .video-poem {
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-right-content {
+        padding: 20px 20px 40px;
+    }
+    
+    .video-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .video-title {
+        font-size: 40pt;
+    }
+    
+    .video-description, .video-poem {
+        font-size: 12pt;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-title {
+        font-size: 30pt;
+    }
+    
+    .video-description, .video-poem {
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+}
     </style>
 </head>
 <body>
@@ -2136,7 +2356,7 @@
                 <img src="IP设计.jpeg" alt="IP设计" class="work-image">
             </div>
             
-            <div class="work-item">
+            <div class="work-item" id="video-editing-trigger">
                 <div class="work-title">视频剪辑</div>
                 <img src="视频剪辑.jpeg" alt="视频剪辑" class="work-image">
             </div>
@@ -2749,6 +2969,66 @@
     </div>
 </div>
 
+<!-- 视频剪辑页面 -->
+<div id="video-editing-page">
+    <!-- 左侧固定导航 -->
+    <div class="video-left-nav">
+        <div class="video-nav-header">
+            <a href="#" class="video-back-button" id="back-to-student-from-video">返回</a>
+            <div class="video-nav-title">视频剪辑</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="video-nav-logo">
+        
+        <div class="video-nav-menu">
+            <div class="nav-item active">学生时期作品</div>
+            <div class="nav-item">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+            <div class="nav-item">返回首页</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="video-right-content">
+        <div class="video-description">
+            针对现代社会内卷，人们越来越焦虑的现状为主题，
+            使用一种抽象的手法，体现人们物质、精神、肉体上的三重压力。
+            香蕉代表人的肉体、风筝代表人的状态、肉代表了人的精神，
+            这三条线索贯穿了整个短片。短片采用了现实世界和精神世界的交错切换，体现了内心的无助焦虑。
+            这个短片主要讲解的是当代大学生面对压力采用不断的自残式学习导致精神肉体状态的逐渐崩溃，迷失自我。身边的人互相猜忌与怀疑，这是一个病态的世界。
+        </div>
+        
+        <div class="video-container">
+            <video class="video-player" controls>
+                <source src="网页设计.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
+        </div>
+        
+        <div class="video-title">蕉绿</div>
+        
+        <div class="video-poem">
+            我睁开眼，开始了新的一天。<br>
+            睁眼、起床、洗漱、吃饭、学习，目标明确…<br>
+            睁眼、起床、吃饭、学习…<br>
+            睁眼、起床、学习…睁眼、<br>
+            学习…学习、学习、学习…我在干什么？<br>
+            永远飞不上天的风筝，无力的追逐虚幻的梦影；<br>
+            不断解剖自己的香蕉，狼狈的寻找迷失的自己；<br>
+            没有保质期的鲜肉，早已腐烂，还在增添新的伤口；<br>
+            时钟虚影里缠绕的绳子，像抓住救命稻草不断向上爬，<br>
+            但又像不断地重复着上吊的前奏，想要到达尽头却始终不能；<br>
+            被困在洗衣机里卷啊卷，无止尽的重复带来的麻木与机械感；<br>
+            燃烧的时钟，内心焦灼的挽留和选择；逆转的时针，不断重复的轮回;<br>
+            我在张望，我在观察，我在偷窥，其实我们都一样;<br>
+            挣扎、痛苦、迷茫、狂躁、迷失、直至麻木…
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -2841,6 +3121,11 @@ const ipDesignPage = document.getElementById('ip-design-page');
 const backToStudentFromIpButton = document.getElementById('back-to-student-from-ip');
 const ipDesignTrigger = document.getElementById('ip-design-trigger');
 const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip-half-image');
+
+// 视频剪辑页面元素
+const videoEditingPage = document.getElementById('video-editing-page');
+const backToStudentFromVideoButton = document.getElementById('back-to-student-from-video');
+const videoEditingTrigger = document.getElementById('video-editing-trigger');
         
         // 预加载图片函数
         function preloadImages() {
@@ -2879,7 +3164,9 @@ const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip
                 '落日1.jpeg', '落日2.jpeg',
                 // IP设计页面图片
                 '牙膏1.jpeg', '牙膏2.jpeg', '牙膏3.jpeg',
-                '美湖1.png', '美湖2.png', '美湖3.png'
+                '美湖1.png', '美湖2.png', '美湖3.png',
+                // 视频剪辑页面视频
+                '网页设计.mp4'
             ];
             
             let loadedCount = 0;
@@ -3001,6 +3288,15 @@ const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip
                     studentWorksPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到学生作品页面按钮（从视频剪辑页面）
+            backToStudentFromVideoButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                videoEditingPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -3067,6 +3363,14 @@ const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip
                 studentWorksPage.classList.remove('visible');
                 setTimeout(() => {
                     ipDesignPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 点击视频剪辑图片跳转到视频剪辑页面
+            videoEditingTrigger.addEventListener('click', function() {
+                studentWorksPage.classList.remove('visible');
+                setTimeout(() => {
+                    videoEditingPage.classList.add('visible');
                 }, 500);
             });
 
