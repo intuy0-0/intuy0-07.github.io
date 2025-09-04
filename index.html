@@ -1598,6 +1598,198 @@
                 font-size: 14pt;
             }
         }
+
+/* 排版设计页面样式 */
+#typesetting-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#typesetting-page.visible {
+    display: flex;
+}
+
+/* 排版设计页面左侧导航 */
+.typesetting-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.typesetting-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.typesetting-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.typesetting-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.typesetting-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.typesetting-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 排版设计页面右侧内容 */
+.typesetting-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px 112px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.typesetting-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.typesetting-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.typesetting-description {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 14pt;
+    color: #727171;
+    letter-spacing: 300;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .typesetting-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .typesetting-right-content {
+        padding: 40px 80px 80px 40px;
+    }
+    
+    .typesetting-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+}
+
+@media (max-width: 992px) {
+    .typesetting-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .typesetting-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 40px 60px;
+    }
+    
+    .typesetting-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .typesetting-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .typesetting-images {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .typesetting-right-content {
+        padding: 20px 20px 40px;
+    }
+    
+    .typesetting-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .typesetting-description {
+        font-size: 13pt;
+        line-height: 1.6;
+    }
+    
+    .typesetting-images {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .typesetting-description {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .typesetting-images {
+        gap: 15px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1702,12 +1894,12 @@
                 <img src="书籍设计.jpeg" alt="书籍设计" class="work-image">
             </div>
             
-           <div class="work-item" id="handmade-trigger">
-    <div class="work-title">手工制作</div>
-    <img src="手工制作.jpeg" alt="手工制作" class="work-image">
-</div>
+            <div class="work-item" id="handmade-trigger">
+               <div class="work-title">手工制作</div>
+               <img src="手工制作.jpeg" alt="手工制作" class="work-image">
+            </div>
             
-            <div class="work-item">
+            <div class="work-item" id="typesetting-trigger">
                 <div class="work-title">排版设计</div>
                 <img src="排版设计.jpeg" alt="排版设计" class="work-image">
             </div>
@@ -2233,6 +2425,52 @@
     </div>
 </div>
 
+<!-- 排版设计页面 -->
+<div id="typesetting-page">
+    <!-- 左侧固定导航 -->
+    <div class="typesetting-left-nav">
+        <div class="typesetting-nav-header">
+            <a href="#" class="typesetting-back-button" id="back-to-student-from-typesetting">返回</a>
+            <div class="typesetting-nav-title">排版设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="typesetting-nav-logo">
+        
+        <div class="typesetting-nav-menu">
+            <div class="nav-item active">学生时期作品</div>
+            <div class="nav-item">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+            <div class="nav-item">返回首页</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="typesetting-right-content">
+        <div class="typesetting-images">
+            <img src="落日1.jpeg" alt="落日飞车设计1" class="typesetting-image" loading="lazy">
+            <img src="落日2.jpeg" alt="落日飞车设计2" class="typesetting-image" loading="lazy">
+        </div>
+        
+        <div class="typesetting-description">
+            落日飞车给我的整体感受便是轻摇滚音乐<br>
+            给人一种慵懒舒适的感觉<br>
+            GREEDY很好展现了落日飞车独有的风格<br>
+            迷幻伤感中带着一丝伤感<br>
+            伴奏中的电音又与现代融合<br>
+            使整首歌充满层次感<br>
+            作品1便是我与电音相结合所创作的<br>
+            并且应用了红绿色的碰撞<br>
+            使画面更加的吸引眼球<br>
+            作品2我认为与落日飞车的风格更相符一些<br>
+            无论是的色调还是字体都带有一种复古感<br>
+            玫瑰花与GREEDY直接联系
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -2313,6 +2551,12 @@ const handmadeImages = document.querySelectorAll('.handmade-main-image, .handmad
 const handmadeCarousel = document.getElementById('handmade-carousel');
 const handmadePrev = document.getElementById('handmade-prev');
 const handmadeNext = document.getElementById('handmade-next');
+
+// 排版设计页面元素
+const typesettingPage = document.getElementById('typesetting-page');
+const backToStudentFromTypesettingButton = document.getElementById('back-to-student-from-typesetting');
+const typesettingTrigger = document.getElementById('typesetting-trigger');
+const typesettingImages = document.querySelectorAll('.typesetting-image');
         
         // 预加载图片函数
         function preloadImages() {
@@ -2346,7 +2590,9 @@ const handmadeNext = document.getElementById('handmade-next');
                 // 手工制作页面图片
                 '壹色.png', '手工1.png', '手工2.png', 
                 '手工3.png', '手工4.png', '手工5.png', 
-                '手工6.png', '手工7.png', '手工8.png'
+                '手工6.png', '手工7.png', '手工8.png',
+                // 排版设计页面图片
+                '落日1.jpeg', '落日2.jpeg'
             ];
             
             let loadedCount = 0;
@@ -2451,6 +2697,15 @@ const handmadeNext = document.getElementById('handmade-next');
                 }, 500);
             });
             
+            // 返回到学生作品页面按钮（从排版设计页面）
+            backToStudentFromTypesettingButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                typesettingPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+            
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
                 studentWorksPage.classList.remove('visible');
@@ -2502,7 +2757,15 @@ const handmadeNext = document.getElementById('handmade-next');
                     initHandmadeCarousel();
                 }, 500);
             });
-            
+                
+            // 点击排版设计图片跳转到排版设计页面
+            typesettingTrigger.addEventListener('click', function() {
+                studentWorksPage.classList.remove('visible');
+                setTimeout(() => {
+                    typesettingPage.classList.add('visible');
+                }, 500);
+            });
+
             // 导航项点击事件
             navItems.forEach(item => {
                 item.addEventListener('click', function() {
@@ -2578,6 +2841,14 @@ const handmadeNext = document.getElementById('handmade-next');
                     imageModal.style.display = 'flex';
                 });
             });
+
+            // 排版设计页面图片点击预览
+            typesettingImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    modalImage.src = this.src;
+                    imageModal.style.display = 'flex';
+                });
+});
             
             // 关闭模态框
             closeModal.addEventListener('click', function() {
