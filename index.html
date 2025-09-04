@@ -1790,6 +1790,233 @@
         gap: 15px;
     }
 }
+
+/* IP设计页面样式 */
+#ip-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#ip-design-page.visible {
+    display: flex;
+}
+
+/* IP设计页面左侧导航 */
+.ip-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.ip-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.ip-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.ip-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ip-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.ip-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* IP设计页面右侧内容 */
+.ip-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px 112px 80px 40px;
+}
+
+.ip-section {
+    margin-bottom: 60px;
+}
+
+.ip-subtitle {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 24pt;
+    color: #727171;
+    letter-spacing: 300;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.ip-images-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ip-large-image {
+    width: 1230.381px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ip-full-image {
+    width: 1206px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.ip-half-image {
+    width: 612.844px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ip-description {
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+    font-size: 16pt;
+    color: #727171;
+    letter-spacing: 300;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .ip-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .ip-large-image, .ip-full-image, .ip-half-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ip-right-content {
+        padding: 40px 80px 80px 40px;
+    }
+    
+    .ip-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ip-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .ip-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 40px 60px;
+    }
+    
+    .ip-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .ip-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .ip-subtitle {
+        font-size: 20pt;
+    }
+    
+    .ip-images-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .ip-right-content {
+        padding: 20px 20px 40px;
+    }
+    
+    .ip-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .ip-subtitle {
+        font-size: 18pt;
+    }
+    
+    .ip-description {
+        font-size: 14pt;
+    }
+}
+
+@media (max-width: 576px) {
+    .ip-subtitle {
+        font-size: 16pt;
+    }
+    
+    .ip-description {
+        font-size: 14pt;
+        line-height: 1.6;
+    }
+}
     </style>
 </head>
 <body>
@@ -1904,7 +2131,7 @@
                 <img src="排版设计.jpeg" alt="排版设计" class="work-image">
             </div>
             
-            <div class="work-item">
+            <div class="work-item" id="ip-design-trigger">
                 <div class="work-title">IP设计</div>
                 <img src="IP设计.jpeg" alt="IP设计" class="work-image">
             </div>
@@ -1970,7 +2197,7 @@
                     </div>
                     <div class="cultural-carousel-item">
                         <div class="cultural-image-label">海报</div>
-                        <img src="文创海报3.jpeg" alt="文创海报3" class="cultural-carousel-image' loading="lazy">
+                        <img src="文创海报3.jpeg" alt="文创海报3" class="cultural-carousel-image" loading="lazy">
                     </div>
                     
                     <!-- 日历图片 -->
@@ -2471,6 +2698,57 @@
     </div>
 </div>
 
+<!-- IP设计页面 -->
+<div id="ip-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="ip-left-nav">
+        <div class="ip-nav-header">
+            <a href="#" class="ip-back-button" id="back-to-student-from-ip">返回</a>
+            <div class="ip-nav-title">IP设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="ip-nav-logo">
+        
+        <div class="ip-nav-menu">
+            <div class="nav-item active">学生时期作品</div>
+            <div class="nav-item">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+            <div class="nav-item">返回首页</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="ip-right-content">
+        <!-- 云南白药牙膏IP设计部分 -->
+        <div class="ip-section">
+            <div class="ip-subtitle">云南白药牙膏IP设计</div>
+            <div class="ip-images-row">
+                <img src="牙膏1.jpeg" alt="云南白药牙膏IP设计1" class="ip-large-image" loading="lazy">
+                <img src="牙膏2.jpeg" alt="云南白药牙膏IP设计2" class="ip-large-image" loading="lazy">
+                <img src="牙膏3.jpeg" alt="云南白药牙膏IP设计3" class="ip-large-image" loading="lazy">
+            </div>
+        </div>
+        
+        <!-- 东方美湖IP形象设计部分 -->
+        <div class="ip-section">
+            <div class="ip-subtitle">东方美湖IP形象设计</div>
+            <img src="美湖1.png" alt="东方美湖IP形象设计1" class="ip-full-image" loading="lazy">
+            
+            <div class="ip-images-row">
+                <img src="美湖2.png" alt="东方美湖IP形象设计2" class="ip-half-image" loading="lazy">
+                <img src="美湖3.png" alt="东方美湖IP形象设计3" class="ip-half-image" loading="lazy">
+            </div>
+            
+            <div class="ip-description">
+                为了更能体现东方美湖企业产品的形象，使顾客能更直观的感受到企 业的气质，因此创作出一个符合"东方美湖"的吉祥物。吉祥物的形 象是一个充满活力的小女孩，体现出"东方美湖"生机盎然充满生命 力的地方，装饰采用荷叶体现南方特质。颜色与LOGO采用相同的主 色调水浅葱色，给IP整体增添一种朦胧、细腻的感受。荷叶小舟、活 泼清秀的小女孩、温柔干净的颜色，体现出南方的情调。
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -2557,6 +2835,12 @@ const typesettingPage = document.getElementById('typesetting-page');
 const backToStudentFromTypesettingButton = document.getElementById('back-to-student-from-typesetting');
 const typesettingTrigger = document.getElementById('typesetting-trigger');
 const typesettingImages = document.querySelectorAll('.typesetting-image');
+
+// IP设计页面元素
+const ipDesignPage = document.getElementById('ip-design-page');
+const backToStudentFromIpButton = document.getElementById('back-to-student-from-ip');
+const ipDesignTrigger = document.getElementById('ip-design-trigger');
+const ipImages = document.querySelectorAll('.ip-large-image, .ip-full-image, .ip-half-image');
         
         // 预加载图片函数
         function preloadImages() {
@@ -2592,7 +2876,10 @@ const typesettingImages = document.querySelectorAll('.typesetting-image');
                 '手工3.png', '手工4.png', '手工5.png', 
                 '手工6.png', '手工7.png', '手工8.png',
                 // 排版设计页面图片
-                '落日1.jpeg', '落日2.jpeg'
+                '落日1.jpeg', '落日2.jpeg',
+                // IP设计页面图片
+                '牙膏1.jpeg', '牙膏2.jpeg', '牙膏3.jpeg',
+                '美湖1.png', '美湖2.png', '美湖3.png'
             ];
             
             let loadedCount = 0;
@@ -2705,6 +2992,15 @@ const typesettingImages = document.querySelectorAll('.typesetting-image');
                     studentWorksPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到学生作品页面按钮（从IP设计页面）
+            backToStudentFromIpButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                ipDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -2763,6 +3059,14 @@ const typesettingImages = document.querySelectorAll('.typesetting-image');
                 studentWorksPage.classList.remove('visible');
                 setTimeout(() => {
                     typesettingPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 点击IP设计图片跳转到IP设计页面
+            ipDesignTrigger.addEventListener('click', function() {
+                studentWorksPage.classList.remove('visible');
+                setTimeout(() => {
+                    ipDesignPage.classList.add('visible');
                 }, 500);
             });
 
@@ -2848,7 +3152,15 @@ const typesettingImages = document.querySelectorAll('.typesetting-image');
                     modalImage.src = this.src;
                     imageModal.style.display = 'flex';
                 });
-});
+            });
+
+            // IP设计页面图片点击预览
+            ipImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    modalImage.src = this.src;
+                    imageModal.style.display = 'flex';
+                });
+            });
             
             // 关闭模态框
             closeModal.addEventListener('click', function() {
