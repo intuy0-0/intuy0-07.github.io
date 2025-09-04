@@ -2486,6 +2486,257 @@
         align-items: center;
     }
 }
+
+/* 海报设计页面样式 */
+#poster-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#poster-design-page.visible {
+    display: flex;
+}
+
+/* 海报设计页面左侧导航 */
+.poster-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.poster-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.poster-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.poster-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.poster-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.poster-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 海报设计页面右侧内容 */
+.poster-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.poster-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 3/4;
+}
+
+.poster-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 图片模态框 */
+.poster-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.poster-close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.poster-modal-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.poster-modal-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .poster-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .poster-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .poster-right-content {
+        padding: 40px 30px;
+    }
+    
+    .poster-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+    
+    .poster-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .poster-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .poster-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 20px;
+    }
+    
+    .poster-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .poster-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .poster-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .poster-right-content {
+        padding: 20px 15px;
+    }
+    
+    .poster-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .poster-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .poster-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .poster-modal-content {
+        max-width: 95%;
+        max-height: 80%;
+    }
+    
+    .poster-modal-controls {
+        bottom: 10px;
+    }
+    
+    .poster-modal-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
     </style>
 </head>
 <body>
@@ -3475,6 +3726,35 @@
     </div>
 </div>
 
+<!-- 海报设计页面 -->
+<div id="poster-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="poster-left-nav">
+        <div class="poster-nav-header">
+            <a href="#" class="poster-back-button" id="back-to-category-from-poster">返回首页</a>
+            <div class="poster-nav-title">海报设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="poster-nav-logo">
+        
+        <div class="poster-nav-menu">
+            <div class="nav-item" id="go-to-student-works">学生时期作品</div>
+            <div class="nav-item active">海报设计</div>
+            <div class="nav-item">淘宝物料设计</div>
+            <div class="nav-item">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="poster-right-content">
+        <div class="poster-grid" id="poster-grid">
+            <!-- 图片将通过JavaScript动态添加 -->
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -3578,6 +3858,12 @@ const graduationDesignPage = document.getElementById('graduation-design-page');
 const backToStudentFromGraduationButton = document.getElementById('back-to-student-from-graduation');
 const graduationDesignTrigger = document.getElementById('graduation-design-trigger');
 const graduationImages = document.querySelectorAll('.graduation-full-image, .graduation-carousel-image');
+
+// 海报设计页面元素
+const posterDesignPage = document.getElementById('poster-design-page');
+const backToCategoryFromPosterButton = document.getElementById('back-to-category-from-poster');
+const goToStudentWorksButton = document.getElementById('go-to-student-works');
+const posterGrid = document.getElementById('poster-grid');
         
         // 预加载图片函数
         function preloadImages() {
@@ -3624,7 +3910,18 @@ const graduationImages = document.querySelectorAll('.graduation-full-image, .gra
                 '丧葬海报1.png', '丧葬海报2.png', '丧葬海报3.png', '丧葬海报4.png', '丧葬海报5.png', '丧葬海报6.png',
                 '宣传册1.jpeg', '宣传册2.jpeg', '宣传册3.jpeg', '宣传册4.jpeg', '宣传册5.jpeg', '宣传册6.jpeg',
                 '装置1.jpeg', '装置2.jpeg', '装置3.jpeg', '装置4.jpeg', '装置5.jpeg', '装置6.jpeg', 
-                '装置7.jpeg', '装置8.jpeg', '装置9.jpeg', '装置10.jpeg', '装置11.jpeg'
+                '装置7.jpeg', '装置8.jpeg', '装置9.jpeg', '装置10.jpeg', '装置11.jpeg',
+// 海报设计页面图片（完整的94张）
+'1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg', '7.jpeg', '8.jpeg', '9.jpeg', '10.jpeg',
+'11.jpeg', '12.jpeg', '13.jpeg', '14.jpeg', '15.png', '16.png', '17.jpeg', '18.jpeg', '19.jpeg', '20.jpeg',
+'21.jpeg', '22.jpeg', '23.jpeg', '24.jpeg', '25.jpeg', '26.jpeg', '27.jpeg', '28.jpeg', '29.jpeg', '30.jpeg',
+'31.jpeg', '32.jpeg', '33.jpeg', '34.jpeg', '35.jpeg', '36.jpeg', '37.jpeg', '38.jpeg', '39.jpeg', '40.jpeg',
+'41.jpeg', '42.jpeg', '43.jpeg', '44.jpeg', '45.jpeg', '46.jpeg', '47.jpeg', '48.jpeg', '49.jpeg', '50.jpeg',
+'51.jpeg', '52.jpeg', '53.jpeg', '54.jpeg', '55.jpeg', '56.jpeg', '57.jpeg', '58.jpeg', '59.jpeg', '60.jpeg',
+'61.jpeg', '62.jpeg', '63.jpeg', '64.jpeg', '65.jpeg', '66.jpeg', '67.jpeg', '68.jpeg', '69.jpeg', '70.jpeg',
+'71.jpeg', '72.jpeg', '73.jpeg', '74.jpeg', '75.jpeg', '76.jpeg', '77.jpeg', '78.jpeg', '79.jpeg', '80.jpeg',
+'81.jpeg', '82.jpeg', '83.jpeg', '84.png', '85.jpeg', '86.png', '87.jpeg', '88.jpeg', '89.jpeg', '90.jpeg',
+'91.jpeg', '92.jpeg', '93.jpeg', '94.jpeg'
             ];
             
             let loadedCount = 0;
@@ -3764,6 +4061,15 @@ const graduationImages = document.querySelectorAll('.graduation-full-image, .gra
                     studentWorksPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到分类页面按钮（从海报设计页面）
+            backToCategoryFromPosterButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                posterDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    categoryPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -3847,6 +4153,23 @@ const graduationImages = document.querySelectorAll('.graduation-full-image, .gra
                 setTimeout(() => {
                     graduationDesignPage.classList.add('visible');
                     initGraduationCarousels();
+                }, 500);
+            });
+
+            // 点击导航2图片跳转到海报设计页面
+            carouselItems[1].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    posterDesignPage.classList.add('visible');
+                    initPosterGrid(); // 初始化海报网格
+                }, 500);
+            });
+
+            // 跳转到学生作品页面按钮
+            goToStudentWorksButton.addEventListener('click', function() {
+                posterDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
                 }, 500);
             });
 
@@ -4039,6 +4362,93 @@ const graduationImages = document.querySelectorAll('.graduation-full-image, .gra
             
             // 图片预览功能
             setupImagePreview();
+
+            // 初始化海报网格
+            function initPosterGrid() {
+                // 清空现有内容
+                posterGrid.innerHTML = '';
+                
+                // 创建94张图片
+                for (let i = 1; i <= 94; i++) {
+                    const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
+                    const posterItem = document.createElement('div');
+                    posterItem.className = 'poster-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = `${i}.${extension}`;
+                    img.alt = `海报设计 ${i}`;
+                    img.className = 'poster-image';
+                    img.loading = 'lazy';
+                    
+                    // 点击图片放大
+                    img.addEventListener('click', function() {
+                        openPosterModal(`${i}.${extension}`);
+                    });
+                    
+                    posterItem.appendChild(img);
+                    posterGrid.appendChild(posterItem);
+                }
+            }
+            
+            // 打开图片模态框
+            function openPosterModal(src) {
+                const modal = document.createElement('div');
+                modal.className = 'poster-modal';
+                modal.id = 'poster-modal';
+                
+                modal.innerHTML = `
+                    <span class="poster-close-modal" id="poster-close-modal">&times;</span>
+                    <img src="${src}" class="poster-modal-content" id="poster-modal-image">
+                    <div class="poster-modal-controls">
+                        <button class="poster-modal-btn" id="poster-zoom-in">放大</button>
+                        <button class="poster-modal-btn" id="poster-zoom-out">缩小</button>
+                        <button class="poster-modal-btn" id="poster-close-btn">关闭</button>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // 显示模态框
+                setTimeout(() => {
+                    modal.style.display = 'flex';
+                }, 10);
+                
+                // 关闭模态框
+                document.getElementById('poster-close-modal').addEventListener('click', closePosterModal);
+                document.getElementById('poster-close-btn').addEventListener('click', closePosterModal);
+                
+                // 点击背景关闭
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closePosterModal();
+                    }
+                });
+                
+                // 缩放功能
+                const modalImage = document.getElementById('poster-modal-image');
+                let scale = 1;
+                
+                document.getElementById('poster-zoom-in').addEventListener('click', function() {
+                    scale += 0.2;
+                    modalImage.style.transform = `scale(${scale})`;
+                });
+                
+                document.getElementById('poster-zoom-out').addEventListener('click', function() {
+                    scale = Math.max(0.5, scale - 0.2);
+                    modalImage.style.transform = `scale(${scale})`;
+                });
+            }
+            
+            // 关闭图片模态框
+            function closePosterModal() {
+                const modal = document.getElementById('poster-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    setTimeout(() => {
+                        document.body.removeChild(modal);
+                    }, 300);
+                }
+            }
         }
         
         // 设置图片预览功能
@@ -4412,6 +4822,15 @@ const graduationImages = document.querySelectorAll('.graduation-full-image, .gra
                 categoryPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 导航2点击事件 - 跳转到海报设计页面
+            carouselItems[1].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    posterDesignPage.classList.add('visible');
+                    initPosterGrid(); // 初始化海报网格
                 }, 500);
             });
             
