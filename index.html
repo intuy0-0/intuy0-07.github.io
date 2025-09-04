@@ -2947,6 +2947,199 @@
         font-size: 13pt;
     }
 }
+
+/* 菜单设计页面样式 */
+#menu-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#menu-design-page.visible {
+    display: flex;
+}
+
+/* 菜单设计页面左侧导航 */
+.menu-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.menu-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.menu-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.menu-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.menu-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 菜单设计页面右侧内容 */
+.menu-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.menu-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .menu-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .menu-right-content {
+        padding: 40px 30px;
+    }
+    
+    .menu-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .menu-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 20px;
+    }
+    
+    .menu-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .menu-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-right-content {
+        padding: 20px 15px;
+    }
+    
+    .menu-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .menu-right-content {
+        padding: 15px 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -4049,6 +4242,33 @@
     </div>
 </div>
 
+<!-- 菜单设计页面 -->
+<div id="menu-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="menu-left-nav">
+        <div class="menu-nav-header">
+            <a href="#" class="menu-back-button" id="back-to-category-from-menu">返回首页</a>
+            <div class="menu-nav-title">菜单设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="menu-nav-logo">
+        
+        <div class="menu-nav-menu">
+            <div class="nav-item" id="go-to-student-works-from-menu">学生时期作品</div>
+            <div class="nav-item active">菜单设计</div>
+            <div class="nav-item">其他设计</div>
+            <div class="nav-item">关于我</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="menu-right-content">
+        <div class="menu-grid" id="menu-grid">
+            <!-- 菜单图片将通过JavaScript动态添加 -->
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -4165,6 +4385,12 @@ const backToCategoryFromTaobaoButton = document.getElementById('back-to-category
 const goToStudentWorksFromTaobaoButton = document.getElementById('go-to-student-works-from-taobao');
 const pinxiaobaoGrid = document.getElementById('pinxiaobao-grid');
 const homepageGrid = document.getElementById('homepage-grid');
+
+// 菜单设计页面元素
+const menuDesignPage = document.getElementById('menu-design-page');
+const backToCategoryFromMenuButton = document.getElementById('back-to-category-from-menu');
+const goToStudentWorksFromMenuButton = document.getElementById('go-to-student-works-from-menu');
+const menuGrid = document.getElementById('menu-grid');
         
         // 预加载图片函数
         function preloadImages() {
@@ -4230,7 +4456,15 @@ const homepageGrid = document.getElementById('homepage-grid');
 '品销宝13.jpeg', '品销宝14.jpeg', '品销宝15.jpeg', '品销宝16.jpeg', '品销宝17.jpeg', '品销宝18.jpeg', 
 '品销宝19.jpeg',
 '长图1.jpeg', '长图2.jpeg', '长图3.jpeg', '长图4.jpeg', '长图5.jpeg', '长图6.jpeg',
-'详情页1.jpeg', '详情页2.jpeg', '详情页3.jpeg', '详情页4.jpeg'
+'详情页1.jpeg', '详情页2.jpeg', '详情页3.jpeg', '详情页4.jpeg',
+// 菜单设计页面图片
+'菜单1.jpeg', '菜单2.jpeg', '菜单3.jpeg', '菜单4.jpeg', '菜单5.jpeg', '菜单6.jpeg', '菜单7.jpeg', 
+'菜单8.jpeg', '菜单9.jpeg', '菜单10.jpeg', '菜单11.jpeg', '菜单12.jpeg', '菜单13.jpeg', '菜单14.jpeg', 
+'菜单15.jpeg', '菜单17.jpeg', '菜单18.jpeg', '菜单19.jpeg', '菜单20.jpeg', '菜单21.jpeg', '菜单22.jpeg', 
+'菜单23.jpeg', '菜单24.jpeg', '菜单25.jpeg', '菜单26.jpeg', '菜单27.jpeg', '菜单28.jpeg', '菜单29.jpeg', 
+'菜单30.jpeg', '菜单31.jpeg', '菜单32.jpeg', '菜单33.jpeg', '菜单34.jpeg', '菜单35.jpeg', '菜单36.jpeg', 
+'菜单37.jpeg', '菜单38.jpeg', '菜单39.jpeg', '菜单40.jpeg', '菜单41.jpeg', '菜单42.jpeg', '菜单43.jpeg', 
+'菜单44.jpeg', '菜单45.jpeg', '菜单46.jpeg', '菜单47.jpeg', '菜单48.jpeg', '菜单49.jpeg'
             ];
             
             let loadedCount = 0;
@@ -4388,6 +4622,15 @@ const homepageGrid = document.getElementById('homepage-grid');
                     categoryPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到分类页面按钮（从菜单设计页面）
+            backToCategoryFromMenuButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                menuDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    categoryPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -4492,6 +4735,15 @@ const homepageGrid = document.getElementById('homepage-grid');
                 }, 500);
             });
 
+            // 点击导航4图片跳转到菜单设计页面
+            carouselItems[3].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    menuDesignPage.classList.add('visible');
+                    initMenuGrid(); // 初始化菜单网格
+                }, 500);
+            });
+
             // 跳转到学生作品页面按钮
             goToStudentWorksButton.addEventListener('click', function() {
                 posterDesignPage.classList.remove('visible');
@@ -4503,6 +4755,14 @@ const homepageGrid = document.getElementById('homepage-grid');
             // 跳转到学生作品页面按钮（从淘宝物料设计页面）
             goToStudentWorksFromTaobaoButton.addEventListener('click', function() {
                 taobaoDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 跳转到学生作品页面按钮（从菜单设计页面）
+            goToStudentWorksFromMenuButton.addEventListener('click', function() {
+                menuDesignPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
                 }, 500);
@@ -4844,7 +5104,45 @@ const homepageGrid = document.getElementById('homepage-grid');
                         });
                     });
                 }
-            } 
+
+                // 初始化菜单网格
+                function initMenuGrid() {
+                    menuGrid.innerHTML = '';
+                    
+                    // 创建48张菜单图片（跳过菜单16.jpeg）
+                    const menuImages = [];
+                    
+                    // 添加菜单1-15
+                    for (let i = 1; i <= 15; i++) {
+                        menuImages.push(`菜单${i}.jpeg`);
+                    }
+                    
+                    // 跳过菜单16，添加菜单17-49
+                    for (let i = 17; i <= 49; i++) {
+                        menuImages.push(`菜单${i}.jpeg`);
+                    }
+                    
+                    // 创建网格项
+                    menuImages.forEach((src, index) => {
+                        const menuItem = document.createElement('div');
+                        menuItem.className = 'menu-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = `菜单设计 ${index + 1}`;
+                        img.className = 'menu-image';
+                        img.loading = 'lazy';
+                        
+                        // 点击图片放大
+                        img.addEventListener('click', function() {
+                            openPosterModal(src);
+                        });
+                        
+                        menuItem.appendChild(img);
+                        menuGrid.appendChild(menuItem);
+                    });
+                }
+            }  
         
         // 设置图片预览功能
         function setupImagePreview() {
@@ -5235,6 +5533,15 @@ const homepageGrid = document.getElementById('homepage-grid');
                 setTimeout(() => {
                     taobaoDesignPage.classList.add('visible');
                     initTaobaoGrids(); // 初始化淘宝物料网格
+                }, 500);
+            });
+
+            // 导航4点击事件 - 跳转到菜单设计页面
+            carouselItems[3].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    menuDesignPage.classList.add('visible');
+                    initMenuGrid(); // 初始化菜单网格
                 }, 500);
             });
             
