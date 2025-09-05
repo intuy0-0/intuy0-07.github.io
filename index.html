@@ -117,6 +117,36 @@
             object-fit: cover;
         }
         
+        /* 新页面样式 */
+        .sub-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 18px;
+            color: #969797;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .page-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #727171;
+        }
+        
         /* 动画效果 */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -222,22 +252,22 @@
             <div class="right-panel">
                 <div class="scroll-container">
                     <div class="carousel">
-                        <div class="carousel-item" data-index="0">
+                        <div class="carousel-item" data-target="student-works">
                             <img src="导航1.png" alt="导航1">
                         </div>
-                        <div class="carousel-item" data-index="1">
+                        <div class="carousel-item" data-target="poster-design">
                             <img src="导航2.png" alt="导航2">
                         </div>
-                        <div class="carousel-item" data-index="2">
+                        <div class="carousel-item" data-target="taobao-design">
                             <img src="导航3.png" alt="导航3">
                         </div>
-                        <div class="carousel-item" data-index="3">
+                        <div class="carousel-item" data-target="menu-design">
                             <img src="导航4.png" alt="导航4">
                         </div>
-                        <div class="carousel-item" data-index="4">
+                        <div class="carousel-item" data-target="other-design">
                             <img src="导航5.png" alt="导航5">
                         </div>
-                        <div class="carousel-item" data-index="5">
+                        <div class="carousel-item" data-target="about-me">
                             <img src="导航6.png" alt="导航6">
                         </div>
                     </div>
@@ -246,18 +276,82 @@
         </div>
     </div>
 
+    <!-- 学生时期作品页面 -->
+    <div id="student-works-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">学生时期作品页面内容</div>
+    </div>
+
+    <!-- 海报设计页面 -->
+    <div id="poster-design-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">海报设计页面内容</div>
+    </div>
+
+    <!-- 淘宝物料设计页面 -->
+    <div id="taobao-design-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">淘宝物料设计页面内容</div>
+    </div>
+
+    <!-- 菜单设计页面 -->
+    <div id="menu-design-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">菜单设计页面内容</div>
+    </div>
+
+    <!-- 其他设计页面 -->
+    <div id="other-design-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">其他设计页面内容</div>
+    </div>
+
+    <!-- 关于我页面 -->
+    <div id="about-me-page" class="sub-page">
+        <div class="back-button" data-back="category">返回</div>
+        <div class="page-content">关于我页面内容</div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const homePage = document.getElementById('home-page');
             const categoryPage = document.getElementById('category-page');
             const homeLogo = document.getElementById('home-logo');
             const carouselItems = document.querySelectorAll('.carousel-item');
+            const backButtons = document.querySelectorAll('.back-button');
+            
+            // 所有子页面
+            const subPages = {
+                'student-works': document.getElementById('student-works-page'),
+                'poster-design': document.getElementById('poster-design-page'),
+                'taobao-design': document.getElementById('taobao-design-page'),
+                'menu-design': document.getElementById('menu-design-page'),
+                'other-design': document.getElementById('other-design-page'),
+                'about-me': document.getElementById('about-me-page')
+            };
             
             // 点击首页logo跳转到分类页面
             homeLogo.addEventListener('click', function() {
                 homePage.style.display = 'none';
                 categoryPage.style.display = 'block';
                 initCarousel();
+            });
+            
+            // 返回按钮点击事件
+            backButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetPage = this.getAttribute('data-back');
+                    
+                    // 隐藏所有子页面
+                    Object.values(subPages).forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // 显示目标页面
+                    if (targetPage === 'category') {
+                        categoryPage.style.display = 'block';
+                    }
+                });
             });
             
             // 初始化分类页面轮播效果
@@ -298,6 +392,38 @@
                             item.style.zIndex = carouselItems.length - Math.abs(position);
                         }
                     });
+                }
+                
+                // 图片点击事件 - 跳转到对应页面
+                carouselItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const targetPage = this.getAttribute('data-target');
+                        
+                        // 隐藏分类页面
+                        categoryPage.style.display = 'none';
+                        
+                        // 显示目标页面
+                        if (subPages[targetPage]) {
+                            subPages[targetPage].style.display = 'block';
+                            
+                            // 更新页面标题（不在页面上显示，但在浏览器标签页显示）
+                            document.title = getPageTitle(targetPage) + " - intuy0-0空间";
+                        }
+                    });
+                });
+                
+                // 根据页面ID获取标题
+                function getPageTitle(pageId) {
+                    const titles = {
+                        'student-works': '学生时期作品',
+                        'poster-design': '海报设计',
+                        'taobao-design': '淘宝物料设计',
+                        'menu-design': '菜单设计',
+                        'other-design': '其他设计',
+                        'about-me': '关于我'
+                    };
+                    
+                    return titles[pageId] || 'intuy0-0空间';
                 }
                 
                 // 滚动事件处理
