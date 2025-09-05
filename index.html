@@ -660,7 +660,6 @@
     </div>
 
     <!-- 其他页面（暂时为空） -->
-    <div id="poster-design-page"></div>
     <div id="taobao-design-page"></div>
     <div id="menu-design-page"></div>
     <div id="other-design-page"></div>
@@ -734,10 +733,21 @@ function initPosterPage() {
         posterItem.className = 'poster-item';
         
         const img = document.createElement('img');
+        
+        // 直接使用文件名，和logo.png同样的方式
         img.src = `${i}.${extension}`;
+        
         img.alt = `海报设计 ${i}`;
         img.className = 'poster-image';
         img.loading = 'lazy';
+        
+        // 添加错误处理
+        img.onerror = function() {
+            console.error(`无法加载图片: ${i}.${extension}`);
+            // 可以设置一个占位图或者隐藏该元素
+            this.style.opacity = '0.3';
+            this.style.filter = 'grayscale(100%)';
+        };
         
         // 点击图片放大
         img.addEventListener('click', function() {
