@@ -148,6 +148,16 @@
             overflow: hidden;
         }
         
+        /* 菜单设计页面样式 */
+        #menu-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -256,6 +266,35 @@
             transition: transform 0.3s ease;
         }
         
+        /* 菜单设计页面图片网格 */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 20px 0;
+        }
+        
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .menu-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
         /* 淘宝物料设计页面样式 */
         .taobao-section {
             margin-bottom: 60px;
@@ -361,7 +400,7 @@
         }
         
         /* 其他页面暂时隐藏 */
-        #menu-design-page, #other-design-page, #about-me-page {
+        #other-design-page, #about-me-page {
             display: none;
             width: 100%;
             height: 100vh;
@@ -515,7 +554,8 @@
             }
             
             .poster-grid,
-            .taobao-grid {
+            .taobao-grid,
+            .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
@@ -536,7 +576,8 @@
             }
             
             .poster-grid,
-            .taobao-grid {
+            .taobao-grid,
+            .menu-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
@@ -735,6 +776,32 @@
         </div>
     </div>
 
+    <!-- 菜单设计页面 -->
+    <div id="menu-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item active" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="right-content">
+                <div class="menu-grid" id="menu-grid">
+                    <!-- 菜单图片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 图片模态框 -->
     <div id="image-modal" class="modal">
         <span class="close-btn" id="close-modal">&times;</span>
@@ -747,7 +814,6 @@
     </div>
 
     <!-- 其他页面（暂时为空） -->
-    <div id="menu-design-page"></div>
     <div id="other-design-page"></div>
     <div id="about-me-page"></div>
 
@@ -762,6 +828,7 @@
             const pinxiaobaoGrid = document.getElementById('pinxiaobao');
             const taobaoHomeGrid = document.getElementById('taobao-home');
             const taobaoDetailsGrid = document.getElementById('taobao-details');
+            const menuGrid = document.getElementById('menu-grid');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -796,6 +863,35 @@
                         openModal(`${i}.${extension}`, `海报设计 ${i}`);
                     });
                 }
+            }
+            
+            // 生成菜单设计页面的图片
+            function generateMenuImages() {
+                // 菜单图片 (1-15, 17-49)
+                const menuImages = [];
+                
+                // 添加1-15
+                for (let i = 1; i <= 15; i++) {
+                    menuImages.push(`菜单${i}.jpeg`);
+                }
+                
+                // 添加17-49
+                for (let i = 17; i <= 49; i++) {
+                    menuImages.push(`菜单${i}.jpeg`);
+                }
+                
+                // 创建菜单项目
+                menuImages.forEach((fileName, index) => {
+                    const menuItem = document.createElement('div');
+                    menuItem.className = 'menu-item';
+                    menuItem.innerHTML = `<img src="${fileName}" alt="菜单设计 ${index + 1}" class="menu-img">`;
+                    menuGrid.appendChild(menuItem);
+                    
+                    // 添加点击事件
+                    menuItem.addEventListener('click', function() {
+                        openModal(fileName, `菜单设计 ${index + 1}`);
+                    });
+                });
             }
             
             // 生成淘宝物料设计页面的图片
@@ -1069,9 +1165,50 @@
                 }
             });
             
+            // 图片预加载优化
+            function preloadImages() {
+                const imageUrls = [];
+                
+                // 添加所有需要预加载的图片
+                for (let i = 1; i <= 94; i++) {
+                    const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
+                    imageUrls.push(`${i}.${extension}`);
+                }
+                
+                // 添加菜单图片
+                for (let i = 1; i <= 15; i++) {
+                    imageUrls.push(`菜单${i}.jpeg`);
+                }
+                for (let i = 17; i <= 49; i++) {
+                    imageUrls.push(`菜单${i}.jpeg`);
+                }
+                
+                // 添加淘宝图片
+                for (let i = 1; i <= 6; i++) {
+                    const extension = (i === 5) ? 'png' : 'jpeg';
+                    imageUrls.push(`淘宝海报${i}.${extension}`);
+                }
+                for (let i = 1; i <= 19; i++) {
+                    imageUrls.push(`品销宝${i}.jpeg`);
+                }
+                for (let i = 1; i <= 6; i++) {
+                    imageUrls.push(`长图${i}.jpeg`);
+                }
+                for (let i = 1; i <= 4; i++) {
+                    imageUrls.push(`详情页${i}.jpeg`);
+                }
+                
+                // 预加载图片
+                imageUrls.forEach(url => {
+                    new Image().src = url;
+                });
+            }
+            
             // 初始化页面
             generatePosterImages();
+            generateMenuImages();
             generateTaobaoImages();
+            preloadImages();
         });
     </script>
 </body>
