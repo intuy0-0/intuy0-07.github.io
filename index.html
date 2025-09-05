@@ -3140,6 +3140,194 @@
         padding: 15px 10px;
     }
 }
+
+/* 其他设计页面样式 */
+#other-design-page {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+#other-design-page.visible {
+    display: flex;
+}
+
+/* 其他设计页面左侧导航 */
+.other-left-nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.other-nav-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 35px;
+    margin-bottom: 20px;
+}
+
+.other-back-button {
+    font-size: 18px;
+    color: #969797;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.other-nav-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.other-nav-logo {
+    width: 407.806px;
+    height: 563px;
+    margin-left: 35px;
+    margin-bottom: 50px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.other-nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 其他设计页面右侧内容 */
+.other-right-content {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.other-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.other-item {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.other-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.other-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 响应式调整 */
+@media (max-width: 1600px) {
+    .other-nav-logo {
+        width: 350px;
+        height: 483px;
+    }
+    
+    .other-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .other-right-content {
+        padding: 40px 30px;
+    }
+    
+    .other-nav-logo {
+        width: 300px;
+        height: 415px;
+    }
+    
+    .other-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .other-left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 0;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .other-right-content {
+        width: 100%;
+        position: relative;
+        padding: 30px 20px;
+    }
+    
+    .other-nav-logo {
+        width: 250px;
+        height: 345px;
+        margin-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .other-nav-menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .other-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .other-right-content {
+        padding: 20px 15px;
+    }
+    
+    .other-nav-logo {
+        width: 200px;
+        height: 276px;
+    }
+    
+    .other-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .other-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
     </style>
 </head>
 <body>
@@ -4269,6 +4457,32 @@
     </div>
 </div>
 
+<!-- 其他设计页面 -->
+<div id="other-design-page">
+    <!-- 左侧固定导航 -->
+    <div class="other-left-nav">
+        <div class="other-nav-header">
+            <a href="#" class="other-back-button" id="back-to-category-from-other">返回首页</a>
+            <div class="other-nav-title">其他设计</div>
+        </div>
+        
+        <img src="logo.png" alt="Logo" class="other-nav-logo">
+        
+        <div class="other-nav-menu">
+            <div class="nav-item" id="go-to-student-works-from-other">学生时期作品</div>
+            <div class="nav-item active">其他设计</div>
+            <div class="nav-item">关于我</div>
+        </div>
+    </div>
+    
+    <!-- 右侧内容区域 -->
+    <div class="other-right-content">
+        <div class="other-grid" id="other-grid">
+            <!-- 其他设计图片将通过JavaScript动态添加 -->
+        </div>
+    </div>
+</div>
+
     <!-- 图片预览模态框 -->
     <div class="image-modal" id="image-modal">
         <span class="close-modal" id="close-modal">&times;</span>
@@ -4391,6 +4605,12 @@ const menuDesignPage = document.getElementById('menu-design-page');
 const backToCategoryFromMenuButton = document.getElementById('back-to-category-from-menu');
 const goToStudentWorksFromMenuButton = document.getElementById('go-to-student-works-from-menu');
 const menuGrid = document.getElementById('menu-grid');
+
+// 其他设计页面元素
+const otherDesignPage = document.getElementById('other-design-page');
+const backToCategoryFromOtherButton = document.getElementById('back-to-category-from-other');
+const goToStudentWorksFromOtherButton = document.getElementById('go-to-student-works-from-other');
+const otherGrid = document.getElementById('other-grid');
         
         // 预加载图片函数
         function preloadImages() {
@@ -4464,7 +4684,12 @@ const menuGrid = document.getElementById('menu-grid');
 '菜单23.jpeg', '菜单24.jpeg', '菜单25.jpeg', '菜单26.jpeg', '菜单27.jpeg', '菜单28.jpeg', '菜单29.jpeg', 
 '菜单30.jpeg', '菜单31.jpeg', '菜单32.jpeg', '菜单33.jpeg', '菜单34.jpeg', '菜单35.jpeg', '菜单36.jpeg', 
 '菜单37.jpeg', '菜单38.jpeg', '菜单39.jpeg', '菜单40.jpeg', '菜单41.jpeg', '菜单42.jpeg', '菜单43.jpeg', 
-'菜单44.jpeg', '菜单45.jpeg', '菜单46.jpeg', '菜单47.jpeg', '菜单48.jpeg', '菜单49.jpeg'
+'菜单44.jpeg', '菜单45.jpeg', '菜单46.jpeg', '菜单47.jpeg', '菜单48.jpeg', '菜单49.jpeg',
+// 其他设计页面图片
+'其他1.jpeg', '其他2.jpeg', '其他3.jpeg', '其他4.jpeg', '其他5.jpeg', '其他6.jpeg', '其他7.jpeg', 
+'其他8.jpeg', '其他9.jpeg', '其他10.jpeg', '其他11.jpeg', '其他12.jpeg', '其他13.jpeg', '其他14.jpeg', 
+'其他15.jpeg', '其他16.jpeg', '其他17.jpeg', '其他18.jpeg', '其他19.jpeg', '其他20.jpeg', '其他21.jpeg', 
+'其他22.jpeg', '其他23.jpeg'
             ];
             
             let loadedCount = 0;
@@ -4631,6 +4856,15 @@ const menuGrid = document.getElementById('menu-grid');
                     categoryPage.classList.add('visible');
                 }, 500);
             });
+
+            // 返回到分类页面按钮（从其他设计页面）
+            backToCategoryFromOtherButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                otherDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    categoryPage.classList.add('visible');
+                }, 500);
+            });
             
             // 点击文创设计图片跳转到文创设计页面
             culturalDesignTrigger.addEventListener('click', function() {
@@ -4744,6 +4978,15 @@ const menuGrid = document.getElementById('menu-grid');
                 }, 500);
             });
 
+            // 点击导航5图片跳转到其他设计页面
+            carouselItems[4].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    otherDesignPage.classList.add('visible');
+                    initOtherGrid(); // 初始化其他设计网格
+                }, 500);
+            });
+
             // 跳转到学生作品页面按钮
             goToStudentWorksButton.addEventListener('click', function() {
                 posterDesignPage.classList.remove('visible');
@@ -4763,6 +5006,14 @@ const menuGrid = document.getElementById('menu-grid');
             // 跳转到学生作品页面按钮（从菜单设计页面）
             goToStudentWorksFromMenuButton.addEventListener('click', function() {
                 menuDesignPage.classList.remove('visible');
+                setTimeout(() => {
+                    studentWorksPage.classList.add('visible');
+                }, 500);
+            });
+
+            // 跳转到学生作品页面按钮（从其他设计页面）
+            goToStudentWorksFromOtherButton.addEventListener('click', function() {
+                otherDesignPage.classList.remove('visible');
                 setTimeout(() => {
                     studentWorksPage.classList.add('visible');
                 }, 500);
@@ -5123,26 +5374,51 @@ const menuGrid = document.getElementById('menu-grid');
                     }
                     
                     // 创建网格项
-                    menuImages.forEach((src, index) => {
-                        const menuItem = document.createElement('div');
-                        menuItem.className = 'menu-item';
-                        
-                        const img = document.createElement('img');
-                        img.src = src;
-                        img.alt = `菜单设计 ${index + 1}`;
-                        img.className = 'menu-image';
-                        img.loading = 'lazy';
-                        
-                        // 点击图片放大
-                        img.addEventListener('click', function() {
-                            openPosterModal(src);
-                        });
-                        
-                        menuItem.appendChild(img);
-                        menuGrid.appendChild(menuItem);
+                menuImages.forEach((src, index) => {
+                    const menuItem = document.createElement('div');
+                    menuItem.className = 'menu-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = `菜单设计 ${index + 1}`;
+                    img.className = 'menu-image';
+                    img.loading = 'lazy';
+                    
+                    // 点击图片放大
+                    img.addEventListener('click', function() {
+                        openPosterModal(src);
                     });
+                    
+                    menuItem.appendChild(img);
+                    menuGrid.appendChild(menuItem);
+                });
+            }
+
+            // 初始化其他设计网格
+            function initOtherGrid() {
+                otherGrid.innerHTML = '';
+                
+                // 创建23张其他设计图片
+                for (let i = 1; i <= 23; i++) {
+                    const otherItem = document.createElement('div');
+                    otherItem.className = 'other-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = `其他${i}.jpeg`;
+                    img.alt = `其他设计 ${i}`;
+                    img.className = 'other-image';
+                    img.loading = 'lazy';
+                    
+                    // 点击图片放大
+                    img.addEventListener('click', function() {
+                        openPosterModal(`其他${i}.jpeg`);
+                    });
+                    
+                    otherItem.appendChild(img);
+                    otherGrid.appendChild(otherItem);
                 }
-            }  
+            }
+        }  
         
         // 设置图片预览功能
         function setupImagePreview() {
@@ -5542,6 +5818,15 @@ const menuGrid = document.getElementById('menu-grid');
                 setTimeout(() => {
                     menuDesignPage.classList.add('visible');
                     initMenuGrid(); // 初始化菜单网格
+                }, 500);
+            });
+
+            // 导航5点击事件 - 跳转到其他设计页面
+            carouselItems[4].addEventListener('click', function() {
+                categoryPage.classList.remove('visible');
+                setTimeout(() => {
+                    otherDesignPage.classList.add('visible');
+                    initOtherGrid(); // 初始化其他设计网格
                 }, 500);
             });
             
