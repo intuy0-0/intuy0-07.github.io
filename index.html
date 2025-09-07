@@ -178,6 +178,16 @@
             overflow: hidden;
         }
         
+        /* 文创设计页面样式 */
+        #cultural-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -256,12 +266,129 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
         
+        /* 返回按钮样式 */
+        .back-button {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+        
+        .back-button:hover {
+            color: #000;
+        }
+        
+        .back-button::before {
+            content: "←";
+            margin-right: 8px;
+        }
+        
         /* 关于我页面图片样式 */
         .about-me-image {
             width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* 文创设计页面样式 */
+        .cultural-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cultural-main-images {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        
+        .cultural-main-image {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        
+        .cultural-main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .cultural-carousel-container {
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .cultural-carousel-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            letter-spacing: 0.3em;
+            color: #727171;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .cultural-carousel {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cultural-carousel-item {
+            width: 100%;
+            display: none;
+        }
+        
+        .cultural-carousel-item.active {
+            display: block;
+        }
+        
+        .cultural-carousel-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        
+        .cultural-carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .cultural-carousel-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .cultural-carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        
+        .cultural-carousel-dot.active {
+            background-color: #727171;
+        }
+        
+        .cultural-description {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 16pt;
+            letter-spacing: 0.3em;
+            color: #727171;
+            text-align: center;
+            line-height: 1.6;
+            margin-top: 40px;
         }
         
         /* 海报设计页面图片网格 */
@@ -634,6 +761,10 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
+            
+            .cultural-description {
+                font-size: 14pt;
+            }
         }
     </style>
 </head>
@@ -698,7 +829,7 @@
             <div class="right-content">
                 <div class="work-item">
                     <div class="work-title">文创设计</div>
-                    <img src="文创设计.jpeg" alt="文创设计" class="work-image">
+                    <img src="文创设计.jpeg" alt="文创设计" class="work-image" id="cultural-design-image">
                 </div>
                 
                 <div class="work-item">
@@ -907,6 +1038,77 @@
         </div>
     </div>
 
+    <!-- 文创设计页面 -->
+    <div id="cultural-design-page">
+        <div class="content-container">
+            <!-- 返回按钮 -->
+            <div class="back-button" id="back-to-student-works">返回</div>
+            
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="right-content">
+                <div class="cultural-content">
+                    <!-- 7张主要图片 -->
+                    <div class="cultural-main-images">
+                        <div class="cultural-main-image">
+                            <img src="文创1.jpeg" alt="文创设计 1">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创2.jpeg" alt="文创设计 2">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创3.jpeg" alt="文创设计 3">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创4.jpeg" alt="文创设计 4">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创5.jpeg" alt="文创设计 5">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创6.jpeg" alt="文创设计 6">
+                        </div>
+                        <div class="cultural-main-image">
+                            <img src="文创7.jpeg" alt="文创设计 7">
+                        </div>
+                    </div>
+                    
+                    <!-- 轮播图部分 -->
+                    <div class="cultural-carousel-container">
+                        <div class="cultural-carousel-title" id="cultural-carousel-title">（海报）</div>
+                        <div class="cultural-carousel" id="cultural-carousel">
+                            <!-- 轮播图将通过JavaScript动态添加 -->
+                        </div>
+                        <div class="cultural-carousel-controls">
+                            <div class="cultural-carousel-dots" id="cultural-carousel-dots">
+                                <!-- 轮播图指示点将通过JavaScript动态添加 -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 描述文字 -->
+                    <div class="cultural-description">
+                        将国宝文物进行简化、现代化，与明亮鲜艳的色彩搭配，<br>
+                        将文物年轻化、图像化，便于生活在如此浮躁社会的我们阅读。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 图片模态框 -->
     <div id="image-modal" class="modal">
         <span class="close-btn" id="close-modal">&times;</span>
@@ -932,6 +1134,12 @@
             const menuGrid = document.getElementById('menu-grid');
             const otherGrid = document.getElementById('other-grid');
             const aboutMeImage = document.getElementById('about-me-image');
+            const culturalDesignImage = document.getElementById('cultural-design-image');
+            const culturalDesignPage = document.getElementById('cultural-design-page');
+            const backToStudentWorks = document.getElementById('back-to-student-works');
+            const culturalCarousel = document.getElementById('cultural-carousel');
+            const culturalCarouselTitle = document.getElementById('cultural-carousel-title');
+            const culturalCarouselDots = document.getElementById('cultural-carousel-dots');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -946,11 +1154,103 @@
                 'taobao-design': document.getElementById('taobao-design-page'),
                 'menu-design': document.getElementById('menu-design-page'),
                 'other-design': document.getElementById('other-design-page'),
-                'about-me': document.getElementById('about-me-page')
+                'about-me': document.getElementById('about-me-page'),
+                'cultural-design': culturalDesignPage
             };
             
             // 当前缩放级别
             let currentScale = 1;
+            
+            // 文创设计轮播图数据
+            const culturalCarouselData = [
+                { image: '文创海报1.jpeg', title: '海报' },
+                { image: '文创海报2.jpeg', title: '海报' },
+                { image: '文创海报3.jpeg', title: '海报' },
+                { image: '文创日历1.jpeg', title: '日历' },
+                { image: '文创日历2.jpeg', title: '日历' },
+                { image: '文创日历3.jpeg', title: '日历' },
+                { image: '文创1.jpeg', title: '文创' },
+                { image: '文创2.jpeg', title: '文创' },
+                { image: '文创3.jpeg', title: '文创' },
+                { image: '文创4.jpeg', title: '文创' },
+                { image: '文创5.jpeg', title: '文创' },
+                { image: '文创6.jpeg', title: '文创' },
+                { image: '文创7.jpeg', title: '文创' }
+            ];
+            
+            let currentCarouselIndex = 0;
+            
+            // 生成文创设计轮播图
+            function generateCulturalCarousel() {
+                culturalCarouselData.forEach((item, index) => {
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = 'cultural-carousel-item';
+                    if (index === 0) carouselItem.classList.add('active');
+                    carouselItem.innerHTML = `<img src="${item.image}" alt="${item.title} ${index + 1}">`;
+                    culturalCarousel.appendChild(carouselItem);
+                    
+                    // 添加点击事件
+                    carouselItem.addEventListener('click', function() {
+                        openModal(item.image, `${item.title} ${index + 1}`);
+                    });
+                    
+                    // 创建指示点
+                    const dot = document.createElement('div');
+                    dot.className = 'cultural-carousel-dot';
+                    if (index === 0) dot.classList.add('active');
+                    dot.setAttribute('data-index', index);
+                    culturalCarouselDots.appendChild(dot);
+                    
+                    // 指示点点击事件
+                    dot.addEventListener('click', function() {
+                        const targetIndex = parseInt(this.getAttribute('data-index'));
+                        showCulturalCarouselItem(targetIndex);
+                    });
+                });
+                
+                // 更新标题
+                updateCulturalCarouselTitle();
+            }
+            
+            // 显示指定索引的轮播图项
+            function showCulturalCarouselItem(index) {
+                // 隐藏所有项
+                document.querySelectorAll('.cultural-carousel-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 移除所有活动指示点
+                document.querySelectorAll('.cultural-carousel-dot').forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // 显示指定项
+                document.querySelectorAll('.cultural-carousel-item')[index].classList.add('active');
+                document.querySelectorAll('.cultural-carousel-dot')[index].classList.add('active');
+                
+                // 更新当前索引
+                currentCarouselIndex = index;
+                
+                // 更新标题
+                updateCulturalCarouselTitle();
+            }
+            
+            // 更新轮播图标题
+            function updateCulturalCarouselTitle() {
+                const currentItem = culturalCarouselData[currentCarouselIndex];
+                culturalCarouselTitle.textContent = `（${currentItem.title}）`;
+            }
+            
+            // 轮播图自动播放
+            function startCulturalCarousel() {
+                setInterval(() => {
+                    let nextIndex = currentCarouselIndex + 1;
+                    if (nextIndex >= culturalCarouselData.length) {
+                        nextIndex = 0;
+                    }
+                    showCulturalCarouselItem(nextIndex);
+                }, 4000); // 每4秒切换一次
+            }
             
             // 生成海报设计页面的图片
             function generatePosterImages() {
@@ -1062,6 +1362,41 @@
             // 关于我图片点击事件
             aboutMeImage.addEventListener('click', function() {
                 openModal('关于我.png', '关于我');
+            });
+            
+            // 文创设计图片点击事件
+            culturalDesignImage.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // 显示文创设计页面
+                culturalDesignPage.style.display = 'block';
+                document.title = "文创设计 - intuy0-0空间";
+            });
+            
+            // 返回按钮点击事件
+            backToStudentWorks.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // 显示学生时期作品页面
+                subPages['student-works'].style.display = 'block';
+                document.title = "学生时期作品 - intuy0-0空间";
+            });
+            
+            // 文创设计页面主图片点击事件
+            document.querySelectorAll('.cultural-main-image img').forEach(img => {
+                img.addEventListener('click', function() {
+                    openModal(this.src, this.alt);
+                });
             });
             
             // 打开模态框显示大图
@@ -1206,7 +1541,8 @@
                         'taobao-design': '淘宝物料设计',
                         'menu-design': '菜单设计',
                         'other-design': '其他设计',
-                        'about-me': '关于我'
+                        'about-me': '关于我',
+                        'cultural-design': '文创设计'
                     };
                     
                     return titles[pageId] || 'intuy0-0空间';
@@ -1330,6 +1666,17 @@
                 // 添加关于我图片
                 imageUrls.push('关于我.png');
                 
+                // 添加文创设计图片
+                for (let i = 1; i <= 7; i++) {
+                    imageUrls.push(`文创${i}.jpeg`);
+                }
+                
+                // 添加文创海报和日历图片
+                for (let i = 1; i <= 3; i++) {
+                    imageUrls.push(`文创海报${i}.jpeg`);
+                    imageUrls.push(`文创日历${i}.jpeg`);
+                }
+                
                 // 预加载图片
                 imageUrls.forEach(url => {
                     new Image().src = url;
@@ -1341,7 +1688,9 @@
             generateMenuImages();
             generateOtherImages();
             generateTaobaoImages();
+            generateCulturalCarousel();
             preloadImages();
+            startCulturalCarousel();
         });
     </script>
 </body>
