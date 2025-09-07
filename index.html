@@ -168,6 +168,16 @@
             overflow: hidden;
         }
         
+        /* 关于我页面样式 */
+        #about-me-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -244,6 +254,14 @@
         .work-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 关于我页面图片样式 */
+        .about-me-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
         /* 海报设计页面图片网格 */
@@ -436,14 +454,6 @@
         
         .zoom-btn:hover {
             background-color: rgba(255, 255, 255, 0.4);
-        }
-        
-        /* 关于我页面暂时隐藏 */
-        #about-me-page {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            background: #fff;
         }
         
         /* 动画效果 */
@@ -871,6 +881,32 @@
         </div>
     </div>
 
+    <!-- 关于我页面 -->
+    <div id="about-me-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item active" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="right-content">
+                <div class="work-item">
+                    <img src="关于我.png" alt="关于我" class="about-me-image" id="about-me-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 图片模态框 -->
     <div id="image-modal" class="modal">
         <span class="close-btn" id="close-modal">&times;</span>
@@ -881,9 +917,6 @@
             <button class="zoom-btn" id="reset-zoom">重置</button>
         </div>
     </div>
-
-    <!-- 关于我页面（暂时为空） -->
-    <div id="about-me-page"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -898,6 +931,7 @@
             const taobaoDetailsGrid = document.getElementById('taobao-details');
             const menuGrid = document.getElementById('menu-grid');
             const otherGrid = document.getElementById('other-grid');
+            const aboutMeImage = document.getElementById('about-me-image');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -1024,6 +1058,11 @@
                 
                 return item;
             }
+            
+            // 关于我图片点击事件
+            aboutMeImage.addEventListener('click', function() {
+                openModal('关于我.png', '关于我');
+            });
             
             // 打开模态框显示大图
             function openModal(fileName, altText) {
@@ -1287,6 +1326,9 @@
                 for (let i = 1; i <= 4; i++) {
                     imageUrls.push(`详情页${i}.jpeg`);
                 }
+                
+                // 添加关于我图片
+                imageUrls.push('关于我.png');
                 
                 // 预加载图片
                 imageUrls.forEach(url => {
