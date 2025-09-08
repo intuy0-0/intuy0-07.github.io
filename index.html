@@ -208,6 +208,16 @@
             overflow: hidden;
         }
         
+        /* 包装设计页面样式 */
+        #packaging-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -266,7 +276,7 @@
         
         .work-title {
             font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
-            font-size: 18pt;
+            font-size: 14pt;
             color: #727171;
             margin-bottom: 20px;
             font-weight: 500;
@@ -318,6 +328,17 @@
         
         /* 插画设计页面样式 */
         .illustration-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        /* 包装设计页面样式 */
+        .packaging-content {
             width: 70%;
             height: 100%;
             position: absolute;
@@ -730,6 +751,47 @@
             border-color: #000;
         }
         
+        /* 包装设计页面样式 */
+        .packaging-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .packaging-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 24pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .packaging-image {
+            width: 100%;
+            max-width: 1182px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        
+        .wahaha-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .wahaha-image {
+            width: 100%;
+            max-width: 1168px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
         /* 图片模态框 */
         .modal {
             display: none;
@@ -833,7 +895,8 @@
             
             .cultural-content,
             .web-design-content,
-            .illustration-content {
+            .illustration-content,
+            .packaging-content {
                 padding: 40px 80px 80px 40px;
             }
         }
@@ -869,7 +932,8 @@
             
             .cultural-content,
             .web-design-content,
-            .illustration-content {
+            .illustration-content,
+            .packaging-content {
                 padding: 40px 60px 80px 40px;
             }
             
@@ -934,7 +998,8 @@
             
             .cultural-content,
             .web-design-content,
-            .illustration-content {
+            .illustration-content,
+            .packaging-content {
                 width: 100%;
                 position: relative;
                 padding: 80px 40px 60px;
@@ -981,7 +1046,8 @@
             
             .cultural-content,
             .web-design-content,
-            .illustration-content {
+            .illustration-content,
+            .packaging-content {
                 padding: 60px 20px 40px;
             }
             
@@ -1085,7 +1151,7 @@
                 
                 <div class="work-item">
                     <div class="work-title">包装设计</div>
-                    <img src="包装设计.jpeg" alt="包装设计" class="work-image">
+                    <img src="包装设计.jpeg" alt="包装设计" class="work-image" id="packaging-design-image">
                 </div>
                 
                 <div class="work-item">
@@ -1428,6 +1494,45 @@
         </div>
     </div>
 
+    <!-- 包装设计页面 -->
+    <div id="packaging-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="packaging-content">
+                <div class="back-button" id="back-to-student-works-packaging">返回</div>
+                
+                <!-- 百丈枇杷包装设计 -->
+                <div class="packaging-section">
+                    <div class="packaging-title">百丈枇杷包装设计</div>
+                    <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="packaging-image" id="loquat-packaging">
+                </div>
+                
+                <!-- 哇哈哈包装设计 -->
+                <div class="packaging-section">
+                    <div class="packaging-title">哇哈哈包装设计</div>
+                    <div class="wahaha-images">
+                        <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="wahaha-image" id="wahaha1">
+                        <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="wahaha-image" id="wahaha2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 海报设计页面 -->
     <div id="poster-design-page">
         <div class="content-container">
@@ -1614,12 +1719,15 @@
             const culturalDesignImage = document.getElementById('cultural-design-image');
             const webDesignImage = document.getElementById('web-design-image');
             const illustrationDesignImage = document.getElementById('illustration-design-image');
+            const packagingDesignImage = document.getElementById('packaging-design-image');
             const culturalDesignPage = document.getElementById('cultural-design-page');
             const webDesignPage = document.getElementById('web-design-page');
             const illustrationDesignPage = document.getElementById('illustration-design-page');
+            const packagingDesignPage = document.getElementById('packaging-design-page');
             const backToStudentWorks = document.getElementById('back-to-student-works');
             const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
             const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
+            const backToStudentWorksPackaging = document.getElementById('back-to-student-works-packaging');
             const carouselTitle = document.getElementById('carousel-title');
             const prevButton = document.getElementById('prev-button');
             const nextButton = document.getElementById('next-button');
@@ -1655,6 +1763,9 @@
             const runfaCulturalNext = document.getElementById('runfa-cultural-next');
             const runfaCulturalItems = document.querySelectorAll('#runfa-cultural-carousel .illustration-carousel-item');
             const chestnutIllustration = document.getElementById('chestnut-illustration');
+            const loquatPackaging = document.getElementById('loquat-packaging');
+            const wahaha1 = document.getElementById('wahaha1');
+            const wahaha2 = document.getElementById('wahaha2');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -1672,7 +1783,8 @@
                 'about-me': document.getElementById('about-me-page'),
                 'cultural-design': culturalDesignPage,
                 'web-design': webDesignPage,
-                'illustration-design': illustrationDesignPage
+                'illustration-design': illustrationDesignPage,
+                'packaging-design': packagingDesignPage
             };
             
             // 当前缩放级别
@@ -2038,6 +2150,20 @@
                 showRunfaCulturalItem(0);
             });
             
+            // 包装设计图片点击事件
+            packagingDesignImage.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示包装设计页面
+                packagingDesignPage.style.display = 'block';
+                document.title = "包装设计 - intuy0-0空间";
+            });
+            
             // 返回按钮点击事件
             backToStudentWorks.addEventListener('click', function() {
                 // 隐藏所有页面
@@ -2068,6 +2194,20 @@
             
             // 插画设计页面返回按钮点击事件
             backToStudentWorksIllustration.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示学生时期作品页面
+                subPages['student-works'].style.display = 'block';
+                document.title = "学生时期作品 - intuy0-0空间";
+            });
+            
+            // 包装设计页面返回按钮点击事件
+            backToStudentWorksPackaging.addEventListener('click', function() {
                 // 隐藏所有页面
                 homePage.style.display = 'none';
                 categoryPage.style.display = 'none';
@@ -2233,6 +2373,19 @@
                 });
             });
             
+            // 包装设计页面图片点击事件
+            loquatPackaging.addEventListener('click', function() {
+                openModal('枇杷.jpeg', '百丈枇杷包装设计');
+            });
+            
+            wahaha1.addEventListener('click', function() {
+                openModal('哇哈哈1.jpeg', '哇哈哈包装设计1');
+            });
+            
+            wahaha2.addEventListener('click', function() {
+                openModal('哇哈哈2.jpeg', '哇哈哈包装设计2');
+            });
+            
             // 打开模态框显示大图
             function openModal(fileName, altText) {
                 modalImage.src = fileName;
@@ -2378,7 +2531,8 @@
                         'about-me': '关于我',
                         'cultural-design': '文创设计',
                         'web-design': '网页设计',
-                        'illustration-design': '插画设计'
+                        'illustration-design': '插画设计',
+                        'packaging-design': '包装设计'
                     };
                     
                     return titles[pageId] || 'intuy0-0空间';
@@ -2539,6 +2693,11 @@
                 imageUrls.push('润发海报2.jpeg');
                 imageUrls.push('润发文创1.jpeg');
                 imageUrls.push('润发文创2.png');
+                
+                // 添加包装设计图片
+                imageUrls.push('枇杷.jpeg');
+                imageUrls.push('哇哈哈1.jpeg');
+                imageUrls.push('哇哈哈2.jpeg');
                 
                 // 预加载图片
                 imageUrls.forEach(url => {
