@@ -218,6 +218,16 @@
             overflow: hidden;
         }
         
+        /* 书籍设计页面样式 */
+        #book-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -292,6 +302,33 @@
         }
         
         .work-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 书籍设计页面样式 */
+        .book-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .book-image {
+            width: 1225px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
@@ -896,8 +933,13 @@
             .cultural-content,
             .web-design-content,
             .illustration-content,
-            .packaging-content {
+            .packaging-content,
+            .book-content {
                 padding: 40px 80px 80px 40px;
+            }
+            
+            .book-image {
+                width: 100%;
             }
         }
         
@@ -933,7 +975,8 @@
             .cultural-content,
             .web-design-content,
             .illustration-content,
-            .packaging-content {
+            .packaging-content,
+            .book-content {
                 padding: 40px 60px 80px 40px;
             }
             
@@ -947,6 +990,10 @@
             .other-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
+            }
+            
+            .book-image {
+                width: 100%;
             }
         }
         
@@ -999,7 +1046,8 @@
             .cultural-content,
             .web-design-content,
             .illustration-content,
-            .packaging-content {
+            .packaging-content,
+            .book-content {
                 width: 100%;
                 position: relative;
                 padding: 80px 40px 60px;
@@ -1037,6 +1085,10 @@
                 top: 20px;
                 left: 20px;
             }
+            
+            .book-image {
+                width: 100%;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1047,7 +1099,8 @@
             .cultural-content,
             .web-design-content,
             .illustration-content,
-            .packaging-content {
+            .packaging-content,
+            .book-content {
                 padding: 60px 20px 40px;
             }
             
@@ -1071,6 +1124,10 @@
             .cultural-description,
             .web-section-text {
                 font-size: 14pt;
+            }
+            
+            .book-image {
+                width: 100%;
             }
         }
     </style>
@@ -1156,7 +1213,7 @@
                 
                 <div class="work-item">
                     <div class="work-title">书籍设计</div>
-                    <img src="书籍设计.jpeg" alt="书籍设计" class="work-image">
+                    <img src="书籍设计.jpeg" alt="书籍设计" class="work-image" id="book-design-image">
                 </div>
                 
                 <div class="work-item">
@@ -1183,6 +1240,43 @@
                     <div class="work-title">毕业设计</div>
                     <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 书籍设计页面 -->
+    <div id="book-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="book-content">
+                <div class="back-button" id="back-to-student-works-book">返回</div>
+                
+                <!-- 书籍设计图片 -->
+                <img src="书籍1.jpeg" alt="书籍设计1" class="book-image" data-index="0">
+                <img src="书籍2.jpeg" alt="书籍设计2" class="book-image" data-index="1">
+                <img src="书籍3.jpeg" alt="书籍设计3" class="book-image" data-index="2">
+                <img src="书籍4.jpeg" alt="书籍设计4" class="book-image" data-index="3">
+                <img src="书籍5.jpeg" alt="书籍设计5" class="book-image" data-index="4">
+                <img src="书籍6.jpeg" alt="书籍设计6" class="book-image" data-index="5">
+                <img src="书籍7.jpeg" alt="书籍设计7" class="book-image" data-index="6">
+                <img src="书籍8.jpeg" alt="书籍设计8" class="book-image" data-index="7">
+                <img src="书籍9.jpeg" alt="书籍设计9" class="book-image" data-index="8">
+                <img src="书籍10.jpeg" alt="书籍设计10" class="book-image" data-index="9">
+                <img src="书籍11.jpeg" alt="书籍设计11" class="book-image" data-index="10">
             </div>
         </div>
     </div>
@@ -1720,14 +1814,17 @@
             const webDesignImage = document.getElementById('web-design-image');
             const illustrationDesignImage = document.getElementById('illustration-design-image');
             const packagingDesignImage = document.getElementById('packaging-design-image');
+            const bookDesignImage = document.getElementById('book-design-image');
             const culturalDesignPage = document.getElementById('cultural-design-page');
             const webDesignPage = document.getElementById('web-design-page');
             const illustrationDesignPage = document.getElementById('illustration-design-page');
             const packagingDesignPage = document.getElementById('packaging-design-page');
+            const bookDesignPage = document.getElementById('book-design-page');
             const backToStudentWorks = document.getElementById('back-to-student-works');
             const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
             const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
             const backToStudentWorksPackaging = document.getElementById('back-to-student-works-packaging');
+            const backToStudentWorksBook = document.getElementById('back-to-student-works-book');
             const carouselTitle = document.getElementById('carousel-title');
             const prevButton = document.getElementById('prev-button');
             const nextButton = document.getElementById('next-button');
@@ -1766,6 +1863,7 @@
             const loquatPackaging = document.getElementById('loquat-packaging');
             const wahaha1 = document.getElementById('wahaha1');
             const wahaha2 = document.getElementById('wahaha2');
+            const bookImages = document.querySelectorAll('.book-image');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -1784,7 +1882,8 @@
                 'cultural-design': culturalDesignPage,
                 'web-design': webDesignPage,
                 'illustration-design': illustrationDesignPage,
-                'packaging-design': packagingDesignPage
+                'packaging-design': packagingDesignPage,
+                'book-design': bookDesignPage
             };
             
             // 当前缩放级别
@@ -2164,6 +2263,20 @@
                 document.title = "包装设计 - intuy0-0空间";
             });
             
+            // 书籍设计图片点击事件
+            bookDesignImage.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示书籍设计页面
+                bookDesignPage.style.display = 'block';
+                document.title = "书籍设计 - intuy0-0空间";
+            });
+            
             // 返回按钮点击事件
             backToStudentWorks.addEventListener('click', function() {
                 // 隐藏所有页面
@@ -2208,6 +2321,20 @@
             
             // 包装设计页面返回按钮点击事件
             backToStudentWorksPackaging.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示学生时期作品页面
+                subPages['student-works'].style.display = 'block';
+                document.title = "学生时期作品 - intuy0-0空间";
+            });
+            
+            // 书籍设计页面返回按钮点击事件
+            backToStudentWorksBook.addEventListener('click', function() {
                 // 隐藏所有页面
                 homePage.style.display = 'none';
                 categoryPage.style.display = 'none';
@@ -2386,6 +2513,13 @@
                 openModal('哇哈哈2.jpeg', '哇哈哈包装设计2');
             });
             
+            // 书籍设计页面图片点击事件
+            bookImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    openModal(this.src, this.alt);
+                });
+            });
+            
             // 打开模态框显示大图
             function openModal(fileName, altText) {
                 modalImage.src = fileName;
@@ -2532,7 +2666,8 @@
                         'cultural-design': '文创设计',
                         'web-design': '网页设计',
                         'illustration-design': '插画设计',
-                        'packaging-design': '包装设计'
+                        'packaging-design': '包装设计',
+                        'book-design': '书籍设计'
                     };
                     
                     return titles[pageId] || 'intuy0-0空间';
@@ -2698,6 +2833,11 @@
                 imageUrls.push('枇杷.jpeg');
                 imageUrls.push('哇哈哈1.jpeg');
                 imageUrls.push('哇哈哈2.jpeg');
+                
+                // 添加书籍设计图片
+                for (let i = 1; i <= 11; i++) {
+                    imageUrls.push(`书籍${i}.jpeg`);
+                }
                 
                 // 预加载图片
                 imageUrls.forEach(url => {
