@@ -128,6 +128,16 @@
             overflow: hidden;
         }
         
+        /* 视频剪辑页面样式 */
+        #video-editing-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         /* 海报设计页面样式 */
         #poster-design-page {
             display: none;
@@ -248,6 +258,26 @@
             overflow: hidden;
         }
         
+        /* IP设计页面样式 */
+        #ip-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
+        /* 毕业设计页面样式 */
+        #graduation-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -324,6 +354,123 @@
         .work-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 视频剪辑页面样式 */
+        .video-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .video-description {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            margin-top: 60px;
+        }
+        
+        .video-player {
+            width: 1219px;
+            max-width: 100%;
+            margin: 0 auto 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .video-player video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 70pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .video-poem {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 12pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        /* IP设计页面样式 */
+        .ip-design-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .ip-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .ip-section-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 18pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .ip-image {
+            width: 100%;
+            max-width: 1230.381px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
+        .ip-image-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .ip-image-half {
+            width: 48%;
+            max-width: 612.844px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
+        .ip-text {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 40px;
         }
         
         /* 排版设计页面样式 */
@@ -479,6 +626,17 @@
         
         /* 包装设计页面样式 */
         .packaging-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        /* 毕业设计页面样式 */
+        .graduation-content {
             width: 70%;
             height: 100%;
             position: absolute;
@@ -990,6 +1148,98 @@
             cursor: pointer;
         }
         
+        /* 毕业设计页面样式 */
+        .graduation-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .graduation-image {
+            width: 1262px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
+        .graduation-text {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .graduation-subtitle {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .graduation-carousel {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .graduation-carousel-items {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            border-radius: 8px;
+        }
+        
+        .graduation-carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            display: none;
+        }
+        
+        .graduation-carousel-item.active {
+            display: block;
+        }
+        
+        .graduation-carousel-image {
+            width: 1262px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .graduation-carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .graduation-carousel-control {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            cursor: pointer;
+            padding: 8px 16px;
+            border: 1px solid #727171;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .graduation-carousel-control:hover {
+            color: #000;
+            border-color: #000;
+        }
+        
         /* 图片模态框 */
         .modal {
             display: none;
@@ -1097,7 +1347,10 @@
             .packaging-content,
             .book-content,
             .handmade-content,
-            .typesetting-content {
+            .typesetting-content,
+            .ip-design-content,
+            .video-content,
+            .graduation-content {
                 padding: 40px 80px 80px 40px;
             }
             
@@ -1107,6 +1360,27 @@
             
             .handmade-image,
             .handmade-carousel-image {
+                width: 100%;
+            }
+            
+            .ip-image {
+                width: 100%;
+            }
+            
+            .ip-image-half {
+                width: 48%;
+            }
+            
+            .video-player {
+                width: 100%;
+            }
+            
+            .video-title {
+                font-size: 50pt;
+            }
+            
+            .graduation-image,
+            .graduation-carousel-image {
                 width: 100%;
             }
         }
@@ -1146,7 +1420,10 @@
             .packaging-content,
             .book-content,
             .handmade-content,
-            .typesetting-content {
+            .typesetting-content,
+            .ip-design-content,
+            .video-content,
+            .graduation-content {
                 padding: 40px 60px 80px 40px;
             }
             
@@ -1168,6 +1445,23 @@
             
             .handmade-image,
             .handmade-carousel-image {
+                width: 100%;
+            }
+            
+            .ip-image {
+                width: 100%;
+            }
+            
+            .ip-image-half {
+                width: 48%;
+            }
+            
+            .video-title {
+                font-size: 40pt;
+            }
+            
+            .graduation-image,
+            .graduation-carousel-image {
                 width: 100%;
             }
         }
@@ -1224,7 +1518,10 @@
             .packaging-content,
             .book-content,
             .handmade-content,
-            .typesetting-content {
+            .typesetting-content,
+            .ip-design-content,
+            .video-content,
+            .graduation-content {
                 width: 100%;
                 position: relative;
                 padding: 80px 40px 60px;
@@ -1271,6 +1568,33 @@
             .handmade-carousel-image {
                 width: 100%;
             }
+            
+            .ip-image {
+                width: 100%;
+            }
+            
+            .ip-image-half {
+                width: 48%;
+            }
+            
+            .ip-image-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .ip-image-half {
+                width: 100%;
+            }
+            
+            .video-title {
+                font-size: 35pt;
+            }
+            
+            .graduation-image,
+            .graduation-carousel-image {
+                width: 100%;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1284,7 +1608,10 @@
             .packaging-content,
             .book-content,
             .handmade-content,
-            .typesetting-content {
+            .typesetting-content,
+            .ip-design-content,
+            .video-content,
+            .graduation-content {
                 padding: 60px 20px 40px;
             }
             
@@ -1308,7 +1635,11 @@
             .cultural-description,
             .web-section-text,
             .handmade-text,
-            .typesetting-text {
+            .typesetting-text,
+            .ip-text,
+            .video-description,
+            .video-poem,
+            .graduation-text {
                 font-size: 14pt;
             }
             
@@ -1318,6 +1649,23 @@
             
             .handmade-image,
             .handmade-carousel-image {
+                width: 100%;
+            }
+            
+            .ip-image {
+                width: 100%;
+            }
+            
+            .ip-image-half {
+                width: 100%;
+            }
+            
+            .video-title {
+                font-size: 30pt;
+            }
+            
+            .graduation-image,
+            .graduation-carousel-image {
                 width: 100%;
             }
         }
@@ -1419,17 +1767,225 @@
                 
                 <div class="work-item">
                     <div class="work-title">IP设计</div>
-                    <img src="IP设计.jpeg" alt="IP设计" class="work-image">
+                    <img src="IP设计.jpeg" alt="IP设计" class="work-image" id="ip-design-image">
                 </div>
                 
                 <div class="work-item">
                     <div class="work-title">视频剪辑</div>
-                    <img src="视频剪辑.jpeg" alt="视频剪辑" class="work-image">
+                    <img src="视频剪辑.jpeg" alt="视频剪辑" class="work-image" id="video-editing-image">
                 </div>
                 
                 <div class="work-item">
                     <div class="work-title">毕业设计</div>
-                    <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
+                    <img src="毕业设计.jpeg" alt="毕业设计" class="work-image" id="graduation-design-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 毕业设计页面 -->
+    <div id="graduation-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="graduation-content">
+                <div class="back-button" id="back-to-student-works-graduation">返回</div>
+                
+                <!-- 毕业设计内容 -->
+                <div class="graduation-section">
+                    <img src="照片展板.jpeg" alt="照片展板" class="graduation-image" data-index="0">
+                </div>
+                
+                <div class="graduation-carousel">
+                    <div class="graduation-carousel-items">
+                        <div class="graduation-carousel-item active">
+                            <img src="丧葬海报1.png" alt="丧葬海报1" class="graduation-carousel-image">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="丧葬海报2.png" alt="丧葬海报2" class="graduation-carousel-image">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="丧葬海报3.png" alt="丧葬海报3" class="graduation-carousel-image">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="丧葬海报4.png" alt="丧葬海报4" class="graduation-carousel-image">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="丧葬海报5.png" alt="丧葬海报5" class="graduation-carousel-image">
+                        </div>
+                        <div class="graduation-carousel-item">
+                            <img src="丧葬海报6.png" alt="丧葬海报6" class="graduation-carousel-image">
+                        </div>
+                    </div>
+                    
+                    <div class="graduation-carousel-controls">
+                        <div class="graduation-carousel-control" id="graduation-poster-prev">上一页</div>
+                        <div class="graduation-carousel-control" id="graduation-poster-next">下一页</div>
+                    </div>
+                </div>
+                
+                <div class="graduation-text">
+                    "宴终"海报设计分为主海报与次海报。主海报是整个设计项目的核心部分，主要呈现作品的整体形象。次海报则是为了更好地展示作品细节的部分。
+                </div>
+                
+                <div class="graduation-section">
+                    <img src="宣传册1.jpeg" alt="宣传册1" class="graduation-image" data-index="1">
+                    <img src="宣传册2.jpeg" alt="宣传册2" class="graduation-image" data-index="2">
+                    <img src="宣传册3.jpeg" alt="宣传册3" class="graduation-image" data-index="3">
+                    <img src="宣传册4.jpeg" alt="宣传册4" class="graduation-image" data-index="4">
+                    <img src="宣传册5.jpeg" alt="宣传册5" class="graduation-image" data-index="5">
+                    <img src="宣传册6.jpeg" alt="宣传册6" class="graduation-image" data-index="6">
+                </div>
+                
+                <div class="graduation-text">
+                    《宴终》宣传册设计风格也沿用了海报的排版与设计。封面的设计截取于主海报的插画。排版上清新规整方便观看者阅读。整体风格统一。宣传册详细的介绍了每一种丧葬文化的知识，包含来源、方式、分类、程序、代表国家与地区等等。考虑到展出效果，装订方式选用了经折装，将宣传册树立在桌面上，可以吸引观者的阅读兴趣，起到宣传科普作用。这样的摆放方式又像祭祀时排位的摆放，与丧葬文化的主题相呼应。
+                </div>
+                
+                <div class="graduation-section">
+                    <div class="graduation-subtitle">土葬</div>
+                    <img src="装置1.jpeg" alt="装置1" class="graduation-image" data-index="7">
+                    <img src="装置2.jpeg" alt="装置2" class="graduation-image" data-index="8">
+                    
+                    <div class="graduation-subtitle">火葬</div>
+                    <img src="装置3.jpeg" alt="装置3" class="graduation-image" data-index="9">
+                    <img src="装置4.jpeg" alt="装置4" class="graduation-image" data-index="10">
+                    
+                    <div class="graduation-subtitle">水葬</div>
+                    <img src="装置5.jpeg" alt="装置5" class="graduation-image" data-index="11">
+                    <img src="装置6.jpeg" alt="装置6" class="graduation-image" data-index="12">
+                    
+                    <div class="graduation-subtitle">风葬</div>
+                    <img src="装置7.jpeg" alt="装置7" class="graduation-image" data-index="13">
+                    <img src="装置8.jpeg" alt="装置8" class="graduation-image" data-index="14">
+                    
+                    <div class="graduation-subtitle">冰葬</div>
+                    <img src="装置9.jpeg" alt="装置9" class="graduation-image" data-index="15">
+                    <img src="装置10.jpeg" alt="装置10" class="graduation-image" data-index="16">
+                    
+                    <div class="graduation-subtitle">天葬</div>
+                    <img src="装置11.jpeg" alt="装置11" class="graduation-image" data-index="17">
+                </div>
+                
+                <div class="graduation-text">
+                    "宴终"装置设计将圆桌作为载体，围绕圆形展开，通过使用不同材质，使装置呈现出不同丧葬文化的美好寓意。每一个微景观都是一个独立的故事，每一件摆设都有自己的意义，每一个摆设都承载着某种特殊的情感。装置将六种不同的丧葬仪式，以聚餐的形式齐聚在一起，从多种多样的表现形中，体现出其中共同的内在核心——对已逝之人的美好祝愿与不舍。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频剪辑页面 -->
+    <div id="video-editing-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="video-content">
+                <div class="back-button" id="back-to-student-works-video">返回</div>
+                
+                <!-- 视频剪辑内容 -->
+                <div class="video-description">
+                    针对现代社会内卷，人们越来越焦虑的现状为主题，
+                    使用一种抽象的手法，体现人们物质、精神、肉体上的三重压力。
+                    香蕉代表人的肉体、风筝代表人的状态、肉代表了人的精神，
+                    这三条线索贯穿了整个短片。短片采用了现实世界和精神世界的交错切换，体现了内心的无助焦虑。
+                    这个短片主要讲解的是当代大学生面对压力采用不断的自残式学习导致精神肉体状态的逐渐崩溃，迷失自我。身边的人互相猜忌与怀疑，这是一个病态的世界。
+                </div>
+                
+                <div class="video-player">
+                    <video controls>
+                        <source src="网页设计.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+                
+                <div class="video-title">蕉绿</div>
+                
+                <div class="video-poem">
+                    我睁开眼，开始了新的一天。<br>
+                    睁眼、起床、洗漱、吃饭、学习，目标明确…<br>
+                    睁眼、起床、吃饭、学习…<br>
+                    睁眼、起床、学习…睁眼、<br>
+                    学习…学习、学习、学习…我在干什么？<br>
+                    永远飞不上天的风筝，无力的追逐虚幻的梦影；<br>
+                    不断解剖自己的香蕉，狼狈的寻找迷失的自己；<br>
+                    没有保质期的鲜肉，早已腐烂，还在增添新的伤口；<br>
+                    时钟虚影里缠绕的绳子，像抓住救命稻草不断向上爬，<br>
+                    但又像不断地重复着上吊的前奏，想要到达尽头却始终不能；<br>
+                    被困在洗衣机里卷啊卷，无止尽的重复带来的麻木与机械感；<br>
+                    燃烧的时钟，内心焦灼的挽留和选择；逆转的时针，不断重复的轮回;<br>
+                    我在张望，我在观察，我在偷窥，其实我们都一样;<br>
+                    挣扎、痛苦、迷茫、狂躁、迷失、直至麻木…
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IP设计页面 -->
+    <div id="ip-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="ip-design-content">
+                <div class="back-button" id="back-to-student-works-ip">返回</div>
+                
+                <!-- IP设计内容 -->
+                <div class="ip-section">
+                    <div class="ip-section-title">云南白药牙膏IP设计</div>
+                    <img src="牙膏1.jpeg" alt="云南白药牙膏IP设计1" class="ip-image" data-index="0">
+                    <img src="牙膏2.jpeg" alt="云南白药牙膏IP设计2" class="ip-image" data-index="1">
+                    <img src="牙膏3.jpeg" alt="云南白药牙膏IP设计3" class="ip-image" data-index="2">
+                </div>
+                
+                <div class="ip-section">
+                    <div class="ip-section-title">东方美湖IP形象设计</div>
+                    <img src="美湖1.png" alt="东方美湖IP形象设计1" class="ip-image" data-index="3">
+                    
+                    <div class="ip-image-row">
+                        <img src="美湖2.png" alt="东方美湖IP形象设计2" class="ip-image-half" data-index="4">
+                        <img src="美湖3.png" alt="东方美湖IP形象设计3" class="ip-image-half" data-index="5">
+                    </div>
+                    
+                    <div class="ip-text">
+                        为了更能体现东方美湖企业产品的形象，使顾客能更直观的感受到企 业的气质，因此创作出一个符合"东方美湖"的吉祥物。吉祥物的形 象是一个充满活力的小女孩，体现出"东方美湖"生机盎然充满生命 力的地方，装饰采用荷叶体现南方特质。颜色与LOGO采用相同的主 色调水浅葱色，给IP整体增添一种朦胧、细腻的感受。荷叶小舟、活 泼清秀的小女孩、温柔干净的颜色，体现出南方的情调。
+                    </div>
                 </div>
             </div>
         </div>
@@ -1852,7 +2408,7 @@
                             <div class="illustration-carousel-item">
                                 <img src="绿茶平铺2.jpeg" alt="绿茶平铺2" class="illustration-carousel-image">
                             </div>
-                            <div class="illustration-carousel-item">
+                                                        <div class="illustration-carousel-item">
                                 <img src="绿茶平铺3.jpeg" alt="绿茶平铺3" class="illustration-carousel-image">
                             </div>
                         </div>
@@ -1926,157 +2482,105 @@
                 <div class="back-button" id="back-to-student-works-packaging">返回</div>
                 
                 <!-- 百丈枇杷包装设计 -->
-                <div class="packaging-section">
-                    <div class="packaging-title">百丈枇杷包装设计</div>
-                    <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="packaging-image" id="loquat-packaging">
-                </div>
-                
-                <!-- 哇哈哈包装设计 -->
-                <div class="packaging-section">
-                    <div class="packaging-title">哇哈哈包装设计</div>
-                    <div class="wahaha-images">
-                        <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="wahaha-image" id="wahaha1">
-                        <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="wahaha-image" id="wahaha2">
+                    <div class="packaging-section">
+                        <div class="packaging-title">百丈枇杷包装设计</div>
+                        <img src="枇杷.jpeg" alt="百丈枇杷包装设计" class="packaging-image" id="loquat-packaging">
+                    </div>
+                    
+                    <!-- 哇哈哈包装设计 -->
+                    <div class="packaging-section">
+                        <div class="packaging-title">哇哈哈包装设计</div>
+                        <div class="wahaha-images">
+                            <img src="哇哈哈1.jpeg" alt="哇哈哈包装设计1" class="wahaha-image" id="wahaha1">
+                            <img src="哇哈哈2.jpeg" alt="哇哈哈包装设计2" class="wahaha-image" id="wahaha2">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 海报设计页面 -->
-    <div id="poster-design-page">
-        <div class="content-container">
-            <!-- 左侧导航区域 -->
-            <div class="left-nav">
-                <img src="logo.png" alt="Logo" class="nav-logo">
-                <div class="nav-menu">
-                    <div class="nav-item" data-target="student-works">学生时期作品</div>
-                    <div class="nav-item active" data-target="poster-design">海报设计</div>
-                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
-                    <div class="nav-item" data-target="menu-design">菜单设计</div>
-                    <div class="nav-item" data-target="other-design">其他设计</div>
-                    <div class="nav-item" data-target="about-me">关于我</div>
-                    <div class="nav-item" data-target="category">返回首页</div>
-                </div>
-            </div>
-            
-           <!-- 右侧内容区域 -->
-            <div class="right-content">
-                <div class="poster-grid" id="poster-grid">
-                    <!-- 海报图片将通过JavaScript动态添加 -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 淘宝物料设计页面 -->
-    <div id="taobao-design-page">
-        <div class="content-container">
-            <!-- 左侧导航区域 -->
-            <div class="left-nav">
-                <img src="logo.png" alt="Logo" class="nav-logo">
-                <div class="nav-menu">
-                    <div class="nav-item" data-target="student-works">学生时期作品</div>
-                    <div class="nav-item" data-target="poster-design">海报设计</div>
-                    <div class="nav-item active" data-target="taobao-design">淘宝物料设计</div>
-                    <div class="nav-item" data-target="menu-design">菜单设计</div>
-                    <div class="nav-item" data-target="other-design">其他设计</div>
-                    <div class="nav-item" data-target="about-me">关于我</div>
-                    <div class="nav-item" data-target="category">返回首页</div>
-                </div>
-            </div>
-            
-            <!-- 右侧内容区域 -->
-            <div class="right-content">
-                <!-- 淘宝海报部分 -->
-                <div class="taobao-section">
-                    <div class="section-title">淘宝海报</div>
-                    <div class="taobao-grid" id="taobao-posters">
-                        <!-- 淘宝海报图片将通过JavaScript动态添加 -->
+        <!-- 海报设计页面 -->
+        <div id="poster-design-page">
+            <div class="content-container">
+                <!-- 左侧导航区域 -->
+                <div class="left-nav">
+                    <img src="logo.png" alt="Logo" class="nav-logo">
+                    <div class="nav-menu">
+                        <div class="nav-item" data-target="student-works">学生时期作品</div>
+                        <div class="nav-item active" data-target="poster-design">海报设计</div>
+                        <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                        <div class="nav-item" data-target="menu-design">菜单设计</div>
+                        <div class="nav-item" data-target="other-design">其他设计</div>
+                        <div class="nav-item" data-target="about-me">关于我</div>
+                        <div class="nav-item" data-target="category">返回首页</div>
                     </div>
                 </div>
                 
-                <!-- 品销宝部分 -->
-                <div class="taobao-section">
-                    <div class="section-title">品销宝</div>
-                    <div class="taobao-grid" id="pinxiaobao">
-                        <!-- 品销宝图片将通过JavaScript动态添加 -->
+               <!-- 右侧内容区域 -->
+                <div class="right-content">
+                    <div class="poster-grid" id="poster-grid">
+                        <!-- 海报图片将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 淘宝物料设计页面 -->
+        <div id="taobao-design-page">
+            <div class="content-container">
+                <!-- 左侧导航区域 -->
+                <div class="left-nav">
+                    <img src="logo.png" alt="Logo" class="nav-logo">
+                    <div class="nav-menu">
+                        <div class="nav-item" data-target="student-works">学生时期作品</div>
+                        <div class="nav-item" data-target="poster-design">海报设计</div>
+                        <div class="nav-item active" data-target="taobao-design">淘宝物料设计</div>
+                        <div class="nav-item" data-target="menu-design">菜单设计</div>
+                        <div class="nav-item" data-target="other-design">其他设计</div>
+                        <div class="nav-item" data-target="about-me">关于我</div>
+                        <div class="nav-item" data-target="category">返回首页</div>
                     </div>
                 </div>
                 
-                <!-- 淘宝首页部分 -->
-                <div class="taobao-section">
-                    <div class="section-title">淘宝首页</div>
-                    <div class="taobao-grid" id="taobao-home">
-                        <!-- 淘宝首页图片将通过JavaScript动态添加 -->
+                <!-- 右侧内容区域 -->
+                <div class="right-content">
+                    <!-- 淘宝海报部分 -->
+                    <div class="taobao-section">
+                        <div class="section-title">淘宝海报</div>
+                        <div class="taobao-grid" id="taobao-posters">
+                            <!-- 淘宝海报图片将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 品销宝部分 -->
+                    <div class="taobao-section">
+                        <div class="section-title">品销宝</div>
+                        <div class="taobao-grid" id="pinxiaobao">
+                            <!-- 品销宝图片将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 淘宝首页部分 -->
+                    <div class="taobao-section">
+                        <div class="section-title">淘宝首页</div>
+                        <div class="taobao-grid" id="taobao-home">
+                            <!-- 淘宝首页图片将通过JavaScript动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 淘宝详情页部分 -->
+                    <div class="taobao-section">
+                        <div class="section-title">淘宝详情页</div>
+                        <div class="taobao-grid" id="taobao-details">
+                            <!-- 淘宝详情页图片将通过JavaScript动态添加 -->
+                        </div>
                     </div>
                 </div>
-                
-                <!-- 淘宝详情页部分 -->
-                <div class="taobao-section">
-                    <div class="section-title">淘宝详情页</div>
-                    <div class="taobao-grid" id="taobao-details">
-                        <!-- 淘宝详情页图片将通过JavaScript动态添加 -->
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 菜单设计页面 -->
-    <div id="menu-design-page">
-        <div class="content-container">
-            <!-- 左侧导航区域 -->
-            <div class="left-nav">
-                <img src="logo.png" alt="Logo" class="nav-logo">
-                <div class="nav-menu">
-                    <div class="nav-item" data-target="student-works">学生时期作品</div>
-                    <div class="nav-item" data-target="poster-design">海报设计</div>
-                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
-                    <div class="nav-item active" data-target="menu-design">菜单设计</div>
-                    <div class="nav-item" data-target="other-design">其他设计</div>
-                    <div class="nav-item" data-target="about-me">关于我</div>
-                    <div class="nav-item" data-target="category">返回首页</div>
-                </div>
-            </div>
-            
-            <!-- 右侧内容区域 -->
-            <div class="right-content">
-                <div class="menu-grid" id="menu-grid">
-                    <!-- 菜单图片将通过JavaScript动态添加 -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 其他设计页面 -->
-    <div id="other-design-page">
-        <div class="content-container">
-            <!-- 左侧导航区域 -->
-            <div class="left-nav">
-                <img src="logo.png" alt="Logo" class="nav-logo">
-                <div class="nav-menu">
-                    <div class="nav-item" data-target="student-works">学生时期作品</div>
-                    <div class="nav-item" data-target="poster-design">海报设计</div>
-                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
-                    <div class="nav-item" data-target="menu-design">菜单设计</div>
-                    <div class="nav-item active" data-target="other-design">其他设计</div>
-                    <div class="nav-item" data-target="about-me">关于我</div>
-                    <div class="nav-item" data-target="category">返回首页</div>
-                </div>
-            </div>
-            
-            <!-- 右侧内容区域 -->
-            <div class="right-content">
-                <div class="other-grid" id="other-grid">
-                    <!-- 其他设计图片将通过JavaScript动态添加 -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 关于我页面 -->
-        <div id="about-me-page">
+        <!-- 菜单设计页面 -->
+        <div id="menu-design-page">
             <div class="content-container">
                 <!-- 左侧导航区域 -->
                 <div class="left-nav">
@@ -2085,6 +2589,58 @@
                         <div class="nav-item" data-target="student-works">学生时期作品</div>
                         <div class="nav-item" data-target="poster-design">海报设计</div>
                         <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                        <div class="nav-item active" data-target="menu-design">菜单设计</div>
+                        <div class="nav-item" data-target="other-design">其他设计</div>
+                        <div class="nav-item" data-target="about-me">关于我</div>
+                        <div class="nav-item" data-target="category">返回首页</div>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容区域 -->
+                <div class="right-content">
+                    <div class="menu-grid" id="menu-grid">
+                        <!-- 菜单图片将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 其他设计页面 -->
+        <div id="other-design-page">
+            <div class="content-container">
+                <!-- 左侧导航区域 -->
+                <div class="left-nav">
+                    <img src="logo.png" alt="Logo" class="nav-logo">
+                    <div class="nav-menu">
+                        <div class="nav-item" data-target="student-works">学生时期作品</div>
+                        <div class="nav-item" data-target="poster-design">海报设计</div>
+                        <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                        <div class="nav-item" data-target="menu-design">菜单设计</div>
+                        <div class="nav-item active" data-target="other-design">其他设计</div>
+                        <div class="nav-item" data-target="about-me">关于我</div>
+                        <div class="nav-item" data-target="category">返回首页</div>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容区域 -->
+                <div class="right-content">
+                    <div class="other-grid" id="other-grid">
+                        <!-- 其他设计图片将通过JavaScript动态添加 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 关于我页面 -->
+        <div id="about-me-page">
+            <div class="content-container">
+                <!-- 左侧导航区域 -->
+                <div class="left-nav">
+                    <img src="logo.png" alt="Logo" class="nav-logo">
+                    <div class="nav-menu">
+                        <div class="nav-item" data-target="student-works">学生时期作品</div>
+                        <div class="nav-item" data-target="poster-design">海报设计</div>
+                                                <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
                         <div class="nav-item" data-target="menu-design">菜单设计</div>
                         <div class="nav-item" data-target="other-design">其他设计</div>
                         <div class="nav-item active" data-target="about-me">关于我</div>
@@ -2133,6 +2689,9 @@
                 const bookDesignImage = document.getElementById('book-design-image');
                 const handmadeImage = document.getElementById('handmade-image');
                 const typesettingDesignImage = document.getElementById('typesetting-design-image');
+                const ipDesignImage = document.getElementById('ip-design-image');
+                const videoEditingImage = document.getElementById('video-editing-image');
+                const graduationDesignImage = document.getElementById('graduation-design-image');
                 const culturalDesignPage = document.getElementById('cultural-design-page');
                 const webDesignPage = document.getElementById('web-design-page');
                 const illustrationDesignPage = document.getElementById('illustration-design-page');
@@ -2140,6 +2699,9 @@
                 const bookDesignPage = document.getElementById('book-design-page');
                 const handmadePage = document.getElementById('handmade-page');
                 const typesettingDesignPage = document.getElementById('typesetting-design-page');
+                const ipDesignPage = document.getElementById('ip-design-page');
+                const videoEditingPage = document.getElementById('video-editing-page');
+                const graduationDesignPage = document.getElementById('graduation-design-page');
                 const backToStudentWorks = document.getElementById('back-to-student-works');
                 const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
                 const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
@@ -2147,6 +2709,9 @@
                 const backToStudentWorksBook = document.getElementById('back-to-student-works-book');
                 const backToStudentWorksHandmade = document.getElementById('back-to-student-works-handmade');
                 const backToStudentWorksTypesetting = document.getElementById('back-to-student-works-typesetting');
+                const backToStudentWorksIp = document.getElementById('back-to-student-works-ip');
+                const backToStudentWorksVideo = document.getElementById('back-to-student-works-video');
+                const backToStudentWorksGraduation = document.getElementById('back-to-student-works-graduation');
                 const carouselTitle = document.getElementById('carousel-title');
                 const prevButton = document.getElementById('prev-button');
                 const nextButton = document.getElementById('next-button');
@@ -2191,6 +2756,12 @@
                 const handmadeNext = document.getElementById('handmade-next');
                 const handmadeCarouselItems = document.querySelectorAll('.handmade-carousel-item');
                 const typesettingImages = document.querySelectorAll('.typesetting-image');
+                const ipImages = document.querySelectorAll('.ip-image');
+                const ipImageHalfs = document.querySelectorAll('.ip-image-half');
+                const graduationImages = document.querySelectorAll('.graduation-image');
+                const graduationPosterPrev = document.getElementById('graduation-poster-prev');
+                const graduationPosterNext = document.getElementById('graduation-poster-next');
+                const graduationPosterItems = document.querySelectorAll('.graduation-carousel-item');
                 const imageModal = document.getElementById('image-modal');
                 const modalImage = document.getElementById('modal-image');
                 const closeModal = document.getElementById('close-modal');
@@ -2212,7 +2783,10 @@
                     'packaging-design': packagingDesignPage,
                     'book-design': bookDesignPage,
                     'handmade': handmadePage,
-                    'typesetting-design': typesettingDesignPage
+                    'typesetting-design': typesettingDesignPage,
+                    'ip-design': ipDesignPage,
+                    'video-editing': videoEditingPage,
+                    'graduation-design': graduationDesignPage
                 };
                 
                 // 当前缩放级别
@@ -2235,6 +2809,8 @@
                 let currentRunfaCulturalIndex = 0;
                 // 当前手工制作轮播图索引
                 let currentHandmadeIndex = 0;
+                // 当前毕业设计海报轮播图索引
+                let currentGraduationPosterIndex = 0;
                 
                 // 生成海报设计页面的图片
                 function generatePosterImages() {
@@ -2538,6 +3114,25 @@
                     currentHandmadeIndex = index;
                 }
                 
+                // 显示指定索引的毕业设计海报轮播图
+                function showGraduationPosterItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = graduationPosterItems.length - 1;
+                    } else if (index >= graduationPosterItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    graduationPosterItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    graduationPosterItems[index].classList.add('active');
+                    currentGraduationPosterIndex = index;
+                }
+                
                 // 关于我图片点击事件
                 aboutMeImage.addEventListener('click', function() {
                     openModal('关于我.png', '关于我');
@@ -2647,15 +3242,60 @@
                 // 排版设计图片点击事件
                 typesettingDesignImage.addEventListener('click', function() {
                     // 隐藏所有页面
+                                        homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+
+                    // 显示排版设计页面
+                    typesettingDesignPage.style.display = 'block';
+                    document.title = "排版设计 - intuy0-0空间";
+                });
+                
+                // IP设计图片点击事件
+                ipDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
                     homePage.style.display = 'none';
                     categoryPage.style.display = 'none';
                     Object.values(subPages).forEach(page => {
                         if (page) page.style.display = 'none';
                     });
                     
-                    // 显示排版设计页面
-                    typesettingDesignPage.style.display = 'block';
-                    document.title = "排版设计 - intuy0-0空间";
+                    // 显示IP设计页面
+                    ipDesignPage.style.display = 'block';
+                    document.title = "IP设计 - intuy0-0空间";
+                });
+                
+                // 视频剪辑图片点击事件
+                videoEditingImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示视频剪辑页面
+                    videoEditingPage.style.display = 'block';
+                    document.title = "视频剪辑 - intuy0-0空间";
+                });
+                
+                // 毕业设计图片点击事件
+                graduationDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示毕业设计页面
+                    graduationDesignPage.style.display = 'block';
+                    document.title = "毕业设计 - intuy0-0空间";
+                    
+                    // 重置轮播图到第一张
+                    showGraduationPosterItem(0);
                 });
                 
                 // 返回按钮点击事件
@@ -2674,7 +3314,7 @@
                 
                 // 网页设计页面返回按钮点击事件
                 backToStudentWorksWeb.addEventListener('click', function() {
-                    // 隐藏所有页面
+                   // 隐藏所有页面
                     homePage.style.display = 'none';
                     categoryPage.style.display = 'none';
                     Object.values(subPages).forEach(page => {
@@ -2744,6 +3384,48 @@
                 
                 // 排版设计页面返回按钮点击事件
                 backToStudentWorksTypesetting.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // IP设计页面返回按钮点击事件
+                backToStudentWorksIp.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 视频剪辑页面返回按钮点击事件
+                backToStudentWorksVideo.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 毕业设计页面返回按钮点击事件
+                backToStudentWorksGraduation.addEventListener('click', function() {
                     // 隐藏所有页面
                     homePage.style.display = 'none';
                     categoryPage.style.display = 'none';
@@ -2835,6 +3517,15 @@
                 
                 handmadeNext.addEventListener('click', function() {
                     showHandmadeItem(currentHandmadeIndex + 1);
+                });
+                
+                // 毕业设计海报轮播图控制事件
+                graduationPosterPrev.addEventListener('click', function() {
+                    showGraduationPosterItem(currentGraduationPosterIndex - 1);
+                });
+                
+                graduationPosterNext.addEventListener('click', function() {
+                    showGraduationPosterItem(currentGraduationPosterIndex + 1);
                 });
                 
                 // 文创主图片点击事件
@@ -2955,6 +3646,35 @@
                 
                 // 排版设计页面图片点击事件
                 typesettingImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // IP设计页面图片点击事件
+                ipImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // IP设计页面半宽图片点击事件
+                ipImageHalfs.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 毕业设计页面图片点击事件
+                graduationImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 毕业设计海报轮播图图片点击事件
+                graduationPosterItems.forEach(item => {
+                    const image = item.querySelector('img');
                     image.addEventListener('click', function() {
                         openModal(this.src, this.alt);
                     });
@@ -3109,7 +3829,10 @@
                             'packaging-design': '包装设计',
                             'book-design': '书籍设计',
                             'handmade': '手工制作',
-                            'typesetting-design': '排版设计'
+                            'typesetting-design': '排版设计',
+                            'ip-design': 'IP设计',
+                            'video-editing': '视频剪辑',
+                            'graduation-design': '毕业设计'
                         };
                         
                         return titles[pageId] || 'intuy0-0空间';
@@ -3293,6 +4016,30 @@
                     imageUrls.push('落日1.jpeg');
                     imageUrls.push('落日2.jpeg');
                     
+                    // 添加IP设计图片
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`牙膏${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`美湖${i}.png`);
+                    }
+                    
+                    // 添加视频剪辑图片
+                    imageUrls.push('视频剪辑.jpeg');
+                    
+                    // 添加毕业设计图片
+                    imageUrls.push('毕业设计.jpeg');
+                    imageUrls.push('照片展板.jpeg');
+                    for (let i = 1; i <= 6; i++) {
+                        imageUrls.push(`丧葬海报${i}.png`);
+                    }
+                    for (let i = 1; i <= 6; i++) {
+                        imageUrls.push(`宣传册${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 11; i++) {
+                        imageUrls.push(`装置${i}.jpeg`);
+                    }
+                    
                     // 预加载图片
                     imageUrls.forEach(url => {
                         new Image().src = url;
@@ -3322,6 +4069,9 @@
                 
                 // 初始化手工制作轮播图
                 showHandmadeItem(0);
+                
+                // 初始化毕业设计海报轮播图
+                showGraduationPosterItem(0);
             });
         </script>
     </body>
