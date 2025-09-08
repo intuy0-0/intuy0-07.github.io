@@ -228,6 +228,16 @@
             overflow: hidden;
         }
         
+        /* 手工制作页面样式 */
+        #handmade-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -304,6 +314,52 @@
         .work-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 手工制作页面样式 */
+        .handmade-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .handmade-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .handmade-title {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 18pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .handmade-image {
+            width: 1074.816px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
+        .handmade-text {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 40px;
         }
         
         /* 书籍设计页面样式 */
@@ -479,6 +535,63 @@
             text-align: center;
             margin-top: 40px;
             line-height: 1.6;
+        }
+        
+        /* 手工制作轮播图样式 */
+        .handmade-carousel {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .handmade-carousel-items {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            border-radius: 8px;
+        }
+        
+        .handmade-carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            display: none;
+        }
+        
+        .handmade-carousel-item.active {
+            display: block;
+        }
+        
+        .handmade-carousel-image {
+            width: 1074.816px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .handmade-carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .handmade-carousel-control {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            cursor: pointer;
+            padding: 8px 16px;
+            border: 1px solid #727171;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .handmade-carousel-control:hover {
+            color: #000;
+            border-color: #000;
         }
         
         /* 网页设计页面样式 */
@@ -672,6 +785,7 @@
         /* 淘宝物料设计页面样式 */
         .taobao-section {
             margin-bottom: 60px;
+            text-align: center;
         }
         
         .section-title {
@@ -934,11 +1048,17 @@
             .web-design-content,
             .illustration-content,
             .packaging-content,
-            .book-content {
+            .book-content,
+            .handmade-content {
                 padding: 40px 80px 80px 40px;
             }
             
             .book-image {
+                width: 100%;
+            }
+            
+            .handmade-image,
+            .handmade-carousel-image {
                 width: 100%;
             }
         }
@@ -976,7 +1096,8 @@
             .web-design-content,
             .illustration-content,
             .packaging-content,
-            .book-content {
+            .book-content,
+            .handmade-content {
                 padding: 40px 60px 80px 40px;
             }
             
@@ -993,6 +1114,11 @@
             }
             
             .book-image {
+                width: 100%;
+            }
+            
+            .handmade-image,
+            .handmade-carousel-image {
                 width: 100%;
             }
         }
@@ -1047,7 +1173,8 @@
             .web-design-content,
             .illustration-content,
             .packaging-content,
-            .book-content {
+            .book-content,
+            .handmade-content {
                 width: 100%;
                 position: relative;
                 padding: 80px 40px 60px;
@@ -1089,6 +1216,11 @@
             .book-image {
                 width: 100%;
             }
+            
+            .handmade-image,
+            .handmade-carousel-image {
+                width: 100%;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1100,7 +1232,8 @@
             .web-design-content,
             .illustration-content,
             .packaging-content,
-            .book-content {
+            .book-content,
+            .handmade-content {
                 padding: 60px 20px 40px;
             }
             
@@ -1122,11 +1255,17 @@
             }
             
             .cultural-description,
-            .web-section-text {
+            .web-section-text,
+            .handmade-text {
                 font-size: 14pt;
             }
             
             .book-image {
+                width: 100%;
+            }
+            
+            .handmade-image,
+            .handmade-carousel-image {
                 width: 100%;
             }
         }
@@ -1218,7 +1357,7 @@
                 
                 <div class="work-item">
                     <div class="work-title">手工制作</div>
-                    <img src="手工制作.jpeg" alt="手工制作" class="work-image">
+                    <img src="手工制作.jpeg" alt="手工制作" class="work-image" id="handmade-image">
                 </div>
                 
                 <div class="work-item">
@@ -1239,6 +1378,86 @@
                 <div class="work-item">
                     <div class="work-title">毕业设计</div>
                     <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 手工制作页面 -->
+    <div id="handmade-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="handmade-content">
+                <div class="back-button" id="back-to-student-works-handmade">返回</div>
+                
+                <!-- 手工制作内容 -->
+                <div class="handmade-section">
+                    <div class="handmade-title">二十四节气纤维艺术</div>
+                    <img src="壹色.png" alt="二十四节气纤维艺术" class="handmade-image" data-index="0">
+                    <div class="handmade-text">
+                        二十四节气与纤维艺术相结合，以现代表现方式体现新的视觉效果，
+                        将二十四节气无形的非遗转换为有形的商品，将非遗以人们喜闻
+                        乐见的形式表现出来，吸引人们的关注和喜爱，更好的将二十四节
+                        气非遗传播和推广出去。
+                    </div>
+                </div>
+                
+                <div class="handmade-section">
+                    <img src="手工1.png" alt="手工制作1" class="handmade-image" data-index="1">
+                    <div class="handmade-text">
+                        参考《中国传统色》这本书籍，根据24节气72物候，在几十万件故宫文物中选取应时应节的96件，从文物中提取传统色。
+                    </div>
+                </div>
+                
+                <div class="handmade-section">
+                    <img src="手工2.png" alt="手工制作2" class="handmade-image" data-index="2">
+                    <div class="handmade-text">
+                        色名与色值两相对应，互为考证，最终完成以时间为轴，以二十四节气为依托，展现中国传统文化的魅力。
+                    </div>
+                </div>
+                
+                <div class="handmade-section">
+                    <div class="handmade-carousel">
+                        <div class="handmade-carousel-items">
+                            <div class="handmade-carousel-item active">
+                                <img src="手工3.png" alt="手工制作3" class="handmade-carousel-image">
+                            </div>
+                            <div class="handmade-carousel-item">
+                                <img src="手工4.png" alt="手工制作4" class="handmade-carousel-image">
+                            </div>
+                            <div class="handmade-carousel-item">
+                                <img src="手工5.png" alt="手工制作5" class="handmade-carousel-image">
+                            </div>
+                            <div class="handmade-carousel-item">
+                                <img src="手工6.png" alt="手工制作6" class="handmade-carousel-image">
+                            </div>
+                            <div class="handmade-carousel-item">
+                                <img src="手工7.png" alt="手工制作7" class="handmade-carousel-image">
+                            </div>
+                            <div class="handmade-carousel-item">
+                                <img src="手工8.png" alt="手工制作8" class="handmade-carousel-image">
+                            </div>
+                        </div>
+                        
+                        <div class="handmade-carousel-controls">
+                            <div class="handmade-carousel-control" id="handmade-prev">上一页</div>
+                            <div class="handmade-carousel-control" id="handmade-next">下一页</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1815,16 +2034,19 @@
             const illustrationDesignImage = document.getElementById('illustration-design-image');
             const packagingDesignImage = document.getElementById('packaging-design-image');
             const bookDesignImage = document.getElementById('book-design-image');
+            const handmadeImage = document.getElementById('handmade-image');
             const culturalDesignPage = document.getElementById('cultural-design-page');
             const webDesignPage = document.getElementById('web-design-page');
             const illustrationDesignPage = document.getElementById('illustration-design-page');
             const packagingDesignPage = document.getElementById('packaging-design-page');
             const bookDesignPage = document.getElementById('book-design-page');
+            const handmadePage = document.getElementById('handmade-page');
             const backToStudentWorks = document.getElementById('back-to-student-works');
             const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
             const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
             const backToStudentWorksPackaging = document.getElementById('back-to-student-works-packaging');
             const backToStudentWorksBook = document.getElementById('back-to-student-works-book');
+            const backToStudentWorksHandmade = document.getElementById('back-to-student-works-handmade');
             const carouselTitle = document.getElementById('carousel-title');
             const prevButton = document.getElementById('prev-button');
             const nextButton = document.getElementById('next-button');
@@ -1864,6 +2086,10 @@
             const wahaha1 = document.getElementById('wahaha1');
             const wahaha2 = document.getElementById('wahaha2');
             const bookImages = document.querySelectorAll('.book-image');
+            const handmadeImages = document.querySelectorAll('.handmade-image');
+            const handmadePrev = document.getElementById('handmade-prev');
+            const handmadeNext = document.getElementById('handmade-next');
+            const handmadeCarouselItems = document.querySelectorAll('.handmade-carousel-item');
             const imageModal = document.getElementById('image-modal');
             const modalImage = document.getElementById('modal-image');
             const closeModal = document.getElementById('close-modal');
@@ -1883,7 +2109,8 @@
                 'web-design': webDesignPage,
                 'illustration-design': illustrationDesignPage,
                 'packaging-design': packagingDesignPage,
-                'book-design': bookDesignPage
+                'book-design': bookDesignPage,
+                'handmade': handmadePage
             };
             
             // 当前缩放级别
@@ -1904,6 +2131,8 @@
             let currentRunfaPosterIndex = 0;
             // 当前润发文创轮播图索引
             let currentRunfaCulturalIndex = 0;
+            // 当前手工制作轮播图索引
+            let currentHandmadeIndex = 0;
             
             // 生成海报设计页面的图片
             function generatePosterImages() {
@@ -2188,6 +2417,25 @@
                 currentRunfaCulturalIndex = index;
             }
             
+            // 显示指定索引的手工制作轮播图
+            function showHandmadeItem(index) {
+                // 确保索引在有效范围内
+                if (index < 0) {
+                    index = handmadeCarouselItems.length - 1;
+                } else if (index >= handmadeCarouselItems.length) {
+                    index = 0;
+                }
+                
+                // 隐藏所有项目
+                handmadeCarouselItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // 显示当前项目
+                handmadeCarouselItems[index].classList.add('active');
+                currentHandmadeIndex = index;
+            }
+            
             // 关于我图片点击事件
             aboutMeImage.addEventListener('click', function() {
                 openModal('关于我.png', '关于我');
@@ -2277,6 +2525,23 @@
                 document.title = "书籍设计 - intuy0-0空间";
             });
             
+            // 手工制作图片点击事件
+            handmadeImage.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示手工制作页面
+                handmadePage.style.display = 'block';
+                document.title = "手工制作 - intuy0-0空间";
+                
+                // 重置轮播图到第一张
+                showHandmadeItem(0);
+            });
+            
             // 返回按钮点击事件
             backToStudentWorks.addEventListener('click', function() {
                 // 隐藏所有页面
@@ -2335,6 +2600,20 @@
             
             // 书籍设计页面返回按钮点击事件
             backToStudentWorksBook.addEventListener('click', function() {
+                // 隐藏所有页面
+                homePage.style.display = 'none';
+                categoryPage.style.display = 'none';
+                Object.values(subPages).forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+                
+                // 显示学生时期作品页面
+                subPages['student-works'].style.display = 'block';
+                document.title = "学生时期作品 - intuy0-0空间";
+            });
+            
+            // 手工制作页面返回按钮点击事件
+            backToStudentWorksHandmade.addEventListener('click', function() {
                 // 隐藏所有页面
                 homePage.style.display = 'none';
                 categoryPage.style.display = 'none';
@@ -2417,6 +2696,15 @@
             
             runfaCulturalNext.addEventListener('click', function() {
                 showRunfaCulturalItem(currentRunfaCulturalIndex + 1);
+            });
+            
+            // 手工制作轮播图控制事件
+            handmadePrev.addEventListener('click', function() {
+                showHandmadeItem(currentHandmadeIndex - 1);
+            });
+            
+            handmadeNext.addEventListener('click', function() {
+                showHandmadeItem(currentHandmadeIndex + 1);
             });
             
             // 文创主图片点击事件
@@ -2515,6 +2803,21 @@
             
             // 书籍设计页面图片点击事件
             bookImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    openModal(this.src, this.alt);
+                });
+            });
+            
+            // 手工制作页面图片点击事件
+            handmadeImages.forEach(image => {
+                image.addEventListener('click', function() {
+                    openModal(this.src, this.alt);
+                });
+            });
+            
+            // 手工制作轮播图图片点击事件
+            handmadeCarouselItems.forEach(item => {
+                const image = item.querySelector('img');
                 image.addEventListener('click', function() {
                     openModal(this.src, this.alt);
                 });
@@ -2667,7 +2970,8 @@
                         'web-design': '网页设计',
                         'illustration-design': '插画设计',
                         'packaging-design': '包装设计',
-                        'book-design': '书籍设计'
+                        'book-design': '书籍设计',
+                        'handmade': '手工制作'
                     };
                     
                     return titles[pageId] || 'intuy0-0空间';
@@ -2839,6 +3143,14 @@
                     imageUrls.push(`书籍${i}.jpeg`);
                 }
                 
+                // 添加手工制作图片
+                imageUrls.push('壹色.png');
+                imageUrls.push('手工1.png');
+                imageUrls.push('手工2.png');
+                for (let i = 3; i <= 8; i++) {
+                    imageUrls.push(`手工${i}.png`);
+                }
+                
                 // 预加载图片
                 imageUrls.forEach(url => {
                     new Image().src = url;
@@ -2865,6 +3177,9 @@
             showGreenTeaPatternItem(0);
             showRunfaPosterItem(0);
             showRunfaCulturalItem(0);
+            
+            // 初始化手工制作轮播图
+            showHandmadeItem(0);
         });
     </script>
 </body>
