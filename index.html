@@ -238,6 +238,16 @@
             overflow: hidden;
         }
         
+        /* 排版设计页面样式 */
+        #typesetting-design-page {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+        }
+        
         .left-nav {
             width: 30%;
             height: 100%;
@@ -314,6 +324,43 @@
         .work-image:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 排版设计页面样式 */
+        .typesetting-content {
+            width: 70%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow-y: auto;
+            padding: 40px 112px 80px 40px;
+        }
+        
+        .typesetting-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .typesetting-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .typesetting-text {
+            font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
+            font-size: 14pt;
+            color: #727171;
+            letter-spacing: 0.3em;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 40px;
         }
         
         /* 手工制作页面样式 */
@@ -681,7 +728,7 @@
         .web-carousel-control {
             font-family: "黑体-简", "Heiti SC Medium", "SimHei", sans-serif;
             font-size: 14pt;
-            color: #727171;
+            color: 727171;
             cursor: pointer;
             padding: 8px 16px;
             border: 1px solid #727171;
@@ -1049,7 +1096,8 @@
             .illustration-content,
             .packaging-content,
             .book-content,
-            .handmade-content {
+            .handmade-content,
+            .typesetting-content {
                 padding: 40px 80px 80px 40px;
             }
             
@@ -1097,7 +1145,8 @@
             .illustration-content,
             .packaging-content,
             .book-content,
-            .handmade-content {
+            .handmade-content,
+            .typesetting-content {
                 padding: 40px 60px 80px 40px;
             }
             
@@ -1174,7 +1223,8 @@
             .illustration-content,
             .packaging-content,
             .book-content,
-            .handmade-content {
+            .handmade-content,
+            .typesetting-content {
                 width: 100%;
                 position: relative;
                 padding: 80px 40px 60px;
@@ -1233,7 +1283,8 @@
             .illustration-content,
             .packaging-content,
             .book-content,
-            .handmade-content {
+            .handmade-content,
+            .typesetting-content {
                 padding: 60px 20px 40px;
             }
             
@@ -1256,7 +1307,8 @@
             
             .cultural-description,
             .web-section-text,
-            .handmade-text {
+            .handmade-text,
+            .typesetting-text {
                 font-size: 14pt;
             }
             
@@ -1362,7 +1414,7 @@
                 
                 <div class="work-item">
                     <div class="work-title">排版设计</div>
-                    <img src="排版设计.jpeg" alt="排版设计" class="work-image">
+                    <img src="排版设计.jpeg" alt="排版设计" class="work-image" id="typesetting-design-image">
                 </div>
                 
                 <div class="work-item">
@@ -1378,6 +1430,51 @@
                 <div class="work-item">
                     <div class="work-title">毕业设计</div>
                     <img src="毕业设计.jpeg" alt="毕业设计" class="work-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 排版设计页面 -->
+    <div id="typesetting-design-page">
+        <div class="content-container">
+            <!-- 左侧导航区域 -->
+            <div class="left-nav">
+                <img src="logo.png" alt="Logo" class="nav-logo">
+                <div class="nav-menu">
+                    <div class="nav-item" data-target="student-works">学生时期作品</div>
+                    <div class="nav-item" data-target="poster-design">海报设计</div>
+                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                    <div class="nav-item" data-target="menu-design">菜单设计</div>
+                    <div class="nav-item" data-target="other-design">其他设计</div>
+                    <div class="nav-item" data-target="about-me">关于我</div>
+                    <div class="nav-item" data-target="category">返回首页</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区域 -->
+            <div class="typesetting-content">
+                <div class="back-button" id="back-to-student-works-typesetting">返回</div>
+                
+                <!-- 排版设计内容 -->
+                <div class="typesetting-images">
+                    <img src="落日1.jpeg" alt="落日1" class="typesetting-image" data-index="0">
+                    <img src="落日2.jpeg" alt="落日2" class="typesetting-image" data-index="1">
+                </div>
+                
+                <div class="typesetting-text">
+                    落日飞车给我的整体感受便是轻摇滚音乐<br>
+                    给人一种慵懒舒适的感觉<br>
+                    GREEDY很好展现了落日飞车独有的风格<br>
+                    迷幻伤感中带着一丝伤感<br>
+                    伴奏中的电音又与现代融合<br>
+                    使整首歌充满层次感<br>
+                    作品1便是我与电音相结合所创作的<br>
+                    并且应用了红绿色的碰撞<br>
+                    使画面更加的吸引眼球<br>
+                    作品2我认为与落日飞车的风格更相符一些<br>
+                    无论是的色调还是字体都带有一种复古感<br>
+                    玫瑰花与GREEDY直接联系
                 </div>
             </div>
         </div>
@@ -1979,898 +2076,475 @@
     </div>
 
     <!-- 关于我页面 -->
-    <div id="about-me-page">
-        <div class="content-container">
-            <!-- 左侧导航区域 -->
-            <div class="left-nav">
-                <img src="logo.png" alt="Logo" class="nav-logo">
-                <div class="nav-menu">
-                    <div class="nav-item" data-target="student-works">学生时期作品</div>
-                    <div class="nav-item" data-target="poster-design">海报设计</div>
-                    <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
-                    <div class="nav-item" data-target="menu-design">菜单设计</div>
-                    <div class="nav-item" data-target="other-design">其他设计</div>
-                    <div class="nav-item active" data-target="about-me">关于我</div>
-                    <div class="nav-item" data-target="category">返回首页</div>
+        <div id="about-me-page">
+            <div class="content-container">
+                <!-- 左侧导航区域 -->
+                <div class="left-nav">
+                    <img src="logo.png" alt="Logo" class="nav-logo">
+                    <div class="nav-menu">
+                        <div class="nav-item" data-target="student-works">学生时期作品</div>
+                        <div class="nav-item" data-target="poster-design">海报设计</div>
+                        <div class="nav-item" data-target="taobao-design">淘宝物料设计</div>
+                        <div class="nav-item" data-target="menu-design">菜单设计</div>
+                        <div class="nav-item" data-target="other-design">其他设计</div>
+                        <div class="nav-item active" data-target="about-me">关于我</div>
+                        <div class="nav-item" data-target="category">返回首页</div>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- 右侧内容区域 -->
-            <div class="right-content">
-                <div class="work-item">
-                    <img src="关于我.png" alt="关于我" class="about-me-image" id="about-me-image">
+                
+                <!-- 右侧内容区域 -->
+                <div class="right-content">
+                    <div class="work-item">
+                        <img src="关于我.png" alt="关于我" class="about-me-image" id="about-me-image">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 图片模态框 -->
-    <div id="image-modal" class="modal">
-        <span class="close-btn" id="close-modal">&times;</span>
-        <img class="modal-content" id="modal-image">
-        <div class="zoom-controls">
-            <button class="zoom-btn" id="zoom-in">+</button>
-            <button class="zoom-btn" id="zoom-out">-</button>
-            <button class="zoom-btn" id="reset-zoom">重置</button>
+        <!-- 图片模态框 -->
+        <div id="image-modal" class="modal">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div class="zoom-controls">
+                <button class="zoom-btn" id="zoom-in">+</button>
+                <button class="zoom-btn" id="zoom-out">-</button>
+                <button class="zoom-btn" id="reset-zoom">重置</button>
+            </div>
         </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const homePage = document.getElementById('home-page');
-            const categoryPage = document.getElementById('category-page');
-            const homeLogo = document.getElementById('home-logo');
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            const posterGrid = document.getElementById('poster-grid');
-            const taobaoPostersGrid = document.getElementById('taobao-posters');
-            const pinxiaobaoGrid = document.getElementById('pinxiaobao');
-            const taobaoHomeGrid = document.getElementById('taobao-home');
-            const taobaoDetailsGrid = document.getElementById('taobao-details');
-            const menuGrid = document.getElementById('menu-grid');
-            const otherGrid = document.getElementById('other-grid');
-            const aboutMeImage = document.getElementById('about-me-image');
-            const culturalDesignImage = document.getElementById('cultural-design-image');
-            const webDesignImage = document.getElementById('web-design-image');
-            const illustrationDesignImage = document.getElementById('illustration-design-image');
-            const packagingDesignImage = document.getElementById('packaging-design-image');
-            const bookDesignImage = document.getElementById('book-design-image');
-            const handmadeImage = document.getElementById('handmade-image');
-            const culturalDesignPage = document.getElementById('cultural-design-page');
-            const webDesignPage = document.getElementById('web-design-page');
-            const illustrationDesignPage = document.getElementById('illustration-design-page');
-            const packagingDesignPage = document.getElementById('packaging-design-page');
-            const bookDesignPage = document.getElementById('book-design-page');
-            const handmadePage = document.getElementById('handmade-page');
-            const backToStudentWorks = document.getElementById('back-to-student-works');
-            const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
-            const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
-            const backToStudentWorksPackaging = document.getElementById('back-to-student-works-packaging');
-            const backToStudentWorksBook = document.getElementById('back-to-student-works-book');
-            const backToStudentWorksHandmade = document.getElementById('back-to-student-works-handmade');
-            const carouselTitle = document.getElementById('carousel-title');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-            const culturalCarouselItems = document.querySelectorAll('.cultural-carousel-item');
-            const culturalMainImages = document.querySelectorAll('.cultural-main-image');
-            const homepageImage = document.getElementById('homepage-image');
-            const secondaryCarousel = document.getElementById('secondary-carousel');
-            const tertiaryCarousel = document.getElementById('tertiary-carousel');
-            const secondaryPrev = document.getElementById('secondary-prev');
-            const secondaryNext = document.getElementById('secondary-next');
-            const tertiaryPrev = document.getElementById('tertiary-prev');
-            const tertiaryNext = document.getElementById('tertiary-next');
-            const secondaryItems = document.querySelectorAll('#secondary-carousel .web-carousel-item');
-            const tertiaryItems = document.querySelectorAll('#tertiary-carousel .web-carousel-item');
-            const chestnutPatternCarousel = document.getElementById('chestnut-pattern-carousel');
-            const chestnutPrev = document.getElementById('chestnut-prev');
-            const chestnutNext = document.getElementById('chestnut-next');
-            const chestnutPatternItems = document.querySelectorAll('#chestnut-pattern-carousel .illustration-carousel-item');
-            const greenTeaIllustrationCarousel = document.getElementById('green-tea-illustration-carousel');
-            const greenTeaIllustrationPrev = document.getElementById('green-tea-illustration-prev');
-            const greenTeaIllustrationNext = document.getElementById('green-tea-illustration-next');
-            const greenTeaIllustrationItems = document.querySelectorAll('#green-tea-illustration-carousel .illustration-carousel-item');
-            const greenTeaPatternCarousel = document.getElementById('green-tea-pattern-carousel');
-            const greenTeaPatternPrev = document.getElementById('green-tea-pattern-prev');
-            const greenTeaPatternNext = document.getElementById('green-tea-pattern-next');
-            const greenTeaPatternItems = document.querySelectorAll('#green-tea-pattern-carousel .illustration-carousel-item');
-            const runfaPosterCarousel = document.getElementById('runfa-poster-carousel');
-            const runfaPosterPrev = document.getElementById('runfa-poster-prev');
-            const runfaPosterNext = document.getElementById('runfa-poster-next');
-            const runfaPosterItems = document.querySelectorAll('#runfa-poster-carousel .illustration-carousel-item');
-            const runfaCulturalCarousel = document.getElementById('runfa-cultural-carousel');
-            const runfaCulturalPrev = document.getElementById('runfa-cultural-prev');
-            const runfaCulturalNext = document.getElementById('runfa-cultural-next');
-            const runfaCulturalItems = document.querySelectorAll('#runfa-cultural-carousel .illustration-carousel-item');
-            const chestnutIllustration = document.getElementById('chestnut-illustration');
-            const loquatPackaging = document.getElementById('loquat-packaging');
-            const wahaha1 = document.getElementById('wahaha1');
-            const wahaha2 = document.getElementById('wahaha2');
-            const bookImages = document.querySelectorAll('.book-image');
-            const handmadeImages = document.querySelectorAll('.handmade-image');
-            const handmadePrev = document.getElementById('handmade-prev');
-            const handmadeNext = document.getElementById('handmade-next');
-            const handmadeCarouselItems = document.querySelectorAll('.handmade-carousel-item');
-            const imageModal = document.getElementById('image-modal');
-            const modalImage = document.getElementById('modal-image');
-            const closeModal = document.getElementById('close-modal');
-            const zoomInBtn = document.getElementById('zoom-in');
-            const zoomOutBtn = document.getElementById('zoom-out');
-            const resetZoomBtn = document.getElementById('reset-zoom');
-            
-            // 所有子页面
-            const subPages = {
-                'student-works': document.getElementById('student-works-page'),
-                'poster-design': document.getElementById('poster-design-page'),
-                'taobao-design': document.getElementById('taobao-design-page'),
-                'menu-design': document.getElementById('menu-design-page'),
-                'other-design': document.getElementById('other-design-page'),
-                'about-me': document.getElementById('about-me-page'),
-                'cultural-design': culturalDesignPage,
-                'web-design': webDesignPage,
-                'illustration-design': illustrationDesignPage,
-                'packaging-design': packagingDesignPage,
-                'book-design': bookDesignPage,
-                'handmade': handmadePage
-            };
-            
-            // 当前缩放级别
-            let currentScale = 1;
-            // 当前轮播图索引
-            let currentCarouselIndex = 0;
-            // 当前二级页面轮播图索引
-            let currentSecondaryIndex = 0;
-            // 当前三级页面轮播图索引
-            let currentTertiaryIndex = 0;
-            // 当前锥栗平铺轮播图索引
-            let currentChestnutPatternIndex = 0;
-            // 当前绿茶插画轮播图索引
-            let currentGreenTeaIllustrationIndex = 0;
-            // 当前绿茶平铺轮播图索引
-            let currentGreenTeaPatternIndex = 0;
-            // 当前润发海报轮播图索引
-            let currentRunfaPosterIndex = 0;
-            // 当前润发文创轮播图索引
-            let currentRunfaCulturalIndex = 0;
-            // 当前手工制作轮播图索引
-            let currentHandmadeIndex = 0;
-            
-            // 生成海报设计页面的图片
-            function generatePosterImages() {
-                for (let i = 1; i <= 94; i++) {
-                    const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
-                    const posterItem = document.createElement('div');
-                    posterItem.className = 'poster-item';
-                    posterItem.innerHTML = `<img src="${i}.${extension}" alt="海报设计 ${i}" class="poster-img">`;
-                    posterGrid.appendChild(posterItem);
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const homePage = document.getElementById('home-page');
+                const categoryPage = document.getElementById('category-page');
+                const homeLogo = document.getElementById('home-logo');
+                const carouselItems = document.querySelectorAll('.carousel-item');
+                const posterGrid = document.getElementById('poster-grid');
+                const taobaoPostersGrid = document.getElementById('taobao-posters');
+                const pinxiaobaoGrid = document.getElementById('pinxiaobao');
+                const taobaoHomeGrid = document.getElementById('taobao-home');
+                const taobaoDetailsGrid = document.getElementById('taobao-details');
+                const menuGrid = document.getElementById('menu-grid');
+                const otherGrid = document.getElementById('other-grid');
+                const aboutMeImage = document.getElementById('about-me-image');
+                const culturalDesignImage = document.getElementById('cultural-design-image');
+                const webDesignImage = document.getElementById('web-design-image');
+                const illustrationDesignImage = document.getElementById('illustration-design-image');
+                const packagingDesignImage = document.getElementById('packaging-design-image');
+                const bookDesignImage = document.getElementById('book-design-image');
+                const handmadeImage = document.getElementById('handmade-image');
+                const typesettingDesignImage = document.getElementById('typesetting-design-image');
+                const culturalDesignPage = document.getElementById('cultural-design-page');
+                const webDesignPage = document.getElementById('web-design-page');
+                const illustrationDesignPage = document.getElementById('illustration-design-page');
+                const packagingDesignPage = document.getElementById('packaging-design-page');
+                const bookDesignPage = document.getElementById('book-design-page');
+                const handmadePage = document.getElementById('handmade-page');
+                const typesettingDesignPage = document.getElementById('typesetting-design-page');
+                const backToStudentWorks = document.getElementById('back-to-student-works');
+                const backToStudentWorksWeb = document.getElementById('back-to-student-works-web');
+                const backToStudentWorksIllustration = document.getElementById('back-to-student-works-illustration');
+                const backToStudentWorksPackaging = document.getElementById('back-to-student-works-packaging');
+                const backToStudentWorksBook = document.getElementById('back-to-student-works-book');
+                const backToStudentWorksHandmade = document.getElementById('back-to-student-works-handmade');
+                const backToStudentWorksTypesetting = document.getElementById('back-to-student-works-typesetting');
+                const carouselTitle = document.getElementById('carousel-title');
+                const prevButton = document.getElementById('prev-button');
+                const nextButton = document.getElementById('next-button');
+                const culturalCarouselItems = document.querySelectorAll('.cultural-carousel-item');
+                const culturalMainImages = document.querySelectorAll('.cultural-main-image');
+                const homepageImage = document.getElementById('homepage-image');
+                const secondaryCarousel = document.getElementById('secondary-carousel');
+                const tertiaryCarousel = document.getElementById('tertiary-carousel');
+                const secondaryPrev = document.getElementById('secondary-prev');
+                const secondaryNext = document.getElementById('secondary-next');
+                const tertiaryPrev = document.getElementById('tertiary-prev');
+                const tertiaryNext = document.getElementById('tertiary-next');
+                const secondaryItems = document.querySelectorAll('#secondary-carousel .web-carousel-item');
+                const tertiaryItems = document.querySelectorAll('#tertiary-carousel .web-carousel-item');
+                const chestnutPatternCarousel = document.getElementById('chestnut-pattern-carousel');
+                const chestnutPrev = document.getElementById('chestnut-prev');
+                const chestnutNext = document.getElementById('chestnut-next');
+                const chestnutPatternItems = document.querySelectorAll('#chestnut-pattern-carousel .illustration-carousel-item');
+                const greenTeaIllustrationCarousel = document.getElementById('green-tea-illustration-carousel');
+                const greenTeaIllustrationPrev = document.getElementById('green-tea-illustration-prev');
+                const greenTeaIllustrationNext = document.getElementById('green-tea-illustration-next');
+                const greenTeaIllustrationItems = document.querySelectorAll('#green-tea-illustration-carousel .illustration-carousel-item');
+                const greenTeaPatternCarousel = document.getElementById('green-tea-pattern-carousel');
+                const greenTeaPatternPrev = document.getElementById('green-tea-pattern-prev');
+                const greenTeaPatternNext = document.getElementById('green-tea-pattern-next');
+                const greenTeaPatternItems = document.querySelectorAll('#green-tea-pattern-carousel .illustration-carousel-item');
+                const runfaPosterCarousel = document.getElementById('runfa-poster-carousel');
+                const runfaPosterPrev = document.getElementById('runfa-poster-prev');
+                const runfaPosterNext = document.getElementById('runfa-poster-next');
+                const runfaPosterItems = document.querySelectorAll('#runfa-poster-carousel .illustration-carousel-item');
+                const runfaCulturalCarousel = document.getElementById('runfa-cultural-carousel');
+                const runfaCulturalPrev = document.getElementById('runfa-cultural-prev');
+                const runfaCulturalNext = document.getElementById('runfa-cultural-next');
+                const runfaCulturalItems = document.querySelectorAll('#runfa-cultural-carousel .illustration-carousel-item');
+                const chestnutIllustration = document.getElementById('chestnut-illustration');
+                const loquatPackaging = document.getElementById('loquat-packaging');
+                const wahaha1 = document.getElementById('wahaha1');
+                const wahaha2 = document.getElementById('wahaha2');
+                const bookImages = document.querySelectorAll('.book-image');
+                const handmadeImages = document.querySelectorAll('.handmade-image');
+                const handmadePrev = document.getElementById('handmade-prev');
+                const handmadeNext = document.getElementById('handmade-next');
+                const handmadeCarouselItems = document.querySelectorAll('.handmade-carousel-item');
+                const typesettingImages = document.querySelectorAll('.typesetting-image');
+                const imageModal = document.getElementById('image-modal');
+                const modalImage = document.getElementById('modal-image');
+                const closeModal = document.getElementById('close-modal');
+                const zoomInBtn = document.getElementById('zoom-in');
+                const zoomOutBtn = document.getElementById('zoom-out');
+                const resetZoomBtn = document.getElementById('reset-zoom');
+                
+                // 所有子页面
+                const subPages = {
+                    'student-works': document.getElementById('student-works-page'),
+                    'poster-design': document.getElementById('poster-design-page'),
+                    'taobao-design': document.getElementById('taobao-design-page'),
+                    'menu-design': document.getElementById('menu-design-page'),
+                    'other-design': document.getElementById('other-design-page'),
+                    'about-me': document.getElementById('about-me-page'),
+                    'cultural-design': culturalDesignPage,
+                    'web-design': webDesignPage,
+                    'illustration-design': illustrationDesignPage,
+                    'packaging-design': packagingDesignPage,
+                    'book-design': bookDesignPage,
+                    'handmade': handmadePage,
+                    'typesetting-design': typesettingDesignPage
+                };
+                
+                // 当前缩放级别
+                let currentScale = 1;
+                // 当前轮播图索引
+                let currentCarouselIndex = 0;
+                // 当前二级页面轮播图索引
+                let currentSecondaryIndex = 0;
+                // 当前三级页面轮播图索引
+                let currentTertiaryIndex = 0;
+                // 当前锥栗平铺轮播图索引
+                let currentChestnutPatternIndex = 0;
+                // 当前绿茶插画轮播图索引
+                let currentGreenTeaIllustrationIndex = 0;
+                // 当前绿茶平铺轮播图索引
+                let currentGreenTeaPatternIndex = 0;
+                // 当前润发海报轮播图索引
+                let currentRunfaPosterIndex = 0;
+                // 当前润发文创轮播图索引
+                let currentRunfaCulturalIndex = 0;
+                // 当前手工制作轮播图索引
+                let currentHandmadeIndex = 0;
+                
+                // 生成海报设计页面的图片
+                function generatePosterImages() {
+                    for (let i = 1; i <= 94; i++) {
+                        const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
+                        const posterItem = document.createElement('div');
+                        posterItem.className = 'poster-item';
+                        posterItem.innerHTML = `<img src="${i}.${extension}" alt="海报设计 ${i}" class="poster-img">`;
+                        posterGrid.appendChild(posterItem);
+                        
+                        // 添加点击事件
+                        posterItem.addEventListener('click', function() {
+                            openModal(`${i}.${extension}`, `海报设计 ${i}`);
+                        });
+                    }
+                }
+                
+                // 生成菜单设计页面的图片
+                function generateMenuImages() {
+                    // 菜单图片 (1-15, 17-49)
+                    const menuImages = [];
+                    
+                    // 添加1-15
+                    for (let i = 1; i <= 15; i++) {
+                        menuImages.push(`菜单${i}.jpeg`);
+                    }
+                    
+                    // 添加17-49
+                    for (let i = 17; i <= 49; i++) {
+                        menuImages.push(`菜单${i}.jpeg`);
+                    }
+                    
+                    // 创建菜单项目
+                    menuImages.forEach((fileName, index) => {
+                        const menuItem = document.createElement('div');
+                        menuItem.className = 'menu-item';
+                        menuItem.innerHTML = `<img src="${fileName}" alt="菜单设计 ${index + 1}" class="menu-img">`;
+                        menuGrid.appendChild(menuItem);
+                        
+                        // 添加点击事件
+                        menuItem.addEventListener('click', function() {
+                            openModal(fileName, `菜单设计 ${index + 1}`);
+                        });
+                    });
+                }
+                
+                // 生成其他设计页面的图片
+                function generateOtherImages() {
+                    // 其他设计图片 (1-23)
+                    for (let i = 1; i <= 23; i++) {
+                        const otherItem = document.createElement('div');
+                        otherItem.className = 'other-item';
+                        otherItem.innerHTML = `<img src="其他${i}.jpeg" alt="其他设计 ${i}" class="other-img">`;
+                        otherGrid.appendChild(otherItem);
+                        
+                        // 添加点击事件
+                        otherItem.addEventListener('click', function() {
+                            openModal(`其他${i}.jpeg`, `其他设计 ${i}`);
+                        });
+                    }
+                }
+                
+                // 生成淘宝物料设计页面的图片
+                function generateTaobaoImages() {
+                    // 淘宝海报图片 (6张)
+                    for (let i = 1; i <= 6; i++) {
+                        const extension = (i === 5) ? 'png' : 'jpeg';
+                        const fileName = `淘宝海报${i}.${extension}`;
+                        const item = createTaobaoItem(fileName, `淘宝海报 ${i}`);
+                        taobaoPostersGrid.appendChild(item);
+                    }
+                    
+                    // 品销宝图片 (19张)
+                    for (let i = 1; i <= 19; i++) {
+                        const fileName = `品销宝${i}.jpeg`;
+                        const item = createTaobaoItem(fileName, `品销宝 ${i}`);
+                        pinxiaobaoGrid.appendChild(item);
+                    }
+                    
+                    // 淘宝首页图片 (6张)
+                    for (let i = 1; i <= 6; i++) {
+                        const fileName = `长图${i}.jpeg`;
+                        const item = createTaobaoItem(fileName, `淘宝首页 ${i}`);
+                        taobaoHomeGrid.appendChild(item);
+                    }
+                    
+                    // 淘宝详情页图片 (4张)
+                    for (let i = 1; i <= 4; i++) {
+                        const fileName = `详情页${i}.jpeg`;
+                        const item = createTaobaoItem(fileName, `淘宝详情页 ${i}`);
+                        taobaoDetailsGrid.appendChild(item);
+                    }
+                }
+                
+                // 创建淘宝物料设计项目
+                function createTaobaoItem(fileName, altText) {
+                    const item = document.createElement('div');
+                    item.className = 'taobao-item';
+                    item.innerHTML = `<img src="${fileName}" alt="${altText}" class="taobao-img">`;
                     
                     // 添加点击事件
-                    posterItem.addEventListener('click', function() {
-                        openModal(`${i}.${extension}`, `海报设计 ${i}`);
+                    item.addEventListener('click', function() {
+                        openModal(fileName, altText);
                     });
-                }
-            }
-            
-            // 生成菜单设计页面的图片
-            function generateMenuImages() {
-                // 菜单图片 (1-15, 17-49)
-                const menuImages = [];
-                
-                // 添加1-15
-                for (let i = 1; i <= 15; i++) {
-                    menuImages.push(`菜单${i}.jpeg`);
-                }
-                
-                // 添加17-49
-                for (let i = 17; i <= 49; i++) {
-                    menuImages.push(`菜单${i}.jpeg`);
-                }
-                
-                // 创建菜单项目
-                menuImages.forEach((fileName, index) => {
-                    const menuItem = document.createElement('div');
-                    menuItem.className = 'menu-item';
-                    menuItem.innerHTML = `<img src="${fileName}" alt="菜单设计 ${index + 1}" class="menu-img">`;
-                    menuGrid.appendChild(menuItem);
                     
-                    // 添加点击事件
-                    menuItem.addEventListener('click', function() {
-                        openModal(fileName, `菜单设计 ${index + 1}`);
+                    return item;
+                }
+                
+                // 更新轮播图标题
+                function updateCarouselTitle() {
+                    const currentItem = culturalCarouselItems[currentCarouselIndex];
+                    const type = currentItem.getAttribute('data-type');
+                    
+                    let title = '';
+                    switch(type) {
+                        case 'poster':
+                            title = '海报';
+                            break;
+                        case 'calendar':
+                            title = '日历';
+                            break;
+                        case 'cultural':
+                            title = '文创';
+                            break;
+                    }
+                    
+                    carouselTitle.textContent = `(${title})`;
+                }
+                
+                // 显示指定索引的轮播图
+                function showCarouselItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = culturalCarouselItems.length - 1;
+                    } else if (index >= culturalCarouselItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    culturalCarouselItems.forEach(item => {
+                        item.classList.remove('active');
                     });
-                });
-            }
-            
-            // 生成其他设计页面的图片
-            function generateOtherImages() {
-                // 其他设计图片 (1-23)
-                for (let i = 1; i <= 23; i++) {
-                    const otherItem = document.createElement('div');
-                    otherItem.className = 'other-item';
-                    otherItem.innerHTML = `<img src="其他${i}.jpeg" alt="其他设计 ${i}" class="other-img">`;
-                    otherGrid.appendChild(otherItem);
                     
-                    // 添加点击事件
-                    otherItem.addEventListener('click', function() {
-                        openModal(`其他${i}.jpeg`, `其他设计 ${i}`);
+                    // 显示当前项目
+                    culturalCarouselItems[index].classList.add('active');
+                    currentCarouselIndex = index;
+                    
+                    // 更新标题
+                    updateCarouselTitle();
+                }
+                
+                // 显示指定索引的二级页面轮播图
+                function showSecondaryItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = secondaryItems.length - 1;
+                    } else if (index >= secondaryItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    secondaryItems.forEach(item => {
+                        item.classList.remove('active');
                     });
-                }
-            }
-            
-            // 生成淘宝物料设计页面的图片
-            function generateTaobaoImages() {
-                // 淘宝海报图片 (6张)
-                for (let i = 1; i <= 6; i++) {
-                    const extension = (i === 5) ? 'png' : 'jpeg';
-                    const fileName = `淘宝海报${i}.${extension}`;
-                    const item = createTaobaoItem(fileName, `淘宝海报 ${i}`);
-                    taobaoPostersGrid.appendChild(item);
-                }
-                
-                // 品销宝图片 (19张)
-                for (let i = 1; i <= 19; i++) {
-                    const fileName = `品销宝${i}.jpeg`;
-                    const item = createTaobaoItem(fileName, `品销宝 ${i}`);
-                    pinxiaobaoGrid.appendChild(item);
-                }
-                
-                // 淘宝首页图片 (6张)
-                for (let i = 1; i <= 6; i++) {
-                    const fileName = `长图${i}.jpeg`;
-                    const item = createTaobaoItem(fileName, `淘宝首页 ${i}`);
-                    taobaoHomeGrid.appendChild(item);
-                }
-                
-                // 淘宝详情页图片 (4张)
-                for (let i = 1; i <= 4; i++) {
-                    const fileName = `详情页${i}.jpeg`;
-                    const item = createTaobaoItem(fileName, `淘宝详情页 ${i}`);
-                    taobaoDetailsGrid.appendChild(item);
-                }
-            }
-            
-            // 创建淘宝物料设计项目
-            function createTaobaoItem(fileName, altText) {
-                const item = document.createElement('div');
-                item.className = 'taobao-item';
-                item.innerHTML = `<img src="${fileName}" alt="${altText}" class="taobao-img">`;
-                
-                // 添加点击事件
-                item.addEventListener('click', function() {
-                    openModal(fileName, altText);
-                });
-                
-                return item;
-            }
-            
-            // 更新轮播图标题
-            function updateCarouselTitle() {
-                const currentItem = culturalCarouselItems[currentCarouselIndex];
-                const type = currentItem.getAttribute('data-type');
-                
-                let title = '';
-                switch(type) {
-                    case 'poster':
-                        title = '海报';
-                        break;
-                    case 'calendar':
-                        title = '日历';
-                        break;
-                    case 'cultural':
-                        title = '文创';
-                        break;
-                }
-                
-                carouselTitle.textContent = `(${title})`;
-            }
-            
-            // 显示指定索引的轮播图
-            function showCarouselItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = culturalCarouselItems.length - 1;
-                } else if (index >= culturalCarouselItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                culturalCarouselItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                culturalCarouselItems[index].classList.add('active');
-                currentCarouselIndex = index;
-                
-                // 更新标题
-                updateCarouselTitle();
-            }
-            
-            // 显示指定索引的二级页面轮播图
-            function showSecondaryItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = secondaryItems.length - 1;
-                } else if (index >= secondaryItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                secondaryItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                secondaryItems[index].classList.add('active');
-                currentSecondaryIndex = index;
-            }
-            
-            // 显示指定索引的三级页面轮播图
-            function showTertiaryItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = tertiaryItems.length - 1;
-                } else if (index >= tertiaryItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                tertiaryItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                tertiaryItems[index].classList.add('active');
-                currentTertiaryIndex = index;
-            }
-            
-            // 显示指定索引的锥栗平铺轮播图
-            function showChestnutPatternItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = chestnutPatternItems.length - 1;
-                } else if (index >= chestnutPatternItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                chestnutPatternItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                chestnutPatternItems[index].classList.add('active');
-                currentChestnutPatternIndex = index;
-            }
-            
-            // 显示指定索引的绿茶插画轮播图
-            function showGreenTeaIllustrationItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = greenTeaIllustrationItems.length - 1;
-                } else if (index >= greenTeaIllustrationItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                greenTeaIllustrationItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                greenTeaIllustrationItems[index].classList.add('active');
-                currentGreenTeaIllustrationIndex = index;
-            }
-            
-            // 显示指定索引的绿茶平铺轮播图
-            function showGreenTeaPatternItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = greenTeaPatternItems.length - 1;
-                } else if (index >= greenTeaPatternItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                greenTeaPatternItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                greenTeaPatternItems[index].classList.add('active');
-                currentGreenTeaPatternIndex = index;
-            }
-            
-            // 显示指定索引的润发海报轮播图
-            function showRunfaPosterItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = runfaPosterItems.length - 1;
-                } else if (index >= runfaPosterItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                runfaPosterItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                runfaPosterItems[index].classList.add('active');
-                currentRunfaPosterIndex = index;
-            }
-            
-            // 显示指定索引的润发文创轮播图
-            function showRunfaCulturalItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = runfaCulturalItems.length - 1;
-                } else if (index >= runfaCulturalItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                runfaCulturalItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                runfaCulturalItems[index].classList.add('active');
-                currentRunfaCulturalIndex = index;
-            }
-            
-            // 显示指定索引的手工制作轮播图
-            function showHandmadeItem(index) {
-                // 确保索引在有效范围内
-                if (index < 0) {
-                    index = handmadeCarouselItems.length - 1;
-                } else if (index >= handmadeCarouselItems.length) {
-                    index = 0;
-                }
-                
-                // 隐藏所有项目
-                handmadeCarouselItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // 显示当前项目
-                handmadeCarouselItems[index].classList.add('active');
-                currentHandmadeIndex = index;
-            }
-            
-            // 关于我图片点击事件
-            aboutMeImage.addEventListener('click', function() {
-                openModal('关于我.png', '关于我');
-            });
-            
-            // 文创设计图片点击事件
-            culturalDesignImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示文创设计页面
-                culturalDesignPage.style.display = 'block';
-                document.title = "文创设计 - intuy0-0空间";
-                
-                // 重置轮播图到第一张
-                showCarouselItem(0);
-            });
-            
-            // 网页设计图片点击事件
-            webDesignImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示网页设计页面
-                webDesignPage.style.display = 'block';
-                document.title = "网页设计 - intuy0-0空间";
-                
-                // 重置轮播图到第一张
-                showSecondaryItem(0);
-                showTertiaryItem(0);
-            });
-            
-            // 插画设计图片点击事件
-            illustrationDesignImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示插画设计页面
-                illustrationDesignPage.style.display = 'block';
-                document.title = "插画设计 - intuy0-0空间";
-                
-                // 重置轮播图到第一张
-                showChestnutPatternItem(0);
-                showGreenTeaIllustrationItem(0);
-                showGreenTeaPatternItem(0);
-                showRunfaPosterItem(0);
-                showRunfaCulturalItem(0);
-            });
-            
-            // 包装设计图片点击事件
-            packagingDesignImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示包装设计页面
-                packagingDesignPage.style.display = 'block';
-                document.title = "包装设计 - intuy0-0空间";
-            });
-            
-            // 书籍设计图片点击事件
-            bookDesignImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示书籍设计页面
-                bookDesignPage.style.display = 'block';
-                document.title = "书籍设计 - intuy0-0空间";
-            });
-            
-            // 手工制作图片点击事件
-            handmadeImage.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示手工制作页面
-                handmadePage.style.display = 'block';
-                document.title = "手工制作 - intuy0-0空间";
-                
-                // 重置轮播图到第一张
-                showHandmadeItem(0);
-            });
-            
-            // 返回按钮点击事件
-            backToStudentWorks.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 网页设计页面返回按钮点击事件
-            backToStudentWorksWeb.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 插画设计页面返回按钮点击事件
-            backToStudentWorksIllustration.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 包装设计页面返回按钮点击事件
-            backToStudentWorksPackaging.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 书籍设计页面返回按钮点击事件
-            backToStudentWorksBook.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 手工制作页面返回按钮点击事件
-            backToStudentWorksHandmade.addEventListener('click', function() {
-                // 隐藏所有页面
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'none';
-                Object.values(subPages).forEach(page => {
-                    if (page) page.style.display = 'none';
-                });
-                
-                // 显示学生时期作品页面
-                subPages['student-works'].style.display = 'block';
-                document.title = "学生时期作品 - intuy0-0空间";
-            });
-            
-            // 轮播图控制事件
-            prevButton.addEventListener('click', function() {
-                showCarouselItem(currentCarouselIndex - 1);
-            });
-            
-            nextButton.addEventListener('click', function() {
-                showCarouselItem(currentCarouselIndex + 1);
-            });
-            
-            // 二级页面轮播图控制事件
-            secondaryPrev.addEventListener('click', function() {
-                showSecondaryItem(currentSecondaryIndex - 1);
-            });
-            
-            secondaryNext.addEventListener('click', function() {
-                showSecondaryItem(currentSecondaryIndex + 1);
-            });
-            
-            // 三级页面轮播图控制事件
-            tertiaryPrev.addEventListener('click', function() {
-                showTertiaryItem(currentTertiaryIndex - 1);
-            });
-            
-            tertiaryNext.addEventListener('click', function() {
-                showTertiaryItem(currentTertiaryIndex + 1);
-            });
-            
-            // 锥栗平铺轮播图控制事件
-            chestnutPrev.addEventListener('click', function() {
-                showChestnutPatternItem(currentChestnutPatternIndex - 1);
-            });
-            
-            chestnutNext.addEventListener('click', function() {
-                showChestnutPatternItem(currentChestnutPatternIndex + 1);
-            });
-            
-            // 绿茶插画轮播图控制事件
-            greenTeaIllustrationPrev.addEventListener('click', function() {
-                showGreenTeaIllustrationItem(currentGreenTeaIllustrationIndex - 1);
-            });
-            
-            greenTeaIllustrationNext.addEventListener('click', function() {
-                showGreenTeaIllustrationItem(currentGreenTeaIllustrationIndex + 1);
-            });
-            
-            // 绿茶平铺轮播图控制事件
-            greenTeaPatternPrev.addEventListener('click', function() {
-                showGreenTeaPatternItem(currentGreenTeaPatternIndex - 1);
-            });
-            
-            greenTeaPatternNext.addEventListener('click', function() {
-                showGreenTeaPatternItem(currentGreenTeaPatternIndex + 1);
-            });
-            
-            // 润发海报轮播图控制事件
-            runfaPosterPrev.addEventListener('click', function() {
-                showRunfaPosterItem(currentRunfaPosterIndex - 1);
-            });
-            
-            runfaPosterNext.addEventListener('click', function() {
-                showRunfaPosterItem(currentRunfaPosterIndex + 1);
-            });
-            
-            // 润发文创轮播图控制事件
-            runfaCulturalPrev.addEventListener('click', function() {
-                showRunfaCulturalItem(currentRunfaCulturalIndex - 1);
-            });
-            
-            runfaCulturalNext.addEventListener('click', function() {
-                showRunfaCulturalItem(currentRunfaCulturalIndex + 1);
-            });
-            
-            // 手工制作轮播图控制事件
-            handmadePrev.addEventListener('click', function() {
-                showHandmadeItem(currentHandmadeIndex - 1);
-            });
-            
-            handmadeNext.addEventListener('click', function() {
-                showHandmadeItem(currentHandmadeIndex + 1);
-            });
-            
-            // 文创主图片点击事件
-            culturalMainImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 轮播图图片点击事件
-            culturalCarouselItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 网页首页图片点击事件
-            homepageImage.addEventListener('click', function() {
-                openModal('网页首页.png', '网页首页');
-            });
-            
-            // 二级页面图片点击事件
-            secondaryItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 三级页面图片点击事件
-            tertiaryItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 插画设计页面图片点击事件
-            chestnutIllustration.addEventListener('click', function() {
-                openModal('锥栗插画.png', '锥栗插画');
-            });
-            
-            // 锥栗平铺图片点击事件
-            chestnutPatternItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 绿茶插画图片点击事件
-            greenTeaIllustrationItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 绿茶平铺图片点击事件
-            greenTeaPatternItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 润发海报图片点击事件
-            runfaPosterItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 润发文创图片点击事件
-            runfaCulturalItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 包装设计页面图片点击事件
-            loquatPackaging.addEventListener('click', function() {
-                openModal('枇杷.jpeg', '百丈枇杷包装设计');
-            });
-            
-            wahaha1.addEventListener('click', function() {
-                openModal('哇哈哈1.jpeg', '哇哈哈包装设计1');
-            });
-            
-            wahaha2.addEventListener('click', function() {
-                openModal('哇哈哈2.jpeg', '哇哈哈包装设计2');
-            });
-            
-            // 书籍设计页面图片点击事件
-            bookImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 手工制作页面图片点击事件
-            handmadeImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 手工制作轮播图图片点击事件
-            handmadeCarouselItems.forEach(item => {
-                const image = item.querySelector('img');
-                image.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-            
-            // 打开模态框显示大图
-            function openModal(fileName, altText) {
-                modalImage.src = fileName;
-                modalImage.alt = altText;
-                imageModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                currentScale = 1;
-                modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
-            }
-            
-            // 关闭模态框
-            function closeImageModal() {
-                imageModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-            
-            // 缩放控制
-            function zoomImage(scaleFactor) {
-                currentScale *= scaleFactor;
-                // 限制缩放范围
-                currentScale = Math.max(0.1, Math.min(currentScale, 10));
-                modalImage.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
-            }
-            
-            // 重置缩放
-            function resetZoom() {
-                currentScale = 1;
-                modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
-            }
-            
-            // 点击首页logo跳转到分类页面
-            homeLogo.addEventListener('click', function() {
-                homePage.style.display = 'none';
-                categoryPage.style.display = 'block';
-                initCarousel();
-            });
-            
-            // 左侧导航点击事件
-            document.querySelectorAll('.nav-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const targetPage = this.getAttribute('data-target');
                     
-                    // 更新活动状态
-                    document.querySelectorAll('.nav-item').forEach(navItem => {
-                        navItem.classList.remove('active');
+                    // 显示当前项目
+                    secondaryItems[index].classList.add('active');
+                    currentSecondaryIndex = index;
+                }
+                
+                // 显示指定索引的三级页面轮播图
+                function showTertiaryItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = tertiaryItems.length - 1;
+                    } else if (index >= tertiaryItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    tertiaryItems.forEach(item => {
+                        item.classList.remove('active');
                     });
-                    this.classList.add('active');
                     
+                    // 显示当前项目
+                    tertiaryItems[index].classList.add('active');
+                    currentTertiaryIndex = index;
+                }
+                
+                // 显示指定索引的锥栗平铺轮播图
+                function showChestnutPatternItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = chestnutPatternItems.length - 1;
+                    } else if (index >= chestnutPatternItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    chestnutPatternItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    chestnutPatternItems[index].classList.add('active');
+                    currentChestnutPatternIndex = index;
+                }
+                
+                // 显示指定索引的绿茶插画轮播图
+                function showGreenTeaIllustrationItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = greenTeaIllustrationItems.length - 1;
+                    } else if (index >= greenTeaIllustrationItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    greenTeaIllustrationItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    greenTeaIllustrationItems[index].classList.add('active');
+                    currentGreenTeaIllustrationIndex = index;
+                }
+                
+                // 显示指定索引的绿茶平铺轮播图
+                function showGreenTeaPatternItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = greenTeaPatternItems.length - 1;
+                    } else if (index >= greenTeaPatternItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    greenTeaPatternItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    greenTeaPatternItems[index].classList.add('active');
+                    currentGreenTeaPatternIndex = index;
+                }
+                
+                // 显示指定索引的润发海报轮播图
+                function showRunfaPosterItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = runfaPosterItems.length - 1;
+                    } else if (index >= runfaPosterItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    runfaPosterItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    runfaPosterItems[index].classList.add('active');
+                    currentRunfaPosterIndex = index;
+                }
+                
+                // 显示指定索引的润发文创轮播图
+                function showRunfaCulturalItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = runfaCulturalItems.length - 1;
+                    } else if (index >= runfaCulturalItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    runfaCulturalItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    runfaCulturalItems[index].classList.add('active');
+                    currentRunfaCulturalIndex = index;
+                }
+                
+                // 显示指定索引的手工制作轮播图
+                function showHandmadeItem(index) {
+                    // 确保索引在有效范围内
+                    if (index < 0) {
+                        index = handmadeCarouselItems.length - 1;
+                    } else if (index >= handmadeCarouselItems.length) {
+                        index = 0;
+                    }
+                    
+                    // 隐藏所有项目
+                    handmadeCarouselItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 显示当前项目
+                    handmadeCarouselItems[index].classList.add('active');
+                    currentHandmadeIndex = index;
+                }
+                
+                // 关于我图片点击事件
+                aboutMeImage.addEventListener('click', function() {
+                    openModal('关于我.png', '关于我');
+                });
+                
+                // 文创设计图片点击事件
+                culturalDesignImage.addEventListener('click', function() {
                     // 隐藏所有页面
                     homePage.style.display = 'none';
                     categoryPage.style.display = 'none';
@@ -2878,61 +2552,461 @@
                         if (page) page.style.display = 'none';
                     });
                     
-                    // 显示目标页面
-                    if (targetPage === 'category') {
-                        categoryPage.style.display = 'block';
-                        document.title = "intuy0-0空间";
-                    } else if (subPages[targetPage]) {
-                        subPages[targetPage].style.display = 'block';
-                        document.title = getPageTitle(targetPage) + " - intuy0-0空间";
-                    }
+                    // 显示文创设计页面
+                    culturalDesignPage.style.display = 'block';
+                    document.title = "文创设计 - intuy0-0空间";
+                    
+                    // 重置轮播图到第一张
+                    showCarouselItem(0);
                 });
-            });
-            
-            // 初始化分类页面轮播效果
-            function initCarousel() {
-                let currentIndex = 0;
-                let isScrolling = false;
                 
-                // 设置初始位置
-                updateCarousel();
-                
-                // 更新轮播显示
-                function updateCarousel() {
-                    carouselItems.forEach((item, index) => {
-                        // 计算相对位置
-                        let position = index - currentIndex;
-                        
-                        // 处理循环逻辑
-                        if (position < -carouselItems.length / 2) {
-                            position += carouselItems.length;
-                        } else if (position > carouselItems.length / 2) {
-                            position -= carouselItems.length;
-                        }
-                        
-                        // 设置位置和样式
-                        if (position === 0) {
-                            // 中间图片
-                            item.style.transform = 'translateY(0) scale(1)';
-                            item.style.opacity = 1;
-                            item.style.zIndex = carouselItems.length;
-                        } else {
-                            // 其他图片
-                            const offsetY = position * 120;
-                            const scale = 0.8;
-                            const opacity = 0.6 - Math.abs(position) * 0.2;
-                            
-                            item.style.transform = `translateY(${offsetY}%) scale(${scale})`;
-                            item.style.opacity = Math.max(opacity, 0.1);
-                            item.style.zIndex = carouselItems.length - Math.abs(position);
-                        }
+                // 网页设计图片点击事件
+                webDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
                     });
+                    
+                    // 显示网页设计页面
+                    webDesignPage.style.display = 'block';
+                    document.title = "网页设计 - intuy0-0空间";
+                    
+                    // 重置轮播图到第一张
+                    showSecondaryItem(0);
+                    showTertiaryItem(0);
+                });
+                
+                // 插画设计图片点击事件
+                illustrationDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示插画设计页面
+                    illustrationDesignPage.style.display = 'block';
+                    document.title = "插画设计 - intuy0-0空间";
+                    
+                    // 重置轮播图到第一张
+                    showChestnutPatternItem(0);
+                    showGreenTeaIllustrationItem(0);
+                    showGreenTeaPatternItem(0);
+                    showRunfaPosterItem(0);
+                    showRunfaCulturalItem(0);
+                });
+                
+                // 包装设计图片点击事件
+                packagingDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示包装设计页面
+                    packagingDesignPage.style.display = 'block';
+                    document.title = "包装设计 - intuy0-0空间";
+                });
+                
+                // 书籍设计图片点击事件
+                bookDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示书籍设计页面
+                    bookDesignPage.style.display = 'block';
+                    document.title = "书籍设计 - intuy0-0空间";
+                });
+                
+                // 手工制作图片点击事件
+                handmadeImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示手工制作页面
+                    handmadePage.style.display = 'block';
+                    document.title = "手工制作 - intuy0-0空间";
+                    
+                    // 重置轮播图到第一张
+                    showHandmadeItem(0);
+                });
+                
+                // 排版设计图片点击事件
+                typesettingDesignImage.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示排版设计页面
+                    typesettingDesignPage.style.display = 'block';
+                    document.title = "排版设计 - intuy0-0空间";
+                });
+                
+                // 返回按钮点击事件
+                backToStudentWorks.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 网页设计页面返回按钮点击事件
+                backToStudentWorksWeb.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 插画设计页面返回按钮点击事件
+                backToStudentWorksIllustration.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 包装设计页面返回按钮点击事件
+                backToStudentWorksPackaging.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 书籍设计页面返回按钮点击事件
+                backToStudentWorksBook.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 手工制作页面返回按钮点击事件
+                backToStudentWorksHandmade.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 排版设计页面返回按钮点击事件
+                backToStudentWorksTypesetting.addEventListener('click', function() {
+                    // 隐藏所有页面
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'none';
+                    Object.values(subPages).forEach(page => {
+                        if (page) page.style.display = 'none';
+                    });
+                    
+                    // 显示学生时期作品页面
+                    subPages['student-works'].style.display = 'block';
+                    document.title = "学生时期作品 - intuy0-0空间";
+                });
+                
+                // 轮播图控制事件
+                prevButton.addEventListener('click', function() {
+                    showCarouselItem(currentCarouselIndex - 1);
+                });
+                
+                nextButton.addEventListener('click', function() {
+                    showCarouselItem(currentCarouselIndex + 1);
+                });
+                
+                // 二级页面轮播图控制事件
+                secondaryPrev.addEventListener('click', function() {
+                    showSecondaryItem(currentSecondaryIndex - 1);
+                });
+                
+                secondaryNext.addEventListener('click', function() {
+                    showSecondaryItem(currentSecondaryIndex + 1);
+                });
+                
+                // 三级页面轮播图控制事件
+                tertiaryPrev.addEventListener('click', function() {
+                    showTertiaryItem(currentTertiaryIndex - 1);
+                });
+                
+                tertiaryNext.addEventListener('click', function() {
+                    showTertiaryItem(currentTertiaryIndex + 1);
+                });
+                
+                // 锥栗平铺轮播图控制事件
+                chestnutPrev.addEventListener('click', function() {
+                    showChestnutPatternItem(currentChestnutPatternIndex - 1);
+                });
+                
+                chestnutNext.addEventListener('click', function() {
+                    showChestnutPatternItem(currentChestnutPatternIndex + 1);
+                });
+                
+                // 绿茶插画轮播图控制事件
+                greenTeaIllustrationPrev.addEventListener('click', function() {
+                    showGreenTeaIllustrationItem(currentGreenTeaIllustrationIndex - 1);
+                });
+                
+                greenTeaIllustrationNext.addEventListener('click', function() {
+                    showGreenTeaIllustrationItem(currentGreenTeaIllustrationIndex + 1);
+                });
+                
+                // 绿茶平铺轮播图控制事件
+                greenTeaPatternPrev.addEventListener('click', function() {
+                    showGreenTeaPatternItem(currentGreenTeaPatternIndex - 1);
+                });
+                
+                greenTeaPatternNext.addEventListener('click', function() {
+                    showGreenTeaPatternItem(currentGreenTeaPatternIndex + 1);
+                });
+                
+                // 润发海报轮播图控制事件
+                runfaPosterPrev.addEventListener('click', function() {
+                    showRunfaPosterItem(currentRunfaPosterIndex - 1);
+                });
+                
+                runfaPosterNext.addEventListener('click', function() {
+                    showRunfaPosterItem(currentRunfaPosterIndex + 1);
+                });
+                
+                // 润发文创轮播图控制事件
+                runfaCulturalPrev.addEventListener('click', function() {
+                    showRunfaCulturalItem(currentRunfaCulturalIndex - 1);
+                });
+                
+                runfaCulturalNext.addEventListener('click', function() {
+                    showRunfaCulturalItem(currentRunfaCulturalIndex + 1);
+                });
+                
+                // 手工制作轮播图控制事件
+                handmadePrev.addEventListener('click', function() {
+                    showHandmadeItem(currentHandmadeIndex - 1);
+                });
+                
+                handmadeNext.addEventListener('click', function() {
+                    showHandmadeItem(currentHandmadeIndex + 1);
+                });
+                
+                // 文创主图片点击事件
+                culturalMainImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 轮播图图片点击事件
+                culturalCarouselItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 网页首页图片点击事件
+                homepageImage.addEventListener('click', function() {
+                    openModal('网页首页.png', '网页首页');
+                });
+                
+                // 二级页面图片点击事件
+                secondaryItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 三级页面图片点击事件
+                tertiaryItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 插画设计页面图片点击事件
+                chestnutIllustration.addEventListener('click', function() {
+                    openModal('锥栗插画.png', '锥栗插画');
+                });
+                
+                // 锥栗平铺图片点击事件
+                chestnutPatternItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 绿茶插画图片点击事件
+                greenTeaIllustrationItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 绿茶平铺图片点击事件
+                greenTeaPatternItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 润发海报图片点击事件
+                runfaPosterItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 润发文创图片点击事件
+                runfaCulturalItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 包装设计页面图片点击事件
+                loquatPackaging.addEventListener('click', function() {
+                    openModal('枇杷.jpeg', '百丈枇杷包装设计');
+                });
+                
+                wahaha1.addEventListener('click', function() {
+                    openModal('哇哈哈1.jpeg', '哇哈哈包装设计1');
+                });
+                
+                wahaha2.addEventListener('click', function() {
+                    openModal('哇哈哈2.jpeg', '哇哈哈包装设计2');
+                });
+                
+                // 书籍设计页面图片点击事件
+                bookImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 手工制作页面图片点击事件
+                handmadeImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 手工制作轮播图图片点击事件
+                handmadeCarouselItems.forEach(item => {
+                    const image = item.querySelector('img');
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 排版设计页面图片点击事件
+                typesettingImages.forEach(image => {
+                    image.addEventListener('click', function() {
+                        openModal(this.src, this.alt);
+                    });
+                });
+                
+                // 打开模态框显示大图
+                function openModal(fileName, altText) {
+                    modalImage.src = fileName;
+                    modalImage.alt = altText;
+                    imageModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    currentScale = 1;
+                    modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
                 }
                 
-                // 图片点击事件 - 跳转到对应页面
-                carouselItems.forEach(item => {
+                // 关闭模态框
+                function closeImageModal() {
+                    imageModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+                
+                // 缩放控制
+                function zoomImage(scaleFactor) {
+                    currentScale *= scaleFactor;
+                    // 限制缩放范围
+                    currentScale = Math.max(0.1, Math.min(currentScale, 10));
+                    modalImage.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
+                }
+                
+                // 重置缩放
+                function resetZoom() {
+                    currentScale = 1;
+                    modalImage.style.transform = 'translate(-50%, -50%) scale(1)';
+                }
+                
+                // 点击首页logo跳转到分类页面
+                homeLogo.addEventListener('click', function() {
+                    homePage.style.display = 'none';
+                    categoryPage.style.display = 'block';
+                    initCarousel();
+                });
+                
+                // 左侧导航点击事件
+                document.querySelectorAll('.nav-item').forEach(item => {
                     item.addEventListener('click', function() {
                         const targetPage = this.getAttribute('data-target');
+                        
+                        // 更新活动状态
+                        document.querySelectorAll('.nav-item').forEach(navItem => {
+                            navItem.classList.remove('active');
+                        });
+                        this.classList.add('active');
                         
                         // 隐藏所有页面
                         homePage.style.display = 'none';
@@ -2942,91 +3016,116 @@
                         });
                         
                         // 显示目标页面
-                        if (subPages[targetPage]) {
+                        if (targetPage === 'category') {
+                            categoryPage.style.display = 'block';
+                            document.title = "intuy0-0空间";
+                        } else if (subPages[targetPage]) {
                             subPages[targetPage].style.display = 'block';
                             document.title = getPageTitle(targetPage) + " - intuy0-0空间";
-                            
-                            // 更新导航活动状态
-                            document.querySelectorAll('.nav-item').forEach(navItem => {
-                                navItem.classList.remove('active');
-                                if (navItem.getAttribute('data-target') === targetPage) {
-                                    navItem.classList.add('active');
-                                }
-                            });
                         }
                     });
                 });
                 
-                // 根据页面ID获取标题
-                function getPageTitle(pageId) {
-                    const titles = {
-                        'student-works': '学生时期作品',
-                        'poster-design': '海报设计',
-                        'taobao-design': '淘宝物料设计',
-                        'menu-design': '菜单设计',
-                        'other-design': '其他设计',
-                        'about-me': '关于我',
-                        'cultural-design': '文创设计',
-                        'web-design': '网页设计',
-                        'illustration-design': '插画设计',
-                        'packaging-design': '包装设计',
-                        'book-design': '书籍设计',
-                        'handmade': '手工制作'
-                    };
+                // 初始化分类页面轮播效果
+                function initCarousel() {
+                    let currentIndex = 0;
+                    let isScrolling = false;
                     
-                    return titles[pageId] || 'intuy0-0空间';
-                }
-                
-                // 滚动事件处理
-                window.addEventListener('wheel', function(e) {
-                    if (isScrolling) return;
-                    
-                    isScrolling = true;
-                    
-                    if (e.deltaY > 0) {
-                        // 向下滚动 - 下一张
-                        currentIndex = (currentIndex + 1) % carouselItems.length;
-                    } else if (e.deltaY < 0) {
-                        // 向上滚动 - 上一张
-                        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-                    }
-                    
-                    // 更新位置
+                    // 设置初始位置
                     updateCarousel();
                     
-                    // 防止滚动过快
-                    setTimeout(() => {
-                        isScrolling = false;
-                    }, 600);
-                });
-                
-                // 触摸事件处理（移动设备）
-                const carousel = document.querySelector('.carousel');
-                let startY = 0;
-                let currentY = 0;
-                
-                carousel.addEventListener('touchstart', function(e) {
-                    startY = e.touches[0].clientY;
-                }, { passive: true });
-                
-                carousel.addEventListener('touchmove', function(e) {
-                    if (isScrolling) return;
-                    currentY = e.touches[0].clientY;
-                }, { passive: true });
-                
-                carousel.addEventListener('touchend', function() {
-                    if (isScrolling) return;
+                    // 更新轮播显示
+                    function updateCarousel() {
+                        carouselItems.forEach((item, index) => {
+                            // 计算相对位置
+                            let position = index - currentIndex;
+                            
+                            // 处理循环逻辑
+                            if (position < -carouselItems.length / 2) {
+                                position += carouselItems.length;
+                            } else if (position > carouselItems.length / 2) {
+                                position -= carouselItems.length;
+                            }
+                            
+                            // 设置位置和样式
+                            if (position === 0) {
+                                // 中间图片
+                                item.style.transform = 'translateY(0) scale(1)';
+                                item.style.opacity = 1;
+                                item.style.zIndex = carouselItems.length;
+                            } else {
+                                // 其他图片
+                                const offsetY = position * 120;
+                                const scale = 0.8;
+                                const opacity = 0.6 - Math.abs(position) * 0.2;
+                                
+                                item.style.transform = `translateY(${offsetY}%) scale(${scale})`;
+                                item.style.opacity = Math.max(opacity, 0.1);
+                                item.style.zIndex = carouselItems.length - Math.abs(position);
+                            }
+                        });
+                    }
                     
-                    const diffY = startY - currentY;
+                    // 图片点击事件 - 跳转到对应页面
+                    carouselItems.forEach(item => {
+                        item.addEventListener('click', function() {
+                            const targetPage = this.getAttribute('data-target');
+                            
+                            // 隐藏所有页面
+                            homePage.style.display = 'none';
+                            categoryPage.style.display = 'none';
+                            Object.values(subPages).forEach(page => {
+                                if (page) page.style.display = 'none';
+                            });
+                            
+                            // 显示目标页面
+                            if (subPages[targetPage]) {
+                                subPages[targetPage].style.display = 'block';
+                                document.title = getPageTitle(targetPage) + " - intuy0-0空间";
+                                
+                                // 更新导航活动状态
+                                document.querySelectorAll('.nav-item').forEach(navItem => {
+                                    navItem.classList.remove('active');
+                                    if (navItem.getAttribute('data-target') === targetPage) {
+                                        navItem.classList.add('active');
+                                    }
+                                });
+                            }
+                        });
+                    });
                     
-                    if (Math.abs(diffY) > 50) { // 最小滑动距离
+                    // 根据页面ID获取标题
+                    function getPageTitle(pageId) {
+                        const titles = {
+                            'student-works': '学生时期作品',
+                            'poster-design': '海报设计',
+                            'taobao-design': '淘宝物料设计',
+                            'menu-design': '菜单设计',
+                            'other-design': '其他设计',
+                            'about-me': '关于我',
+                            'cultural-design': '文创设计',
+                            'web-design': '网页设计',
+                            'illustration-design': '插画设计',
+                            'packaging-design': '包装设计',
+                            'book-design': '书籍设计',
+                            'handmade': '手工制作',
+                            'typesetting-design': '排版设计'
+                        };
+                        
+                        return titles[pageId] || 'intuy0-0空间';
+                    }
+                    
+                    // 滚动事件处理
+                    window.addEventListener('wheel', function(e) {
+                        if (isScrolling) return;
+                        
                         isScrolling = true;
                         
-                        if (diffY > 0) {
-                            // 向上滑动 - 下一张
+                        if (e.deltaY > 0) {
+                            // 向下滚动 - 下一张
                             currentIndex = (currentIndex + 1) % carouselItems.length;
-                        } else {
-                            // 向下滑动 - 上一张
+                        } else if (e.deltaY < 0) {
+                            // 向上滚动 - 上一张
                             currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
                         }
                         
@@ -3037,150 +3136,193 @@
                         setTimeout(() => {
                             isScrolling = false;
                         }, 600);
+                    });
+                    
+                    // 触摸事件处理（移动设备）
+                    const carousel = document.querySelector('.carousel');
+                    let startY = 0;
+                    let currentY = 0;
+                    
+                    carousel.addEventListener('touchstart', function(e) {
+                        startY = e.touches[0].clientY;
+                    }, { passive: true });
+                    
+                    carousel.addEventListener('touchmove', function(e) {
+                        if (isScrolling) return;
+                        currentY = e.touches[0].clientY;
+                    }, { passive: true });
+                    
+                    carousel.addEventListener('touchend', function() {
+                        if (isScrolling) return;
+                        
+                        const diffY = startY - currentY;
+                        
+                        if (Math.abs(diffY) > 50) { // 最小滑动距离
+                            isScrolling = true;
+                            
+                            if (diffY > 0) {
+                                // 向上滑动 - 下一张
+                                currentIndex = (currentIndex + 1) % carouselItems.length;
+                            } else {
+                                // 向下滑动 - 上一张
+                                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                            }
+                            
+                            // 更新位置
+                            updateCarousel();
+                            
+                            // 防止滚动过快
+                            setTimeout(() => {
+                                isScrolling = false;
+                            }, 600);
+                        }
+                    }, { passive: true });
+                }
+                
+                // 模态框事件监听
+                closeModal.addEventListener('click', closeImageModal);
+                zoomInBtn.addEventListener('click', () => zoomImage(1.2));
+                zoomOutBtn.addEventListener('click', () => zoomImage(0.8));
+                resetZoomBtn.addEventListener('click', resetZoom);
+                
+                // 点击模态框背景关闭
+                imageModal.addEventListener('click', function(e) {
+                    if (e.target === imageModal) {
+                        closeImageModal();
                     }
-                }, { passive: true });
-            }
-            
-            // 模态框事件监听
-            closeModal.addEventListener('click', closeImageModal);
-            zoomInBtn.addEventListener('click', () => zoomImage(1.2));
-            zoomOutBtn.addEventListener('click', () => zoomImage(0.8));
-            resetZoomBtn.addEventListener('click', resetZoom);
-            
-            // 点击模态框背景关闭
-            imageModal.addEventListener('click', function(e) {
-                if (e.target === imageModal) {
-                    closeImageModal();
-                }
-            });
-            
-            // 图片预加载优化
-            function preloadImages() {
-                const imageUrls = [];
-                
-                // 添加所有需要预加载的图片
-                for (let i = 1; i <= 94; i++) {
-                    const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
-                    imageUrls.push(`${i}.${extension}`);
-                }
-                
-                // 添加菜单图片
-                for (let i = 1; i <= 15; i++) {
-                    imageUrls.push(`菜单${i}.jpeg`);
-                }
-                for (let i = 17; i <= 49; i++) {
-                    imageUrls.push(`菜单${i}.jpeg`);
-                }
-                
-                // 添加其他设计图片
-                for (let i = 1; i <= 23; i++) {
-                    imageUrls.push(`其他${i}.jpeg`);
-                }
-                
-                // 添加淘宝图片
-                for (let i = 1; i <= 6; i++) {
-                    const extension = (i === 5) ? 'png' : 'jpeg';
-                    imageUrls.push(`淘宝海报${i}.${extension}`);
-                }
-                for (let i = 1; i <= 19; i++) {
-                    imageUrls.push(`品销宝${i}.jpeg`);
-                }
-                for (let i = 1; i <= 6; i++) {
-                    imageUrls.push(`长图${i}.jpeg`);
-                }
-                for (let i = 1; i <= 4; i++) {
-                    imageUrls.push(`详情页${i}.jpeg`);
-                }
-                
-                // 添加关于我图片
-                imageUrls.push('关于我.png');
-                
-                // 添加文创设计图片
-                for (let i = 1; i <= 7; i++) {
-                    imageUrls.push(`文创${i}.jpeg`);
-                }
-                for (let i = 1; i <= 3; i++) {
-                    imageUrls.push(`文创海报${i}.jpeg`);
-                }
-                for (let i = 1; i <= 3; i++) {
-                    imageUrls.push(`文创日历${i}.jpeg`);
-                }
-                for (let i = 1; i <= 7; i++) {
-                    imageUrls.push(`文创图${i}.jpeg`);
-                }
-                
-                // 添加网页设计图片
-                imageUrls.push('网页首页.png');
-                for (let i = 1; i <= 3; i++) {
-                    imageUrls.push(`二级页面${i}.png`);
-                }
-                for (let i = 1; i <= 3; i++) {
-                    imageUrls.push(`三级页面${i}.png`);
-                }
-                
-                // 添加插画设计图片
-                imageUrls.push('锥栗插画.png');
-                imageUrls.push('锥栗平铺1.png');
-                imageUrls.push('锥栗平铺2.png');
-                imageUrls.push('绿茶插画1.jpeg');
-                imageUrls.push('绿茶插画2.jpeg');
-                imageUrls.push('绿茶插画3.jpeg');
-                imageUrls.push('绿茶平铺1.jpeg');
-                imageUrls.push('绿茶平铺2.jpeg');
-                imageUrls.push('绿茶平铺3.jpeg');
-                imageUrls.push('润发海报1.jpeg');
-                imageUrls.push('润发海报2.jpeg');
-                imageUrls.push('润发文创1.jpeg');
-                imageUrls.push('润发文创2.png');
-                
-                // 添加包装设计图片
-                imageUrls.push('枇杷.jpeg');
-                imageUrls.push('哇哈哈1.jpeg');
-                imageUrls.push('哇哈哈2.jpeg');
-                
-                // 添加书籍设计图片
-                for (let i = 1; i <= 11; i++) {
-                    imageUrls.push(`书籍${i}.jpeg`);
-                }
-                
-                // 添加手工制作图片
-                imageUrls.push('壹色.png');
-                imageUrls.push('手工1.png');
-                imageUrls.push('手工2.png');
-                for (let i = 3; i <= 8; i++) {
-                    imageUrls.push(`手工${i}.png`);
-                }
-                
-                // 预加载图片
-                imageUrls.forEach(url => {
-                    new Image().src = url;
                 });
-            }
-            
-            // 初始化页面
-            generatePosterImages();
-            generateMenuImages();
-            generateOtherImages();
-            generateTaobaoImages();
-            preloadImages();
-            
-            // 初始化文创设计轮播图
-            updateCarouselTitle();
-            
-            // 初始化网页设计轮播图
-            showSecondaryItem(0);
-            showTertiaryItem(0);
-            
-            // 初始化插画设计轮播图
-            showChestnutPatternItem(0);
-            showGreenTeaIllustrationItem(0);
-            showGreenTeaPatternItem(0);
-            showRunfaPosterItem(0);
-            showRunfaCulturalItem(0);
-            
-            // 初始化手工制作轮播图
-            showHandmadeItem(0);
-        });
-    </script>
-</body>
+                
+                // 图片预加载优化
+                function preloadImages() {
+                    const imageUrls = [];
+                    
+                    // 添加所有需要预加载的图片
+                    for (let i = 1; i <= 94; i++) {
+                        const extension = (i === 15 || i === 16 || i === 84 || i === 86) ? 'png' : 'jpeg';
+                        imageUrls.push(`${i}.${extension}`);
+                    }
+                    
+                    // 添加菜单图片
+                    for (let i = 1; i <= 15; i++) {
+                        imageUrls.push(`菜单${i}.jpeg`);
+                    }
+                    for (let i = 17; i <= 49; i++) {
+                        imageUrls.push(`菜单${i}.jpeg`);
+                    }
+                    
+                    // 添加其他设计图片
+                    for (let i = 1; i <= 23; i++) {
+                        imageUrls.push(`其他${i}.jpeg`);
+                    }
+                    
+                    // 添加淘宝图片
+                    for (let i = 1; i <= 6; i++) {
+                        const extension = (i === 5) ? 'png' : 'jpeg';
+                        imageUrls.push(`淘宝海报${i}.${extension}`);
+                    }
+                    for (let i = 1; i <= 19; i++) {
+                        imageUrls.push(`品销宝${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 6; i++) {
+                        imageUrls.push(`长图${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 4; i++) {
+                        imageUrls.push(`详情页${i}.jpeg`);
+                    }
+                    
+                    // 添加关于我图片
+                    imageUrls.push('关于我.png');
+                    
+                    // 添加文创设计图片
+                    for (let i = 1; i <= 7; i++) {
+                        imageUrls.push(`文创${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`文创海报${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`文创日历${i}.jpeg`);
+                    }
+                    for (let i = 1; i <= 7; i++) {
+                        imageUrls.push(`文创图${i}.jpeg`);
+                    }
+                    
+                    // 添加网页设计图片
+                    imageUrls.push('网页首页.png');
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`二级页面${i}.png`);
+                    }
+                    for (let i = 1; i <= 3; i++) {
+                        imageUrls.push(`三级页面${i}.png`);
+                    }
+                    
+                    // 添加插画设计图片
+                    imageUrls.push('锥栗插画.png');
+                    imageUrls.push('锥栗平铺1.png');
+                    imageUrls.push('锥栗平铺2.png');
+                    imageUrls.push('绿茶插画1.jpeg');
+                    imageUrls.push('绿茶插画2.jpeg');
+                    imageUrls.push('绿茶插画3.jpeg');
+                    imageUrls.push('绿茶平铺1.jpeg');
+                    imageUrls.push('绿茶平铺2.jpeg');
+                    imageUrls.push('绿茶平铺3.jpeg');
+                    imageUrls.push('润发海报1.jpeg');
+                    imageUrls.push('润发海报2.jpeg');
+                    imageUrls.push('润发文创1.jpeg');
+                    imageUrls.push('润发文创2.png');
+                    
+                    // 添加包装设计图片
+                    imageUrls.push('枇杷.jpeg');
+                    imageUrls.push('哇哈哈1.jpeg');
+                    imageUrls.push('哇哈哈2.jpeg');
+                    
+                    // 添加书籍设计图片
+                    for (let i = 1; i <= 11; i++) {
+                        imageUrls.push(`书籍${i}.jpeg`);
+                    }
+                    
+                    // 添加手工制作图片
+                    imageUrls.push('壹色.png');
+                    imageUrls.push('手工1.png');
+                    imageUrls.push('手工2.png');
+                    for (let i = 3; i <= 8; i++) {
+                        imageUrls.push(`手工${i}.png`);
+                    }
+                    
+                    // 添加排版设计图片
+                    imageUrls.push('落日1.jpeg');
+                    imageUrls.push('落日2.jpeg');
+                    
+                    // 预加载图片
+                    imageUrls.forEach(url => {
+                        new Image().src = url;
+                    });
+                }
+                
+                // 初始化页面
+                generatePosterImages();
+                generateMenuImages();
+                generateOtherImages();
+                generateTaobaoImages();
+                preloadImages();
+                
+                // 初始化文创设计轮播图
+                updateCarouselTitle();
+                
+                // 初始化网页设计轮播图
+                showSecondaryItem(0);
+                showTertiaryItem(0);
+                
+                // 初始化插画设计轮播图
+                showChestnutPatternItem(0);
+                showGreenTeaIllustrationItem(0);
+                showGreenTeaPatternItem(0);
+                showRunfaPosterItem(0);
+                showRunfaCulturalItem(0);
+                
+                // 初始化手工制作轮播图
+                showHandmadeItem(0);
+            });
+        </script>
+    </body>
 </html>
